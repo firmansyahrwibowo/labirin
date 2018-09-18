@@ -70,4 +70,13 @@ public class ChangeLabirinControlEvent : GameEvent
         Labirin = labirin;
     }
 }
+public class GetStarEvent : GameEvent
+{
+    public int Number;
+
+    public GetStarEvent(int number)
+    {
+        Number = number;
+    }
+}
 

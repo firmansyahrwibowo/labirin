@@ -20,10 +20,16 @@ public class GameplayManager : MonoBehaviour
     // Use this for initialization
     [SerializeField]
     GameObject [] _Level;
-    
+
+    [Header("PAUSE BUTTON")]
+    [SerializeField]
+    GameObject _WinRestart;
     [SerializeField]
     GameObject _NextLevelButton;
+    [SerializeField]
+    GameObject _WinQuitButton;
 
+    [Header("PAUSE BUTTON")]
     [SerializeField]
     GameObject _PauseUI;
     [SerializeField]
@@ -32,6 +38,8 @@ public class GameplayManager : MonoBehaviour
     GameObject _ResumeButton;
     [SerializeField]
     GameObject _RestartButton;
+    [SerializeField]
+    GameObject _QuitButton;
 
     [SerializeField]
     Text _TextLevel;
@@ -40,6 +48,8 @@ public class GameplayManager : MonoBehaviour
 
     TimeCounting _TimeCounting;
 
+    [SerializeField]
+    GameObject[] Star;
     
 
     private void Awake()
@@ -49,7 +59,8 @@ public class GameplayManager : MonoBehaviour
         EventManager.AddListener<OnNextLevel>(GoToNextLevel);
         EventManager.AddListener<StartGameplayEvent>(StartGameInit);
         EventManager.AddListener<ObstacleEvent>(ObstacleHandler);
-        
+        EventManager.AddListener<GetStarEvent>(GetStarHandler);
+
         _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
             NextLevel();
         });
@@ -65,6 +76,17 @@ public class GameplayManager : MonoBehaviour
             OnPause(false);
             Reset();
         });
+        _WinRestart.AddComponent<Button>().onClick.AddListener(delegate {
+            OnPause(false);
+            _WinUI.SetActive(false);
+            Reset();
+        });
+        _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
+            OnQuit();
+        });
+        _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
+            OnQuit();
+        });
 
         _BallManager = _Ball.AddComponent<BallBehaviour>();
     }
@@ -74,6 +96,11 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1f;
         Global.Level = 0;
 
+        //STAR INIT
+        for (int i = 0; i < Star.Length; i++)
+            Star[i].SetActive(false);
+
+        //LEVEL INIT
         for (int i = 0; i < _Level.Length; i++)
         {
             if (i == Global.Level)
@@ -124,6 +151,11 @@ public class GameplayManager : MonoBehaviour
         if (Global.Level > 4)
             Global.Level = 0;
 
+        //STAR INIT
+        for (int i = 0; i < Star.Length; i++)
+            Star[i].SetActive(false);
+
+        //LEVEL INIT
         for (int i = 0; i < _Level.Length; i++)
         {
             if (i == Global.Level)
@@ -149,9 +181,17 @@ public class GameplayManager : MonoBehaviour
             _Level[i].transform.position = _LabirinDefaultPos;
     }
 
+    void GetStarHandler(GetStarEvent e) {
+        Star[e.Number].SetActive(true);
+    }
+
     void SetTextLevel() {
         _TextLevel.text = "LEVEL " + (Global.Level+1).ToString();
         _WinUILevel.text = "LEVEL " + (Global.Level + 1).ToString();
+    }
+
+    void OnQuit() {
+        Application.Quit();
     }
 
     private void Reset()

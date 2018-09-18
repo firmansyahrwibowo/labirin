@@ -12,10 +12,15 @@ public class MainManager : MonoBehaviour {
     public GameObject ButtonInGameUI;
     public GameObject TheGameUI;
 
+    //AUDIO
+    [SerializeField]
+    private GameObject _GameplayBGM;
+
     // Use this for initialization
     private void Awake()
     {
         EventManager.AddListener<MainMenuButtonEvent>(MainMenuButton);
+        
     }
 
     void Start () {
@@ -30,6 +35,7 @@ public class MainManager : MonoBehaviour {
         TutorialUI.SetActive(false);
         ButtonInGameUI.SetActive(false);
         TheGameUI.SetActive(false);
+        _GameplayBGM.SetActive(false);
 
         EventManager.TriggerEvent(new ControllerEvent(false));
     }
@@ -46,6 +52,8 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 StartCoroutine(FalseTutorial());
+
+                _GameplayBGM.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
                 EventManager.TriggerEvent(new StartGameplayEvent());
@@ -66,6 +74,7 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
+                _GameplayBGM.SetActive(false);
 
                 EventManager.TriggerEvent(new ControllerEvent(false));
                 break;

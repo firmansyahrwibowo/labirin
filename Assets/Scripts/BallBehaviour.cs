@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallBehaviour : MonoBehaviour {
 
     [SerializeField]
-    int _Diamond = 0;
+    int _StarCount = 0;
     int _MaxCollect = 3;
 
     bool _IsGoal = false;
@@ -15,7 +15,7 @@ public class BallBehaviour : MonoBehaviour {
 
     public void ResetBehaviour()
     {
-        _Diamond = 0;
+        _StarCount = 0;
         _IsGoal = false;
         for (int i = 0; i < _DiamondObject.Count; i++)
         {
@@ -27,7 +27,7 @@ public class BallBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Goal" && (_IsGoal || _Diamond > 2))
+        if (collision.gameObject.tag == "Goal" && (_IsGoal || _StarCount > 2))
         {
             EventManager.TriggerEvent(new OnNextLevel());
 
@@ -40,10 +40,12 @@ public class BallBehaviour : MonoBehaviour {
 
         if (collision.gameObject.tag == "Collectible")
         {
-            _Diamond++;
+            _StarCount++;
+            EventManager.TriggerEvent(new GetStarEvent(_StarCount - 1));
+
             collision.gameObject.SetActive(false);
             _DiamondObject.Add(collision.gameObject);
-            if (_Diamond > 2)
+            if (_StarCount > 2)
                 _IsGoal = true;
         }
     }

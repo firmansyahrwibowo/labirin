@@ -13,6 +13,7 @@ public class BallBehaviour : MonoBehaviour {
     [SerializeField]
     List<GameObject> _DiamondObject = new List<GameObject>();
 
+    
     public void ResetBehaviour()
     {
         _StarCount = 0;

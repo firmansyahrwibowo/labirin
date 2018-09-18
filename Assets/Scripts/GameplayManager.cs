@@ -177,6 +177,9 @@ public class GameplayManager : MonoBehaviour
     {
         _Ball.transform.position = _BallDefaultPos;
         _BallManager.ResetBehaviour();
+        //STAR INIT
+        for (int i = 0; i < Star.Length; i++)
+            Star[i].SetActive(false);
         for (int i = 0; i < _Level.Length; i++)
             _Level[i].transform.position = _LabirinDefaultPos;
     }
@@ -198,6 +201,9 @@ public class GameplayManager : MonoBehaviour
     {
         _Ball.transform.position = _BallDefaultPos;
         _BallManager.ResetBehaviour();
+        //STAR INIT
+        for (int i = 0; i < Star.Length; i++)
+            Star[i].SetActive(false);
         for (int i = 0; i < _Level.Length; i++)
             _Level[i].transform.position = _LabirinDefaultPos;
     }

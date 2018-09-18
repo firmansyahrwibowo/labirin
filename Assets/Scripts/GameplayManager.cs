@@ -121,7 +121,7 @@ public class GameplayManager : MonoBehaviour
         EventManager.TriggerEvent(new ControllerEvent(true));
         _WinUI.SetActive(false);
         Global.Level++;
-        if (Global.Level > 9)
+        if (Global.Level > 4)
             Global.Level = 0;
 
         for (int i = 0; i < _Level.Length; i++)
@@ -150,8 +150,8 @@ public class GameplayManager : MonoBehaviour
     }
 
     void SetTextLevel() {
-        _TextLevel.text = "Level " + (Global.Level+1).ToString();
-        _WinUILevel.text = "Level " + (Global.Level + 1).ToString();
+        _TextLevel.text = "LEVEL " + (Global.Level+1).ToString();
+        _WinUILevel.text = "LEVEL " + (Global.Level + 1).ToString();
     }
 
     private void Reset()

@@ -28,7 +28,9 @@ public class MainManager : MonoBehaviour {
         InitFirstOpen();
 	}
 
-    void InitFirstOpen() {
+    void InitFirstOpen()
+    {
+        EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, false));
         MainMenuUI.SetActive(true);
         FinishLevel.SetActive(false);
         PausedUI.SetActive(false);

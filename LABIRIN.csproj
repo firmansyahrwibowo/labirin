@@ -295,6 +295,7 @@
     <Compile Include="Assets\Scripts\Events.cs" />
     <Compile Include="Assets\Scripts\GameplayManager.cs" />
     <Compile Include="Assets\Scripts\MainManager.cs" />
+    <Compile Include="Assets\Scripts\SoundFX.cs" />
     <Compile Include="Assets\Scripts\TimeCounting.cs" />
     <Compile Include="Assets\Scripts\Unknown\Backeend.cs" />
     <Compile Include="Assets\Scripts\Unknown\ButtonManager.cs" />

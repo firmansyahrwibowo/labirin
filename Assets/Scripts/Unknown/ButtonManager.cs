@@ -20,13 +20,16 @@ public class ButtonManager : MonoBehaviour {
         
         _MainMenuPlayButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
         });
 
         _TutorialButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.TUTORIAL));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
         });
 
         _MainMenuExitButton.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
             ExitButton();
         });
     }

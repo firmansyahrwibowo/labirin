@@ -80,3 +80,14 @@ public class GetStarEvent : GameEvent
     }
 }
 
+public class SFXPlayEvent : GameEvent {
+    public SfxType Sfx;
+    public bool IsEnd;
+
+    public SFXPlayEvent(SfxType sfx, bool isEnd)
+    {
+        Sfx = sfx;
+        IsEnd = isEnd;
+    }
+}
+

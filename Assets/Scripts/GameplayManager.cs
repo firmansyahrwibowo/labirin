@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-
     [SerializeField]
     GameObject _Ball;
     BallBehaviour _BallManager;
@@ -41,16 +40,20 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     GameObject _QuitButton;
 
+    [Header("LEVEL IMAGE")]
     [SerializeField]
-    Text _TextLevel;
+    Image _LevelImage;
     [SerializeField]
-    Text _WinUILevel;
+    Image _WinUILevelImage;
 
     TimeCounting _TimeCounting;
 
     [SerializeField]
     GameObject[] Star;
-    
+
+    [Header("Level Image")]
+    [SerializeField]
+    Sprite[] _LevelTittleImage;
 
     private void Awake()
     {
@@ -63,29 +66,36 @@ public class GameplayManager : MonoBehaviour
 
         _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
             NextLevel();
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
         });
 
         // Pause Handler
         _PauseButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(true);
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
         });
         _ResumeButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
         });
         _RestartButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
             Reset();
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
         });
         _WinRestart.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
             _WinUI.SetActive(false);
             Reset();
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
         });
         _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
         });
         _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
         });
 
         _BallManager = _Ball.AddComponent<BallBehaviour>();
@@ -141,6 +151,7 @@ public class GameplayManager : MonoBehaviour
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
         _WinUI.SetActive(true);
+        EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }
 
     void NextLevel()
@@ -189,8 +200,12 @@ public class GameplayManager : MonoBehaviour
     }
 
     void SetTextLevel() {
-        _TextLevel.text = "LEVEL " + (Global.Level+1).ToString();
-        _WinUILevel.text = "LEVEL " + (Global.Level + 1).ToString();
+        _LevelImage.sprite = _LevelTittleImage[Global.Level];
+        _LevelImage.SetNativeSize();
+        _WinUILevelImage.sprite = _LevelTittleImage[Global.Level];
+        _WinUILevelImage.SetNativeSize();
+        //_TextLevel.text = "LEVEL " + (Global.Level+1).ToString();
+        //_WinUILevel.text = "LEVEL " + (Global.Level + 1).ToString();
     }
 
     void OnQuit() {

@@ -41,6 +41,7 @@ public class BallBehaviour : MonoBehaviour {
 
         if (collision.gameObject.tag == "Collectible")
         {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
             _StarCount++;
             EventManager.TriggerEvent(new GetStarEvent(_StarCount - 1));
 

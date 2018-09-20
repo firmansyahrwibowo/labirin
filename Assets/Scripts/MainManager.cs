@@ -6,6 +6,7 @@ public class MainManager : MonoBehaviour {
 
     public GameObject IntroUI;
     public GameObject MainMenuUI;
+    public GameObject LevelSelect;
     public GameObject FinishLevel;
     public GameObject PausedUI;
     public GameObject TutorialUI;
@@ -20,7 +21,8 @@ public class MainManager : MonoBehaviour {
     private void Awake()
     {
         EventManager.AddListener<MainMenuButtonEvent>(MainMenuButton);
-        
+        EventManager.AddListener<LevelSelectButtonEvent>(LevelSelectButton);
+
     }
 
     void Start () {
@@ -32,6 +34,7 @@ public class MainManager : MonoBehaviour {
     {
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, false));
         MainMenuUI.SetActive(true);
+        LevelSelect.SetActive(false);
         FinishLevel.SetActive(false);
         PausedUI.SetActive(false);
         TutorialUI.SetActive(false);
@@ -49,16 +52,17 @@ public class MainManager : MonoBehaviour {
                 MainMenuUI.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
-                TutorialUI.SetActive(true);
-                ButtonInGameUI.SetActive(true);
-                TheGameUI.SetActive(true);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
 
-                StartCoroutine(FalseTutorial());
+                LevelSelect.SetActive(true);
+                //StartCoroutine(FalseTutorial());
 
-                _GameplayBGM.SetActive(true);
+                //_GameplayBGM.SetActive(true);
 
-                EventManager.TriggerEvent(new ControllerEvent(true));
-                EventManager.TriggerEvent(new StartGameplayEvent());
+                //EventManager.TriggerEvent(new ControllerEvent(true));
+                //EventManager.TriggerEvent(new StartGameplayEvent());
                 break;
             case MainMenuButtonType.EXIT:
 
@@ -71,6 +75,7 @@ public class MainManager : MonoBehaviour {
                 break;
             case MainMenuButtonType.ON_RESTART:
                 MainMenuUI.SetActive(true);
+                LevelSelect.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -81,6 +86,82 @@ public class MainManager : MonoBehaviour {
                 EventManager.TriggerEvent(new ControllerEvent(false));
                 break;
         }
+    }
+
+    public void LevelSelectButton(LevelSelectButtonEvent e)
+    {
+        switch (e.Type)
+        {
+            case LevelSelectButtonType.LEVEL_1:
+                MainMenuUI.SetActive(false);
+                LevelSelect.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(true);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                StartCoroutine(FalseTutorial());
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_2:
+                MainMenuUI.SetActive(false);
+                LevelSelect.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_3:
+                MainMenuUI.SetActive(false);
+                LevelSelect.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_4:
+                MainMenuUI.SetActive(false);
+                LevelSelect.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_5:
+                MainMenuUI.SetActive(false);
+                LevelSelect.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+        }
+
     }
 
     IEnumerator FalseTutorial() {

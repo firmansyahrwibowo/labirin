@@ -20,7 +20,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     GameObject [] _Level;
 
-    [Header("PAUSE BUTTON")]
+    [Header("WIN BUTTON")]
     [SerializeField]
     GameObject _WinRestart;
     [SerializeField]
@@ -98,13 +98,13 @@ public class GameplayManager : MonoBehaviour
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
         });
 
+       
         _BallManager = _Ball.AddComponent<BallBehaviour>();
     }
     
     private void StartGameInit(StartGameplayEvent e)
     {
         Time.timeScale = 1f;
-        Global.Level = 0;
 
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)

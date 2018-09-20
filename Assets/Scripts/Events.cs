@@ -12,6 +12,17 @@ public class MainMenuButtonEvent : GameEvent
     }
 }
 
+public class LevelSelectButtonEvent : GameEvent
+{
+    public LevelSelectButtonType Type;
+
+    public LevelSelectButtonEvent(LevelSelectButtonType type)
+    {
+        Type = type;
+    }
+
+}
+
 public class ObstacleEvent : GameEvent { }
 
 public class SaveDBLocalEvent : GameEvent

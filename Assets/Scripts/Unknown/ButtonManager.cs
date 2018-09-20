@@ -13,6 +13,20 @@ public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject _MainMenuExitButton;
 
+    [Header("LEVEL BUTTON")]
+    [SerializeField]
+    GameObject _Level1Button;
+    [SerializeField]
+    GameObject _Level2Button;
+    [SerializeField]
+    GameObject _Level3Button;
+    [SerializeField]
+    GameObject _Level4Button;
+    [SerializeField]
+    GameObject _Level5Button;
+    [SerializeField]
+    GameObject _BackToMenuButton;
+
     MainManager _MainManager;
     
     void Awake () {
@@ -32,8 +46,32 @@ public class ButtonManager : MonoBehaviour {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
             ExitButton();
         });
+
+        //Level Select Handler
+        _Level1Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 0;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_1));
+        });
+        _Level2Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 1;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_2));
+        });
+        _Level3Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 2;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_3));
+        });
+        _Level4Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 3;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_4));
+        });
+        _Level5Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 4;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_5));
+        });
+
+
     }
-    
+
     void StartGameButton() {
 
     }

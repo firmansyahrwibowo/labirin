@@ -1058,12 +1058,6 @@ MonoBehaviour:
   - {fileID: 819809209}
   - {fileID: 1545726684}
   - {fileID: 1166395832}
-  _Level1Button: {fileID: 1488600890}
-  _Level2Button: {fileID: 1449544059}
-  _Level3Button: {fileID: 1108225600}
-  _Level4Button: {fileID: 951408902}
-  _Level5Button: {fileID: 1560127540}
-  _BackToMenuButton: {fileID: 1895867591}
   _WinRestart: {fileID: 674273712}
   _NextLevelButton: {fileID: 728860513}
   _WinQuitButton: {fileID: 1748269020}
@@ -1084,6 +1078,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 56fd21b3ff5ab5442816e22a1c17b049, type: 3}
   - {fileID: 21300000, guid: 1866e12de5e5a1643a9aacb6a9f6e2eb, type: 3}
   - {fileID: 21300000, guid: 3c564f6b1ca67c848a251ae3f0fc8623, type: 3}
+  _StarCollect: 0
 --- !u!4 &214584681
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,6 +1135,12 @@ MonoBehaviour:
   _Level4Button: {fileID: 951408902}
   _Level5Button: {fileID: 1560127540}
   _BackToMenuButton: {fileID: 1895867591}
+  _LevelLock:
+  - {fileID: 1488600890}
+  - {fileID: 1449544059}
+  - {fileID: 1108225600}
+  - {fileID: 951408902}
+  - {fileID: 1560127540}
 --- !u!114 &214584684
 MonoBehaviour:
   m_ObjectHideFlags: 0

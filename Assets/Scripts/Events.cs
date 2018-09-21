@@ -81,6 +81,7 @@ public class ChangeLabirinControlEvent : GameEvent
         Labirin = labirin;
     }
 }
+
 public class GetStarEvent : GameEvent
 {
     public int Number;

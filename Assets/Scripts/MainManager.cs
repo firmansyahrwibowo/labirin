@@ -22,7 +22,6 @@ public class MainManager : MonoBehaviour {
     {
         EventManager.AddListener<MainMenuButtonEvent>(MainMenuButton);
         EventManager.AddListener<LevelSelectButtonEvent>(LevelSelectButton);
-
     }
 
     void Start () {
@@ -159,6 +158,17 @@ public class MainManager : MonoBehaviour {
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
                 EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.Back_ToMenu:
+                MainMenuUI.SetActive(true);
+                LevelSelect.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
+
+
                 break;
         }
 

@@ -43,6 +43,8 @@ public class BallBehaviour : MonoBehaviour {
         {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
             _StarCount++;
+
+
             EventManager.TriggerEvent(new GetStarEvent(_StarCount - 1));
 
             collision.gameObject.SetActive(false);

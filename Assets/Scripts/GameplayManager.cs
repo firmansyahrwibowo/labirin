@@ -55,6 +55,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     Sprite[] _LevelTittleImage;
 
+    [SerializeField]
+    int _StarCollect;
     private void Awake()
     {
         _TimeCounting = GetComponent<TimeCounting>();
@@ -83,6 +85,9 @@ public class GameplayManager : MonoBehaviour
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
         });
+
+        // Win Handler
+
         _WinRestart.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
             _WinUI.SetActive(false);
@@ -151,6 +156,7 @@ public class GameplayManager : MonoBehaviour
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
         _WinUI.SetActive(true);
+        //Ambil _StarCount
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }
 
@@ -209,7 +215,7 @@ public class GameplayManager : MonoBehaviour
     }
 
     void OnQuit() {
-        Application.Quit();
+        EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu));
     }
 
     private void Reset()

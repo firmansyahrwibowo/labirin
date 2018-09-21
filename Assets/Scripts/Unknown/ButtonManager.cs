@@ -27,11 +27,31 @@ public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject _BackToMenuButton;
 
+    [Header("LEVEL LOCK")]
+    [SerializeField]
+    GameObject[] _LevelLock;
+
+    int _StarLock=3;
+
     MainManager _MainManager;
     
     void Awake () {
         _MainManager = GetComponent<MainManager>();
-        
+
+        //Level Lock Handler
+        for (int i = 0; i <= _LevelLock.Length; i++)
+        {
+            if (_StarLock >= _LevelLock.Length*3)
+            {
+                _LevelLock[i].SetActive(true);
+            }
+            else
+            {
+                _LevelLock[i].SetActive(false);
+            }
+        }
+
+        //Main Menu Handler
         _MainMenuPlayButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
@@ -67,6 +87,8 @@ public class ButtonManager : MonoBehaviour {
         _Level5Button.AddComponent<Button>().onClick.AddListener(delegate {
             Global.Level = 4;
             EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_5));
+        });
+        _BackToMenuButton.AddComponent<Button>().onClick.AddListener(delegate {
         });
 
 

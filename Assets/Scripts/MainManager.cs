@@ -56,12 +56,8 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(false);
 
                 LevelSelect.SetActive(true);
-                //StartCoroutine(FalseTutorial());
-
-                //_GameplayBGM.SetActive(true);
-
-                //EventManager.TriggerEvent(new ControllerEvent(true));
-                //EventManager.TriggerEvent(new StartGameplayEvent());
+                EventManager.TriggerEvent(new InitButtonEvent());
+                //init level buka / g nya
                 break;
             case MainMenuButtonType.EXIT:
 

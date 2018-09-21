@@ -31,26 +31,12 @@ public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject[] _LevelLock;
 
-    int _StarLock=3;
-
     MainManager _MainManager;
     
     void Awake () {
         _MainManager = GetComponent<MainManager>();
 
-        //Level Lock Handler
-        for (int i = 0; i <= _LevelLock.Length; i++)
-        {
-            if (_StarLock >= _LevelLock.Length*3)
-            {
-                _LevelLock[i].SetActive(true);
-            }
-            else
-            {
-                _LevelLock[i].SetActive(false);
-            }
-        }
-
+        EventManager.AddListener<InitButtonEvent>(Init);
         //Main Menu Handler
         _MainMenuPlayButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
@@ -91,6 +77,26 @@ public class ButtonManager : MonoBehaviour {
         _BackToMenuButton.AddComponent<Button>().onClick.AddListener(delegate {
         });
 
+
+    }
+
+    public void Init (InitButtonEvent e)
+    {
+        //Level Lock Handler
+        for (int i = 0; i <= _LevelLock.Length; i++)
+        {
+            if (i <= Global.Level)
+            {
+                if (Global.StarCollect >= (Global.Level - 1) * 3)
+                {
+                    _LevelLock[i].SetActive(true);
+                }
+
+            }
+            
+        }
+
+        
 
     }
 

@@ -103,3 +103,4 @@ public class SFXPlayEvent : GameEvent {
     }
 }
 
+public class InitButtonEvent : GameEvent { }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
+
     [SerializeField]
     GameObject _Ball;
     BallBehaviour _BallManager;
@@ -16,9 +17,8 @@ public class GameplayManager : MonoBehaviour
 
     [SerializeField]
     GameObject _WinUI;
-    // Use this for initialization
-    [SerializeField]
-    GameObject [] _Level;
+
+    public List<Level> _Level;
 
     [Header("WIN BUTTON")]
     [SerializeField]
@@ -55,8 +55,6 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     Sprite[] _LevelTittleImage;
 
-    [SerializeField]
-    int _StarCollect;
     private void Awake()
     {
         _TimeCounting = GetComponent<TimeCounting>();
@@ -87,7 +85,6 @@ public class GameplayManager : MonoBehaviour
         });
 
         // Win Handler
-
         _WinRestart.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
             _WinUI.SetActive(false);
@@ -116,15 +113,15 @@ public class GameplayManager : MonoBehaviour
             Star[i].SetActive(false);
 
         //LEVEL INIT
-        for (int i = 0; i < _Level.Length; i++)
+        for (int i = 0; i < _Level.Count; i++)
         {
             if (i == Global.Level)
             {
-                EventManager.TriggerEvent(new ChangeLabirinControlEvent(_Level[i].transform));
-                _Level[i].SetActive(true);
+                EventManager.TriggerEvent(new ChangeLabirinControlEvent(_Level[i].Labirin.transform));
+                _Level[i].Labirin.SetActive(true);
             }
             else
-                _Level[i].SetActive(false);
+                _Level[i].Labirin.SetActive(false);
         }
 
         SetTextLevel();
@@ -153,10 +150,29 @@ public class GameplayManager : MonoBehaviour
 
     private void GoToNextLevel(OnNextLevel e)
     {
+        Global.Level++;
+        if (Global.Level > 4)
+            Global.Level = 0;
+
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
         _WinUI.SetActive(true);
-        //Ambil _StarCount
+
+        for (int i = 0; i < _Level.Count; i++)
+        {
+            if (i == Global.Level)
+            {
+                if (_Level[i].IsClear == false)
+                {
+                    Global.StarCollect += 3;
+                    Debug.Log(Global.StarCollect);
+                    _Level[i].IsClear = true;
+                }
+            }
+        }
+
+       
+
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }
 
@@ -164,24 +180,23 @@ public class GameplayManager : MonoBehaviour
     {
         EventManager.TriggerEvent(new ControllerEvent(true));
         _WinUI.SetActive(false);
-        Global.Level++;
-        if (Global.Level > 4)
-            Global.Level = 0;
 
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
 
         //LEVEL INIT
-        for (int i = 0; i < _Level.Length; i++)
+        for (int i = 0; i < _Level.Count; i++)
         {
             if (i == Global.Level)
             {
-                EventManager.TriggerEvent(new ChangeLabirinControlEvent(_Level[i].transform));
-                _Level[i].SetActive(true);
+                EventManager.TriggerEvent(new ChangeLabirinControlEvent(_Level[i].Labirin.transform));
+                _Level[i].Labirin.SetActive(true);
+
             }
             else
-                _Level[i].SetActive(false);
+                _Level[i].Labirin.SetActive(false);
+
         }
 
         OnPause(false);
@@ -197,8 +212,8 @@ public class GameplayManager : MonoBehaviour
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
-        for (int i = 0; i < _Level.Length; i++)
-            _Level[i].transform.position = _LabirinDefaultPos;
+        for (int i = 0; i < _Level.Count; i++)
+            _Level[i].Labirin.transform.position = _LabirinDefaultPos;
     }
 
     void GetStarHandler(GetStarEvent e) {
@@ -225,8 +240,8 @@ public class GameplayManager : MonoBehaviour
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
-        for (int i = 0; i < _Level.Length; i++)
-            _Level[i].transform.position = _LabirinDefaultPos;
+        for (int i = 0; i < _Level.Count; i++)
+            _Level[i].Labirin.transform.position = _LabirinDefaultPos;
     }
 
 

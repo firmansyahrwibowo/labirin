@@ -151,7 +151,7 @@ public class GameplayManager : MonoBehaviour
     private void GoToNextLevel(OnNextLevel e)
     {
         Global.Level++;
-        if (Global.Level > 4)
+        if (Global.Level > 14)
             Global.Level = 0;
 
         EventManager.TriggerEvent(new ControllerEvent(false));
@@ -160,14 +160,32 @@ public class GameplayManager : MonoBehaviour
 
         for (int i = 0; i < _Level.Count; i++)
         {
-            if (i == Global.Level)
+            if (i+1 == Global.Level)
             {
-                if (_Level[i].IsClear == false)
+                if ((_Level[i].IsClear == false) && (_Level[i].Stage == 1))
                 {
                     Global.StarCollect += 3;
+                    Global.StarPerStage1 += 3;
                     Debug.Log(Global.StarCollect);
                     _Level[i].IsClear = true;
                 }
+
+                if ((_Level[i].IsClear == false) && (_Level[i].Stage == 2))
+                {
+                    Global.StarCollect += 3;
+                    Global.StarPerStage2 += 3;
+                    Debug.Log(Global.StarCollect);
+                    _Level[i].IsClear = true;
+                }
+
+                if ((_Level[i].IsClear == false) && (_Level[i].Stage == 3))
+                {
+                    Global.StarCollect += 3;
+                    Global.StarPerStage3 += 3;
+                    Debug.Log(Global.StarCollect);
+                    _Level[i].IsClear = true;
+                }
+
             }
         }
 
@@ -230,7 +248,7 @@ public class GameplayManager : MonoBehaviour
     }
 
     void OnQuit() {
-        EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu));
+        EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu1));
     }
 
     private void Reset()

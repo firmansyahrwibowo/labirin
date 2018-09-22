@@ -25,11 +25,66 @@ public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject _Level5Button;
     [SerializeField]
-    GameObject _BackToMenuButton;
+    GameObject _BackToMenuButton1;
+    [SerializeField]
+    GameObject _Left1;
+    [SerializeField]
+    GameObject _Right1;
+
+    [SerializeField]
+    GameObject _Level6Button;
+    [SerializeField]
+    GameObject _Level7Button;
+    [SerializeField]
+    GameObject _Level8Button;
+    [SerializeField]
+    GameObject _Level9Button;
+    [SerializeField]
+    GameObject _Level10Button;
+    [SerializeField]
+    GameObject _BackToMenuButton2;
+    [SerializeField]
+    GameObject _Left2;
+    [SerializeField]
+    GameObject _Right2;
+
+    [SerializeField]
+    GameObject _Level11Button;
+    [SerializeField]
+    GameObject _Level12Button;
+    [SerializeField]
+    GameObject _Level13Button;
+    [SerializeField]
+    GameObject _Level14Button;
+    [SerializeField]
+    GameObject _Level15Button;
+    [SerializeField]
+    GameObject _BackToMenuButton3;
+    [SerializeField]
+    GameObject _Left3;
+    [SerializeField]
+    GameObject _Right3;
+
 
     [Header("LEVEL LOCK")]
     [SerializeField]
     GameObject[] _LevelLock;
+
+    [Header("STAR COLLECTED")]
+    [SerializeField]
+    Text _StarRemaining1;
+    [SerializeField]
+    Text _StarRemaining2;
+    [SerializeField]
+    Text _StarRemaining3;
+
+    [SerializeField]
+    Text _StarTotal1;
+    [SerializeField]
+    Text _StarTotal2;
+    [SerializeField]
+    Text _StarTotal3;
+
 
     MainManager _MainManager;
     
@@ -37,6 +92,7 @@ public class ButtonManager : MonoBehaviour {
         _MainManager = GetComponent<MainManager>();
 
         EventManager.AddListener<InitButtonEvent>(Init);
+
         //Main Menu Handler
         _MainMenuPlayButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
@@ -74,9 +130,75 @@ public class ButtonManager : MonoBehaviour {
             Global.Level = 4;
             EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_5));
         });
-        _BackToMenuButton.AddComponent<Button>().onClick.AddListener(delegate {
+        _BackToMenuButton1.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu1));
+        });
+        _Left1.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Left_1));
+        });
+        _Right1.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Right_1));
         });
 
+        _Level6Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 5;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_6));
+        });
+        _Level7Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 6;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_7));
+        });
+        _Level8Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 7;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_8));
+        });
+        _Level9Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 8;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_9));
+        });
+        _Level10Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 9;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_10));
+        });
+        _BackToMenuButton2.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu2));
+        });
+        _Left2.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Left_2));
+        });
+        _Right2.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Right_2));
+        });
+
+        _Level11Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 10;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_11));
+        });
+        _Level12Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 11;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_12));
+        });
+        _Level13Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 12;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_13));
+        });
+        _Level14Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 13;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_14));
+        });
+        _Level15Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 14;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_15));
+        });
+        _BackToMenuButton3.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu3));
+        });
+        _Left3.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Left_3));
+        });
+        _Right3.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Right_3));
+        });
 
     }
 
@@ -92,11 +214,14 @@ public class ButtonManager : MonoBehaviour {
                     _LevelLock[i].SetActive(true);
                 }
 
-            }
-            
+            }           
         }
 
-        
+        _StarRemaining1.text = Global.StarPerStage1.ToString();
+        _StarRemaining2.text = Global.StarPerStage2.ToString();
+        _StarRemaining3.text = Global.StarPerStage3.ToString();
+        _StarTotal1.text = _StarTotal2.text = _StarTotal3.text = Global.StarCollect.ToString();
+
 
     }
 

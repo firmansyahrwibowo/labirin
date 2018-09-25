@@ -9,6 +9,8 @@ public class MainManager : MonoBehaviour {
     public GameObject LevelSelect1;
     public GameObject LevelSelect2;
     public GameObject LevelSelect3;
+    public GameObject LevelSelect4;
+    public GameObject LevelSelect5;
     public GameObject FinishLevel;
     public GameObject PausedUI;
     public GameObject TutorialUI;
@@ -38,6 +40,8 @@ public class MainManager : MonoBehaviour {
         LevelSelect1.SetActive(false);
         LevelSelect2.SetActive(false);
         LevelSelect3.SetActive(false);
+        LevelSelect4.SetActive(false);
+        LevelSelect5.SetActive(false);
         FinishLevel.SetActive(false);
         PausedUI.SetActive(false);
         TutorialUI.SetActive(false);
@@ -60,6 +64,8 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
 
                 LevelSelect1.SetActive(true);
                 EventManager.TriggerEvent(new InitButtonEvent());
@@ -78,6 +84,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -99,6 +107,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(true);
@@ -117,6 +127,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -132,6 +144,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -147,6 +161,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -162,6 +178,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -177,6 +195,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -187,7 +207,9 @@ public class MainManager : MonoBehaviour {
                 MainMenuUI.SetActive(false);
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
-                LevelSelect3.SetActive(true);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(true);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -199,6 +221,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(true);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -212,6 +236,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -229,6 +255,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -244,6 +272,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -259,6 +289,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -274,6 +306,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -289,6 +323,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -300,6 +336,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(true);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -311,6 +349,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(true);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -324,6 +364,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -341,6 +383,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -356,6 +400,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -371,6 +417,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -386,6 +434,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -401,6 +451,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -412,6 +464,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(true);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
@@ -420,9 +474,267 @@ public class MainManager : MonoBehaviour {
                 break;
             case LevelSelectButtonType.Right_3:
                 MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(true);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
+                break;
+
+
+            case LevelSelectButtonType.LEVEL_16:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_17:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_18:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_19:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_20:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.Back_ToMenu4:
+                MainMenuUI.SetActive(true);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
+                break;
+            case LevelSelectButtonType.Left_4:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(true);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
+                break;
+            case LevelSelectButtonType.Right_4:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(true);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
+                break;
+
+
+            case LevelSelectButtonType.LEVEL_21:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_22:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_23:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_24:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.LEVEL_25:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                ButtonInGameUI.SetActive(true);
+                TheGameUI.SetActive(true);
+
+                _GameplayBGM.SetActive(true);
+
+                EventManager.TriggerEvent(new ControllerEvent(true));
+                EventManager.TriggerEvent(new StartGameplayEvent());
+                break;
+            case LevelSelectButtonType.Back_ToMenu5:
+                MainMenuUI.SetActive(true);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
+                break;
+            case LevelSelectButtonType.Left_5:
+                MainMenuUI.SetActive(false);
+                LevelSelect1.SetActive(false);
+                LevelSelect2.SetActive(false);
+                LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(true);
+                LevelSelect5.SetActive(false);
+                FinishLevel.SetActive(false);
+                PausedUI.SetActive(false);
+                TutorialUI.SetActive(false);
+                ButtonInGameUI.SetActive(false);
+                TheGameUI.SetActive(false);
+                break;
+            case LevelSelectButtonType.Right_5:
+                MainMenuUI.SetActive(false);
                 LevelSelect1.SetActive(true);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
+                LevelSelect4.SetActive(false);
+                LevelSelect5.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);

@@ -10,8 +10,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     GameObject _Ball;
     BallBehaviour _BallManager;
-    [SerializeField]
-    Vector2 _BallDefaultPos;
+    //[SerializeField]
+    //Vector2 _BallDefaultPos;
     [SerializeField]
     Vector2 _LabirinDefaultPos;
 
@@ -151,7 +151,7 @@ public class GameplayManager : MonoBehaviour
     private void GoToNextLevel(OnNextLevel e)
     {
         Global.Level++;
-        if (Global.Level > 14)
+        if (Global.Level > 24)
             Global.Level = 0;
 
         EventManager.TriggerEvent(new ControllerEvent(false));
@@ -182,6 +182,22 @@ public class GameplayManager : MonoBehaviour
                 {
                     Global.StarCollect += 3;
                     Global.StarPerStage3 += 3;
+                    Debug.Log(Global.StarCollect);
+                    _Level[i].IsClear = true;
+                }
+
+                if ((_Level[i].IsClear == false) && (_Level[i].Stage == 4))
+                {
+                    Global.StarCollect += 3;
+                    Global.StarPerStage4 += 3;
+                    Debug.Log(Global.StarCollect);
+                    _Level[i].IsClear = true;
+                }
+
+                if ((_Level[i].IsClear == false) && (_Level[i].Stage == 5))
+                {
+                    Global.StarCollect += 3;
+                    Global.StarPerStage5 += 3;
                     Debug.Log(Global.StarCollect);
                     _Level[i].IsClear = true;
                 }
@@ -225,13 +241,21 @@ public class GameplayManager : MonoBehaviour
 
     void ObstacleHandler(ObstacleEvent e)
     {
-        _Ball.transform.position = _BallDefaultPos;
         _BallManager.ResetBehaviour();
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
         for (int i = 0; i < _Level.Count; i++)
-            _Level[i].Labirin.transform.position = _LabirinDefaultPos;
+        {
+            //_Level[i].Labirin.transform.position = _LabirinDefaultPos;
+            if (i==Global.Level)
+            {
+                //_Ball.transform.position = new Vector2(_Level[i].BallDefaultPosition.position.x, _Level[i].BallDefaultPosition.position.y);
+                _Ball.transform.position = _Level[i].BallDefaultPosition.position;
+            }
+           
+        }
+            
     }
 
     void GetStarHandler(GetStarEvent e) {
@@ -253,13 +277,20 @@ public class GameplayManager : MonoBehaviour
 
     private void Reset()
     {
-        _Ball.transform.position = _BallDefaultPos;
         _BallManager.ResetBehaviour();
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
         for (int i = 0; i < _Level.Count; i++)
-            _Level[i].Labirin.transform.position = _LabirinDefaultPos;
+        {
+            //_Level[i].Labirin.transform.position = _LabirinDefaultPos;
+            if (i == Global.Level)
+            {
+                //_Ball.transform.position = new Vector2(_Level[i].BallDefaultPosition.position.x, _Level[i].BallDefaultPosition.position.y);
+                _Ball.transform.position = _Level[i].BallDefaultPosition.position;
+            }
+        }
+           
     }
 
 

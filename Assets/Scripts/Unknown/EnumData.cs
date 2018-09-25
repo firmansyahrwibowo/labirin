@@ -36,5 +36,21 @@ public enum LevelSelectButtonType
     LEVEL_15,
     Back_ToMenu3,
     Left_3,
-    Right_3
+    Right_3,
+    LEVEL_16,
+    LEVEL_17,
+    LEVEL_18,
+    LEVEL_19,
+    LEVEL_20,
+    Back_ToMenu4,
+    Left_4,
+    Right_4,
+    LEVEL_21,
+    LEVEL_22,
+    LEVEL_23,
+    LEVEL_24,
+    LEVEL_25,
+    Back_ToMenu5,
+    Left_5,
+    Right_5
 }

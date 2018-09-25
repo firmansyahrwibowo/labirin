@@ -9,4 +9,5 @@ public class Level
     public GameObject Labirin;
     public bool IsClear;
     public int Stage;
+    public Transform BallDefaultPosition;
 }

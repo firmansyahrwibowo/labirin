@@ -151,7 +151,7 @@ public class GameplayManager : MonoBehaviour
     private void GoToNextLevel(OnNextLevel e)
     {
         Global.Level++;
-        if (Global.Level > 24)
+        if (Global.Level > 29)
             Global.Level = 0;
 
         EventManager.TriggerEvent(new ControllerEvent(false));
@@ -198,6 +198,14 @@ public class GameplayManager : MonoBehaviour
                 {
                     Global.StarCollect += 3;
                     Global.StarPerStage5 += 3;
+                    Debug.Log(Global.StarCollect);
+                    _Level[i].IsClear = true;
+                }
+
+                if ((_Level[i].IsClear == false) && (_Level[i].Stage == 6))
+                {
+                    Global.StarCollect += 3;
+                    Global.StarPerStage6 += 3;
                     Debug.Log(Global.StarCollect);
                     _Level[i].IsClear = true;
                 }

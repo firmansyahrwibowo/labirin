@@ -99,6 +99,23 @@ public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject _Right5;
 
+    [SerializeField]
+    GameObject _Level26Button;
+    [SerializeField]
+    GameObject _Level27Button;
+    [SerializeField]
+    GameObject _Level28Button;
+    [SerializeField]
+    GameObject _Level29Button;
+    [SerializeField]
+    GameObject _Level30Button;
+    [SerializeField]
+    GameObject _BackToMenuButton6;
+    [SerializeField]
+    GameObject _Left6;
+    [SerializeField]
+    GameObject _Right6;
+
     [Header("LEVEL LOCK")]
     [SerializeField]
     GameObject[] _LevelLock;
@@ -114,6 +131,8 @@ public class ButtonManager : MonoBehaviour {
     Text _StarRemaining4;
     [SerializeField]
     Text _StarRemaining5;
+    [SerializeField]
+    Text _StarRemaining6;
 
 
     [SerializeField]
@@ -126,6 +145,8 @@ public class ButtonManager : MonoBehaviour {
     Text _StarTotal4;
     [SerializeField]
     Text _StarTotal5;
+    [SerializeField]
+    Text _StarTotal6;
 
 
     MainManager _MainManager;
@@ -302,6 +323,36 @@ public class ButtonManager : MonoBehaviour {
             EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Right_5));
         });
 
+        _Level26Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 25;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_26));
+        });
+        _Level27Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 26;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_27));
+        });
+        _Level28Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 27;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_28));
+        });
+        _Level29Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 28;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_29));
+        });
+        _Level30Button.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = 29;
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_30));
+        });
+        _BackToMenuButton6.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu6));
+        });
+        _Left6.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Left_6));
+        });
+        _Right6.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Right_6));
+        });
+
     }
 
     public void Init (InitButtonEvent e)
@@ -324,7 +375,8 @@ public class ButtonManager : MonoBehaviour {
         _StarRemaining3.text = Global.StarPerStage3.ToString();
         _StarRemaining4.text = Global.StarPerStage4.ToString();
         _StarRemaining5.text = Global.StarPerStage5.ToString();
-        _StarTotal1.text = _StarTotal2.text = _StarTotal3.text = _StarTotal4.text = _StarTotal5.text = Global.StarCollect.ToString();
+        _StarRemaining6.text = Global.StarPerStage6.ToString();
+        _StarTotal1.text = _StarTotal2.text = _StarTotal3.text = _StarTotal4.text = _StarTotal5.text = _StarTotal6.text = Global.StarCollect.ToString();
 
 
     }

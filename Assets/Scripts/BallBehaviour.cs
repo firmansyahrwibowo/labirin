@@ -37,11 +37,12 @@ public class BallBehaviour : MonoBehaviour {
         if (collision.gameObject.tag == "Obstacle")
         {
             EventManager.TriggerEvent(new ObstacleEvent());
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
         }
 
         if (collision.gameObject.tag == "Collectible")
         {
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.STAR, false));
             _StarCount++;
 
 

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum SfxType {
-    CLICK,
-    CANCEL,
+    TAP,
+    TAP_BACK,
     LABIRIN,
-    DIAMOND
+    STAR,
+    LOGO_TULUS,
+    LEFT_RIGHT
 }
 
 [System.Serializable]

@@ -63,25 +63,26 @@ public class GameplayManager : MonoBehaviour
         EventManager.AddListener<StartGameplayEvent>(StartGameInit);
         EventManager.AddListener<ObstacleEvent>(ObstacleHandler);
         EventManager.AddListener<GetStarEvent>(GetStarHandler);
+        EventManager.AddListener<SetDataLevelEvent>(SetDataLevel);
 
         _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
             NextLevel();
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
 
         // Pause Handler
         _PauseButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(true);
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
         _ResumeButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
         _RestartButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
             Reset();
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
 
         // Win Handler
@@ -89,21 +90,48 @@ public class GameplayManager : MonoBehaviour
             OnPause(false);
             _WinUI.SetActive(false);
             Reset();
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
         });
         _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
         });
         _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
         });
-
-       
+        
         _BallManager = _Ball.AddComponent<BallBehaviour>();
     }
-    
+
+    public void SetDataLevel(SetDataLevelEvent e)
+    {
+        for (int i = 0; i < _Level.Count; i++) {
+            if (_Level[i].Id == e.Data.IDLevel)
+            {
+                _Level[i].IsClear = e.Data.IsClear;
+                Global.StarCollect += 3;
+                switch (_Level[i].Stage) {
+                    case 1:
+                        Global.StarPerStage1 += 3;
+                        break;
+                    case 2:
+                        Global.StarPerStage2 += 3;
+                        break;
+                    case 3:
+                        Global.StarPerStage3 += 3;
+                        break;
+                    case 4:
+                        Global.StarPerStage4 += 3;
+                        break;
+                    case 5:
+                        Global.StarPerStage5 += 3;
+                        break;
+                }
+            }
+        }
+    }
+
     private void StartGameInit(StartGameplayEvent e)
     {
         Time.timeScale = 1f;

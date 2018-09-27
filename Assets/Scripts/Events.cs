@@ -27,18 +27,18 @@ public class ObstacleEvent : GameEvent { }
 
 public class SaveDBLocalEvent : GameEvent
 {
-    public HighScore highScore;
+    public LevelData LevelData;
 
-    public SaveDBLocalEvent(HighScore highScore)
+    public SaveDBLocalEvent(LevelData levelData)
     {
-        this.highScore = highScore;
+        this.LevelData = levelData;
     }
 }
 public class CheckDBLocalEvent : GameEvent
 {
-    public HighScore highScore;
+    public LevelData highScore;
 
-    public CheckDBLocalEvent(HighScore highScore)
+    public CheckDBLocalEvent(LevelData highScore)
     {
         this.highScore = highScore;
     }
@@ -102,5 +102,12 @@ public class SFXPlayEvent : GameEvent {
         IsEnd = isEnd;
     }
 }
+public class SetDataLevelEvent : GameEvent {
+    public LevelData Data;
 
+    public SetDataLevelEvent(LevelData data)
+    {
+        Data = data;
+    }
+}
 public class InitButtonEvent : GameEvent { }

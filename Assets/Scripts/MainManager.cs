@@ -36,7 +36,7 @@ public class MainManager : MonoBehaviour {
 
     void InitFirstOpen()
     {
-        EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, false));
+        EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LOGO_TULUS, false));
         MainMenuUI.SetActive(true);
         LevelSelect1.SetActive(false);
         LevelSelect2.SetActive(false);
@@ -72,15 +72,6 @@ public class MainManager : MonoBehaviour {
 
                 LevelSelect1.SetActive(true);
                 EventManager.TriggerEvent(new InitButtonEvent());
-                break;
-            case MainMenuButtonType.EXIT:
-
-                break;
-            case MainMenuButtonType.ON_FINISH:
-
-                break;
-            case MainMenuButtonType.TUTORIAL:
-
                 break;
             case MainMenuButtonType.ON_RESTART:
                 MainMenuUI.SetActive(true);

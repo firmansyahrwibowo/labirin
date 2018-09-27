@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class Level
 {
+    public int Id;
     public GameObject Labirin;
     public bool IsClear;
     public int Stage;

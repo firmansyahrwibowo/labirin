@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DatabaseLocalScore : MonoBehaviour {
@@ -9,25 +10,22 @@ public class DatabaseLocalScore : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         _Backend = GetComponent<Backeend>();
-
         EventManager.AddListener<CheckDBLocalEvent>(CheckDBLocal);
 	}
 
     private void CheckDBLocal(CheckDBLocalEvent e)
     {
-        if (_Backend.DictionaryDBData.ContainsKey(e.highScore.IDLevel))
+        LevelData data = _Backend.DBLocalData.Find(x => x.IDLevel == e.highScore.IDLevel);
+        if (data != null)
         {
-            int score = _Backend.DictionaryDBData[e.highScore.IDLevel];
-            if (e.highScore.Score <= score)
+            if (data.Score <= e.highScore.Score)
             {
-                _Backend.DictionaryDBData[e.highScore.IDLevel] = e.highScore.Score;
-                EventManager.TriggerEvent(new SaveDBLocalEvent(e.highScore));
+                data.Score = e.highScore.Score;
+                EventManager.TriggerEvent(new SaveDBLocalEvent(null));
             }
-
         }
         else
-        { 
-            _Backend.DictionaryDBData.Add(e.highScore.IDLevel, e.highScore.Score);
+        {
             EventManager.TriggerEvent(new SaveDBLocalEvent(e.highScore));
         }
     }

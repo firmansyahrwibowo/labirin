@@ -6,34 +6,30 @@ using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
-public class HighScore {
-    public string IDLevel;
-    public int Score;
+public class LevelData {
+    public int IDLevel;
+    public float Score;
+    public bool IsClear;
 }
 
 public class Backeend : MonoBehaviour {
+    
+    public List<LevelData> DBLocalData = new List<LevelData>();
 
-    [SerializeField]
-    private List<HighScore> _DBLocalData = new List<HighScore>();
-
-    public Dictionary<string, int> DictionaryDBData = new Dictionary<string, int>();
-
-    string _BackeendDir = "_Data";
-
+    //public Dictionary<string, int> DictionaryDBData = new Dictionary<string, int>();
+    
     void Awake () {
         EventManager.AddListener<SaveDBLocalEvent>(SaveHighScore);
     }
 
     void Start()
     {
-        if (!Directory.Exists(_BackeendDir))
-            Directory.CreateDirectory(_BackeendDir);
-
+        //PlayerPrefs.SetString("DBLocalLevel.fyr", "");
         LoadAllHighScore();
+        for (int i = 0; i < DBLocalData.Count; i++)
+            EventManager.TriggerEvent(new SetDataLevelEvent(DBLocalData[i]));
 
-        for (int i = 0; i < _DBLocalData.Count; i++) {
-            DictionaryDBData.Add(_DBLocalData[i].IDLevel, _DBLocalData[i].Score);
-        }
+        Global.Level = DBLocalData.Count;
     }
 
     #region Save
@@ -43,23 +39,16 @@ public class Backeend : MonoBehaviour {
         string filePath = "";
         string json = "";
         
-        fileName = "DBLocalScore.fyr";
+        fileName = "DBLocalLevel.fyr";
 
+        if (e != null)
+            DBLocalData.Add(e.LevelData);
+        json = JsonHelper.ToJson(DBLocalData.ToArray(), true);        //JsonUtility.ToJson(scoreData);
 
-        filePath = _BackeendDir +"/"+fileName;
+        PlayerPrefs.SetString(fileName, json);
 
-        _DBLocalData = new List<HighScore>();
-        foreach (var item in DictionaryDBData) {
-            HighScore hs = new HighScore();
-            hs.IDLevel = item.Key;
-            hs.Score = item.Value;
-            _DBLocalData.Add(hs);
-        }
-
-        //Game1HighScore.Add(data);
-        json = JsonHelper.ToJson(_DBLocalData.ToArray(), true);        //JsonUtility.ToJson(scoreData);
-
-        File.WriteAllText(filePath, json);
+        LoadAllHighScore();
+        //File.WriteAllText(filePath, json);
         
     }
     #endregion
@@ -69,17 +58,16 @@ public class Backeend : MonoBehaviour {
     {
         string path = "";
         string fileName = "";
-        
-        fileName = "DBLocalScore.fyr";
-        
-        string filePath = _BackeendDir + "/" + fileName;
 
-        if (File.Exists(filePath))
+        fileName = "DBLocalLevel.fyr";
+
+        if (PlayerPrefs.GetString (fileName) != "")
         {
-            _DBLocalData = new List<HighScore>();
-            string json = File.ReadAllText(filePath);
-            HighScore[] highScore = JsonHelper.FromJson<HighScore>(json);
-            _DBLocalData = highScore.ToList();
+            string data = PlayerPrefs.GetString(fileName);
+            DBLocalData = new List<LevelData>();
+            string json = data;
+            LevelData[] dataLevel = JsonHelper.FromJson<LevelData>(json);
+            DBLocalData = dataLevel.ToList();
         }
 
     }

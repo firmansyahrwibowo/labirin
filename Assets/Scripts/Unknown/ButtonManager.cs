@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class LevelSelectData
+{
+    public LevelSelectButtonType ButtonType;
+    public GameObject Object;
+    public int GlobalLevel;
+}
 
 public class ButtonManager : MonoBehaviour {
     [SerializeField]
@@ -12,6 +19,9 @@ public class ButtonManager : MonoBehaviour {
     GameObject _TutorialButton;
     [SerializeField]
     GameObject _MainMenuExitButton;
+
+    [SerializeField]
+    LevelSelectData [] _LevelSelectData;
 
     [Header("LEVEL BUTTON")]
     [SerializeField]
@@ -159,20 +169,30 @@ public class ButtonManager : MonoBehaviour {
         //Main Menu Handler
         _MainMenuPlayButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
 
         _TutorialButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.TUTORIAL));
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CLICK, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
 
         _MainMenuExitButton.AddComponent<Button>().onClick.AddListener(delegate {
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.CANCEL, false));
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
             ExitButton();
         });
 
-        //Level Select Handler
+
+        //BENTUK SEDERHANA LEVEL HANDLER
+        foreach (LevelSelectData data in _LevelSelectData)
+        {
+            data.Object.AddComponent<Button>().onClick.AddListener(delegate
+            {
+                ButtonAction(data);
+            });
+        }
+        #region LevelHandler used to be
+        /*
         _Level1Button.AddComponent<Button>().onClick.AddListener(delegate {
             Global.Level = 0;
             EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.LEVEL_1));
@@ -352,7 +372,8 @@ public class ButtonManager : MonoBehaviour {
         _Right6.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Right_6));
         });
-
+        */
+        #endregion
     }
 
     public void Init (InitButtonEvent e)
@@ -379,6 +400,20 @@ public class ButtonManager : MonoBehaviour {
         _StarTotal1.text = _StarTotal2.text = _StarTotal3.text = _StarTotal4.text = _StarTotal5.text = _StarTotal6.text = Global.StarCollect.ToString();
 
 
+    }
+
+    public void ButtonAction (LevelSelectData data)
+    {
+        if (data.GlobalLevel != -1)
+        {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, true));
+            Global.Level = data.GlobalLevel;
+        }
+        else
+        {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LEFT_RIGHT, true));
+        }
+        EventManager.TriggerEvent(new LevelSelectButtonEvent(data.ButtonType));
     }
 
     void StartGameButton() {

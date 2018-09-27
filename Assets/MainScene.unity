@@ -6446,7 +6446,7 @@ Transform:
   - {fileID: 1088787084}
   - {fileID: 178854228}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195258659
 GameObject:
@@ -7485,7 +7485,7 @@ GameObject:
   - component: {fileID: 214584686}
   - component: {fileID: 214584685}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: MANAGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7506,123 +7506,153 @@ MonoBehaviour:
   _LabirinDefaultPos: {x: 0, y: 0}
   _WinUI: {fileID: 1821566669}
   _Level:
-  - Labirin: {fileID: 1572098173}
+  - Id: 1
+    Labirin: {fileID: 1572098173}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 449396274}
-  - Labirin: {fileID: 249806393}
+  - Id: 2
+    Labirin: {fileID: 249806393}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 2105381254}
-  - Labirin: {fileID: 819809209}
+  - Id: 3
+    Labirin: {fileID: 819809209}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 1440232626}
-  - Labirin: {fileID: 1545726684}
+  - Id: 4
+    Labirin: {fileID: 1545726684}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 54287342}
-  - Labirin: {fileID: 1166395832}
+  - Id: 5
+    Labirin: {fileID: 1166395832}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 1466474448}
-  - Labirin: {fileID: 704511865}
+  - Id: 6
+    Labirin: {fileID: 704511865}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 1016367257}
-  - Labirin: {fileID: 1565609281}
+  - Id: 7
+    Labirin: {fileID: 1565609281}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 1052848795}
-  - Labirin: {fileID: 1090793713}
+  - Id: 8
+    Labirin: {fileID: 1090793713}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 367557016}
-  - Labirin: {fileID: 955135684}
+  - Id: 9
+    Labirin: {fileID: 955135684}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 963954645}
-  - Labirin: {fileID: 1504382726}
+  - Id: 10
+    Labirin: {fileID: 1504382726}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 220401069}
-  - Labirin: {fileID: 758751761}
+  - Id: 11
+    Labirin: {fileID: 758751761}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1366490511}
-  - Labirin: {fileID: 1509659281}
+  - Id: 12
+    Labirin: {fileID: 1509659281}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1238525881}
-  - Labirin: {fileID: 1444080787}
+  - Id: 13
+    Labirin: {fileID: 1444080787}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 657416424}
-  - Labirin: {fileID: 207954972}
+  - Id: 14
+    Labirin: {fileID: 207954972}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1260413399}
-  - Labirin: {fileID: 392612008}
+  - Id: 15
+    Labirin: {fileID: 392612008}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1650145832}
-  - Labirin: {fileID: 684613462}
+  - Id: 16
+    Labirin: {fileID: 684613462}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 1006599575}
-  - Labirin: {fileID: 588256225}
+  - Id: 17
+    Labirin: {fileID: 588256225}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 821226216}
-  - Labirin: {fileID: 1038590065}
+  - Id: 18
+    Labirin: {fileID: 1038590065}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 249227146}
-  - Labirin: {fileID: 1885508211}
+  - Id: 19
+    Labirin: {fileID: 1885508211}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 728419906}
-  - Labirin: {fileID: 1005645201}
+  - Id: 20
+    Labirin: {fileID: 1005645201}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 1682576245}
-  - Labirin: {fileID: 1538161529}
+  - Id: 21
+    Labirin: {fileID: 1538161529}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 432918433}
-  - Labirin: {fileID: 1309560378}
+  - Id: 22
+    Labirin: {fileID: 1309560378}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 1846229438}
-  - Labirin: {fileID: 1991509347}
+  - Id: 23
+    Labirin: {fileID: 1991509347}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 322930864}
-  - Labirin: {fileID: 608014730}
+  - Id: 24
+    Labirin: {fileID: 608014730}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 1851031595}
-  - Labirin: {fileID: 1236154451}
+  - Id: 25
+    Labirin: {fileID: 1236154451}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 549767239}
-  - Labirin: {fileID: 1568214591}
+  - Id: 26
+    Labirin: {fileID: 1568214591}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 1539651743}
-  - Labirin: {fileID: 832060325}
+  - Id: 27
+    Labirin: {fileID: 832060325}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 1581652053}
-  - Labirin: {fileID: 1880135724}
+  - Id: 28
+    Labirin: {fileID: 1880135724}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 197658484}
-  - Labirin: {fileID: 1088787083}
+  - Id: 29
+    Labirin: {fileID: 1088787083}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 1215313346}
-  - Labirin: {fileID: 178854227}
+  - Id: 30
+    Labirin: {fileID: 178854227}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 764494950}
@@ -7685,7 +7715,7 @@ Transform:
   - {fileID: 1166829622}
   - {fileID: 1769898297}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &214584682
 MonoBehaviour:
@@ -7726,6 +7756,151 @@ MonoBehaviour:
   _MainMenuPlayButton: {fileID: 122061347}
   _TutorialButton: {fileID: 608074352}
   _MainMenuExitButton: {fileID: 1760001289}
+  _LevelSelectData:
+  - ButtonType: 0
+    Object: {fileID: 1488600890}
+    GlobalLevel: 0
+  - ButtonType: 1
+    Object: {fileID: 1449544059}
+    GlobalLevel: 1
+  - ButtonType: 2
+    Object: {fileID: 1108225600}
+    GlobalLevel: 2
+  - ButtonType: 3
+    Object: {fileID: 951408902}
+    GlobalLevel: 3
+  - ButtonType: 4
+    Object: {fileID: 1560127540}
+    GlobalLevel: 4
+  - ButtonType: 5
+    Object: {fileID: 1895867591}
+    GlobalLevel: -1
+  - ButtonType: 6
+    Object: {fileID: 803281337}
+    GlobalLevel: -1
+  - ButtonType: 7
+    Object: {fileID: 38772734}
+    GlobalLevel: -1
+  - ButtonType: 8
+    Object: {fileID: 254894139}
+    GlobalLevel: 5
+  - ButtonType: 9
+    Object: {fileID: 590552684}
+    GlobalLevel: 6
+  - ButtonType: 10
+    Object: {fileID: 572780158}
+    GlobalLevel: 7
+  - ButtonType: 11
+    Object: {fileID: 896233223}
+    GlobalLevel: 8
+  - ButtonType: 12
+    Object: {fileID: 1643292588}
+    GlobalLevel: 9
+  - ButtonType: 13
+    Object: {fileID: 1549555432}
+    GlobalLevel: -1
+  - ButtonType: 14
+    Object: {fileID: 1483265382}
+    GlobalLevel: -1
+  - ButtonType: 15
+    Object: {fileID: 195555514}
+    GlobalLevel: -1
+  - ButtonType: 16
+    Object: {fileID: 621307584}
+    GlobalLevel: 10
+  - ButtonType: 17
+    Object: {fileID: 34764949}
+    GlobalLevel: 11
+  - ButtonType: 18
+    Object: {fileID: 680655186}
+    GlobalLevel: 12
+  - ButtonType: 19
+    Object: {fileID: 703003164}
+    GlobalLevel: 13
+  - ButtonType: 20
+    Object: {fileID: 153297598}
+    GlobalLevel: 14
+  - ButtonType: 21
+    Object: {fileID: 1009413454}
+    GlobalLevel: -1
+  - ButtonType: 22
+    Object: {fileID: 1525821110}
+    GlobalLevel: -1
+  - ButtonType: 23
+    Object: {fileID: 2047020079}
+    GlobalLevel: -1
+  - ButtonType: 24
+    Object: {fileID: 1819802584}
+    GlobalLevel: 15
+  - ButtonType: 25
+    Object: {fileID: 173083366}
+    GlobalLevel: 16
+  - ButtonType: 26
+    Object: {fileID: 1339355394}
+    GlobalLevel: 17
+  - ButtonType: 27
+    Object: {fileID: 1953025240}
+    GlobalLevel: 18
+  - ButtonType: 28
+    Object: {fileID: 1440409720}
+    GlobalLevel: 19
+  - ButtonType: 29
+    Object: {fileID: 1882190353}
+    GlobalLevel: -1
+  - ButtonType: 30
+    Object: {fileID: 592798872}
+    GlobalLevel: -1
+  - ButtonType: 31
+    Object: {fileID: 1602336907}
+    GlobalLevel: -1
+  - ButtonType: 32
+    Object: {fileID: 1099675021}
+    GlobalLevel: 20
+  - ButtonType: 33
+    Object: {fileID: 552718618}
+    GlobalLevel: 21
+  - ButtonType: 34
+    Object: {fileID: 174708392}
+    GlobalLevel: 22
+  - ButtonType: 35
+    Object: {fileID: 489895447}
+    GlobalLevel: 23
+  - ButtonType: 36
+    Object: {fileID: 731697333}
+    GlobalLevel: 24
+  - ButtonType: 37
+    Object: {fileID: 1978677564}
+    GlobalLevel: -1
+  - ButtonType: 38
+    Object: {fileID: 1766579781}
+    GlobalLevel: -1
+  - ButtonType: 39
+    Object: {fileID: 897620168}
+    GlobalLevel: -1
+  - ButtonType: 40
+    Object: {fileID: 1811480285}
+    GlobalLevel: 25
+  - ButtonType: 41
+    Object: {fileID: 640645294}
+    GlobalLevel: 26
+  - ButtonType: 42
+    Object: {fileID: 698903130}
+    GlobalLevel: 27
+  - ButtonType: 43
+    Object: {fileID: 1511386867}
+    GlobalLevel: 28
+  - ButtonType: 44
+    Object: {fileID: 856256833}
+    GlobalLevel: 29
+  - ButtonType: 45
+    Object: {fileID: 1478908936}
+    GlobalLevel: -1
+  - ButtonType: 46
+    Object: {fileID: 1954826835}
+    GlobalLevel: -1
+  - ButtonType: 47
+    Object: {fileID: 1097497985}
+    GlobalLevel: -1
   _Level1Button: {fileID: 1488600890}
   _Level2Button: {fileID: 1449544059}
   _Level3Button: {fileID: 1108225600}
@@ -7853,7 +8028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a33a8de065ce774cb0b6aaaeffa1def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DBLocalData: []
+  DBLocalData: []
 --- !u!1 &217401415
 GameObject:
   m_ObjectHideFlags: 0
@@ -10540,7 +10715,7 @@ Transform:
   m_Children:
   - {fileID: 1735800761}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &283315877
 GameObject:
@@ -19724,7 +19899,7 @@ RectTransform:
   - {fileID: 1058621558}
   - {fileID: 1061983268}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -47125,7 +47300,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c89af044e7e14a04681dfa95e60fd350, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a49b557e22cfc054e92c10118f62474a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -69301,7 +69476,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1751009389
 GameObject:
@@ -69866,6 +70041,7 @@ Transform:
   m_Children:
   - {fileID: 1585927308}
   - {fileID: 1004260348}
+  - {fileID: 1943466136}
   m_Father: {fileID: 214584681}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69882,16 +70058,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioList:
   - Type: 0
-    SFX: {fileID: 8300000, guid: 6d9485e788d57ec42a3acea52d41c0ae, type: 3}
-  - Type: 0
-    SFX: {fileID: 8300000, guid: 45b8eb8c3e2063a41b407f3a25cbfa2e, type: 3}
+    SFX: {fileID: 8300000, guid: a894e001c29654d45bd09258eb33e526, type: 3}
+  - Type: 1
+    SFX: {fileID: 8300000, guid: 30132f5f3a0f57e49ba38c65e564ab66, type: 3}
   - Type: 2
     SFX: {fileID: 8300000, guid: eecf0d9e7d0f43446bf311596d65e452, type: 3}
   - Type: 3
-    SFX: {fileID: 8300000, guid: e355b995f26247841bab428fc15d8fa9, type: 3}
+    SFX: {fileID: 8300000, guid: c0013c512d9c9df4dbb83b5941145313, type: 3}
+  - Type: 5
+    SFX: {fileID: 8300000, guid: 9ca8756335fb08f4fa1eaf9197abfccb, type: 3}
+  - Type: 4
+    SFX: {fileID: 8300000, guid: 87a3481e5550061409ac8250af4d0e5b, type: 3}
   Audio:
   - {fileID: 1585927309}
   - {fileID: 1004260349}
+  - {fileID: 1943466137}
 --- !u!82 &1769898299
 AudioSource:
   m_ObjectHideFlags: 0
@@ -75492,6 +75673,115 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5174068, y: 0.15893055}
   m_EdgeRadius: 0
+--- !u!1 &1943466135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1943466136}
+  - component: {fileID: 1943466137}
+  m_Layer: 0
+  m_Name: AudioSource (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1943466136
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943466135}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1769898297}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1943466137
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943466135}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1944967541
 GameObject:
   m_ObjectHideFlags: 0

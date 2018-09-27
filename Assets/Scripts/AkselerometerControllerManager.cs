@@ -36,7 +36,7 @@ public class AkselerometerControllerManager : MonoBehaviour
         _Controller.IsActive = e.IsActive;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!_IsActive)
             return;
@@ -51,6 +51,7 @@ public class AkselerometerControllerManager : MonoBehaviour
             Vector3 _Movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
             // Adding force to rigidbody
             rigid.AddForce(_Movement * _Controller.speed * Time.deltaTime);
+            //rigid.AddForce(_Movement * _Controller.speed);
         }
         else
         {

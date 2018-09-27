@@ -22,7 +22,7 @@ public class ButtonManager : MonoBehaviour {
 
     [SerializeField]
     LevelSelectData [] _LevelSelectData;
-
+    /*
     [Header("LEVEL BUTTON")]
     [SerializeField]
     GameObject _Level1Button;
@@ -125,7 +125,7 @@ public class ButtonManager : MonoBehaviour {
     GameObject _Left6;
     [SerializeField]
     GameObject _Right6;
-
+    */
     [Header("LEVEL LOCK")]
     [SerializeField]
     GameObject[] _LevelLock;

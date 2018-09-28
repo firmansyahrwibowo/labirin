@@ -48,8 +48,20 @@ public class Backeend : MonoBehaviour {
         PlayerPrefs.SetString(fileName, json);
 
         LoadAllHighScore();
+        
         //File.WriteAllText(filePath, json);
         
+    }
+
+    void CalculateScore() {
+        float score = 0;
+        for (int i = 0; i < DBLocalData.Count; i++)
+            score += DBLocalData[i].Score;
+
+        float avg = score / DBLocalData.Count;
+        Debug.Log(avg);
+        EventManager.TriggerEvent(new LeaderboardAddEvent(Mathf.FloorToInt(avg)));
+
     }
     #endregion
 

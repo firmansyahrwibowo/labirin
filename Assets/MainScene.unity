@@ -4825,7 +4825,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1920}
+  m_SizeDelta: {x: 3668.4, y: 4870.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139384980
 MonoBehaviour:
@@ -7478,6 +7478,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 214584681}
+  - component: {fileID: 214584687}
   - component: {fileID: 214584682}
   - component: {fileID: 214584680}
   - component: {fileID: 214584683}
@@ -7901,54 +7902,6 @@ MonoBehaviour:
   - ButtonType: 47
     Object: {fileID: 1097497985}
     GlobalLevel: -1
-  _Level1Button: {fileID: 1488600890}
-  _Level2Button: {fileID: 1449544059}
-  _Level3Button: {fileID: 1108225600}
-  _Level4Button: {fileID: 951408902}
-  _Level5Button: {fileID: 1560127540}
-  _BackToMenuButton1: {fileID: 1895867591}
-  _Left1: {fileID: 803281337}
-  _Right1: {fileID: 38772734}
-  _Level6Button: {fileID: 254894139}
-  _Level7Button: {fileID: 590552684}
-  _Level8Button: {fileID: 572780158}
-  _Level9Button: {fileID: 896233223}
-  _Level10Button: {fileID: 1643292588}
-  _BackToMenuButton2: {fileID: 1549555432}
-  _Left2: {fileID: 1483265382}
-  _Right2: {fileID: 195555514}
-  _Level11Button: {fileID: 621307584}
-  _Level12Button: {fileID: 34764949}
-  _Level13Button: {fileID: 680655186}
-  _Level14Button: {fileID: 703003164}
-  _Level15Button: {fileID: 153297598}
-  _BackToMenuButton3: {fileID: 1009413454}
-  _Left3: {fileID: 1525821110}
-  _Right3: {fileID: 2047020079}
-  _Level16Button: {fileID: 1819802584}
-  _Level17Button: {fileID: 173083366}
-  _Level18Button: {fileID: 1339355394}
-  _Level19Button: {fileID: 1953025240}
-  _Level20Button: {fileID: 1440409720}
-  _BackToMenuButton4: {fileID: 1882190353}
-  _Left4: {fileID: 592798872}
-  _Right4: {fileID: 1602336907}
-  _Level21Button: {fileID: 1099675021}
-  _Level22Button: {fileID: 552718618}
-  _Level23Button: {fileID: 174708392}
-  _Level24Button: {fileID: 489895447}
-  _Level25Button: {fileID: 731697333}
-  _BackToMenuButton5: {fileID: 1978677564}
-  _Left5: {fileID: 1766579781}
-  _Right5: {fileID: 897620168}
-  _Level26Button: {fileID: 1811480285}
-  _Level27Button: {fileID: 640645294}
-  _Level28Button: {fileID: 698903130}
-  _Level29Button: {fileID: 1511386867}
-  _Level30Button: {fileID: 856256833}
-  _BackToMenuButton6: {fileID: 1478908936}
-  _Left6: {fileID: 1954826835}
-  _Right6: {fileID: 1097497985}
   _LevelLock:
   - {fileID: 1488600890}
   - {fileID: 1449544059}
@@ -8029,6 +7982,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DBLocalData: []
+--- !u!114 &214584687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 214584679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808a3d6af3ccaa94d91e429f3987490e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &217401415
 GameObject:
   m_ObjectHideFlags: 0

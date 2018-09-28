@@ -7755,7 +7755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MainMenuPlayButton: {fileID: 122061347}
-  _TutorialButton: {fileID: 608074352}
+  _HighscoreButton: {fileID: 608074352}
   _MainMenuExitButton: {fileID: 1760001289}
   _LevelSelectData:
   - ButtonType: 0
@@ -35140,7 +35140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &898554033
 RectTransform:
   m_ObjectHideFlags: 0

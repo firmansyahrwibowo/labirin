@@ -111,6 +111,7 @@ public class SetDataLevelEvent : GameEvent {
     }
 }
 public class InitButtonEvent : GameEvent { }
+public class ShowLeaderboardEvent : GameEvent { }
 
 public class LeaderboardAddEvent : GameEvent {
     public int Score;

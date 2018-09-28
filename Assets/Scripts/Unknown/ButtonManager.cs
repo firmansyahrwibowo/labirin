@@ -16,7 +16,7 @@ public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject _MainMenuPlayButton;
     [SerializeField]
-    GameObject _TutorialButton;
+    GameObject _HighscoreButton;
     [SerializeField]
     GameObject _MainMenuExitButton;
 
@@ -172,9 +172,9 @@ public class ButtonManager : MonoBehaviour {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
 
-        _TutorialButton.AddComponent<Button>().onClick.AddListener(delegate {
-            EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.TUTORIAL));
+        _HighscoreButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            EventManager.TriggerEvent(new ShowLeaderboardEvent());
         });
 
         _MainMenuExitButton.AddComponent<Button>().onClick.AddListener(delegate {

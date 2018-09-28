@@ -9,6 +9,7 @@ public class PlayGamesManager : MonoBehaviour {
     private void Awake()
     {
         EventManager.AddListener<LeaderboardAddEvent>(LeaderboardAddHandler);
+        EventManager.AddListener<ShowLeaderboardEvent>(ShowLeaderboardUI);
     }
     // Use this for initialization
     void Start () {
@@ -47,7 +48,7 @@ public class PlayGamesManager : MonoBehaviour {
         Social.ReportScore(score, leaderboardId, sucess => { });
     }
 
-    public void ShowLeaderboardUI() {
+    public void ShowLeaderboardUI(ShowLeaderboardEvent e) {
         Social.ShowLeaderboardUI();
     }
     #endregion

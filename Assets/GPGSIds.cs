@@ -24,6 +24,8 @@
 
 public static class GPGSIds
 {
+        public const string achievement_star_collect = "CgkI9Y_BxagCEAIQAw"; // <GPGSID>
+        public const string achievement_tulus_labirin = "CgkI9Y_BxagCEAIQAg"; // <GPGSID>
         public const string leaderboard_leaderboard = "CgkI9Y_BxagCEAIQAA"; // <GPGSID>
 
 }

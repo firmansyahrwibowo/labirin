@@ -10,6 +10,7 @@ public class PlayGamesManager : MonoBehaviour {
     {
         EventManager.AddListener<LeaderboardAddEvent>(LeaderboardAddHandler);
         EventManager.AddListener<ShowLeaderboardEvent>(ShowLeaderboardUI);
+        EventManager.AddListener<ShowAchievementEvent>(ShowAchievementUI);
     }
     // Use this for initialization
     void Start () {
@@ -22,30 +23,39 @@ public class PlayGamesManager : MonoBehaviour {
 
 
     void SignIn() {
-        Social.localUser.Authenticate(sucess => { });
+        Social.localUser.Authenticate(sucess => {
+            UnlockAchievement(1);
+        });
     }
     // Update is called once per frame
     #region Achievements
-    public void UnlockAchievement(string id)
+    public void UnlockAchievement(int id)
     {
-        Social.ReportProgress(id, 100, sucess => { });
+        switch (id) {
+            case 1:
+                Social.ReportProgress(GPGSIds.achievement_tulus_labirin, 100, (bool sucess) => { });
+                break;
+            case 2:
+                Social.ReportProgress(GPGSIds.achievement_star_collect, 100, (bool sucess) => { });
+                break;
+        }
     }
     public void IncrementAchievement(string id, int stepIncrement)
     {
         PlayGamesPlatform.Instance.IncrementAchievement(id, stepIncrement, sucess => { });
     }
 
-    public void ShowAchievementUI() {
+    public void ShowAchievementUI(ShowAchievementEvent e) {
         Social.ShowAchievementsUI();
     }
     #endregion
 
     #region Leaderboard
     public void LeaderboardAddHandler(LeaderboardAddEvent e) {
-        AddScoreToLeaderboard("CgkI9Y_BxagCEAIQAA", e.Score);
-    }
-    public void AddScoreToLeaderboard(string leaderboardId, int score) {
-        Social.ReportScore(score, leaderboardId, sucess => { });
+        Debug.Log(e.Score);
+        Social.ReportScore(e.Score, GPGSIds.leaderboard_leaderboard, (bool sucess) => {
+
+        });
     }
 
     public void ShowLeaderboardUI(ShowLeaderboardEvent e) {

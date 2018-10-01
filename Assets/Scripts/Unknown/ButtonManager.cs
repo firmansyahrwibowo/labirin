@@ -18,6 +18,8 @@ public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject _HighscoreButton;
     [SerializeField]
+    GameObject _AchievementButton;
+    [SerializeField]
     GameObject _MainMenuExitButton;
 
     [SerializeField]
@@ -160,10 +162,12 @@ public class ButtonManager : MonoBehaviour {
 
 
     MainManager _MainManager;
+
+    Backeend _Backend;
     
     void Awake () {
         _MainManager = GetComponent<MainManager>();
-
+        _Backend = GetComponent<Backeend>();
         EventManager.AddListener<InitButtonEvent>(Init);
 
         //Main Menu Handler
@@ -175,6 +179,11 @@ public class ButtonManager : MonoBehaviour {
         _HighscoreButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new ShowLeaderboardEvent());
+        });
+        
+        _AchievementButton.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            EventManager.TriggerEvent(new ShowAchievementEvent());
         });
 
         _MainMenuExitButton.AddComponent<Button>().onClick.AddListener(delegate {
@@ -378,6 +387,7 @@ public class ButtonManager : MonoBehaviour {
 
     public void Init (InitButtonEvent e)
     {
+        Global.Level = _Backend.DBLocalData.Count;
         //Level Lock Handler
         for (int i = 0; i <= _LevelLock.Length; i++)
         {

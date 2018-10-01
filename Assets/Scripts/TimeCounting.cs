@@ -39,12 +39,8 @@ public class TimeCounting : MonoBehaviour {
     }
     public void StopTime() {
         _TimeStart = false;
-        //HighScore hs = new HighScore();
-        //hs.IDLevel = "Level " + (Global.Level + 1).ToString();
-        //hs.Score = Mathf.FloorToInt(_Time);
-        //EventManager.TriggerEvent(new CheckDBLocalEvent(hs));
-        LevelData data = new LevelData();
 
+        LevelData data = new LevelData();
         data.IDLevel = Global.Level;
         data.Score = _Time;
         data.IsClear = true;

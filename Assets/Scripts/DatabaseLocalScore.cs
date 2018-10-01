@@ -18,7 +18,7 @@ public class DatabaseLocalScore : MonoBehaviour {
         LevelData data = _Backend.DBLocalData.Find(x => x.IDLevel == e.highScore.IDLevel);
         if (data != null)
         {
-            if (data.Score <= e.highScore.Score)
+            if (data.Score >= e.highScore.Score)
             {
                 data.Score = e.highScore.Score;
                 EventManager.TriggerEvent(new SaveDBLocalEvent(null));

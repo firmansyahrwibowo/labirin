@@ -41,14 +41,15 @@ public class Backeend : MonoBehaviour {
         
         fileName = "DBLocalLevel.fyr";
 
-        if (e != null)
+        if (e.LevelData != null)
             DBLocalData.Add(e.LevelData);
         json = JsonHelper.ToJson(DBLocalData.ToArray(), true);        //JsonUtility.ToJson(scoreData);
 
         PlayerPrefs.SetString(fileName, json);
 
         LoadAllHighScore();
-        
+
+        CalculateScore();
         //File.WriteAllText(filePath, json);
         
     }

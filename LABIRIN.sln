@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labirin", "Labirin.csproj", "{F09FDBD3-8983-12C2-5CA8-950E382EA79D}"
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LABIRIN", "LABIRIN.csproj", "{F09FDBD3-8983-12C2-5CA8-950E382EA79D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labirin.Editor", "Labirin.Editor.csproj", "{13E154F9-A4BD-6706-BB10-60CDEBD3C40B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LABIRIN.Editor", "LABIRIN.Editor.csproj", "{13E154F9-A4BD-6706-BB10-60CDEBD3C40B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +22,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B0DC5944-885C-43D5-AF95-E81BB849359C}
 	EndGlobalSection
 EndGlobal

@@ -7506,153 +7506,155 @@ MonoBehaviour:
   _Ball: {fileID: 1328073932}
   _LabirinDefaultPos: {x: 0, y: 0}
   _WinUI: {fileID: 1821566669}
+  _ThisLevel: 0
+  _NextLevel: 0
   _Level:
-  - Id: 1
+  - Id: 0
     Labirin: {fileID: 1572098173}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 449396274}
-  - Id: 2
+  - Id: 1
     Labirin: {fileID: 249806393}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 2105381254}
-  - Id: 3
+  - Id: 2
     Labirin: {fileID: 819809209}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 1440232626}
-  - Id: 4
+  - Id: 3
     Labirin: {fileID: 1545726684}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 54287342}
-  - Id: 5
+  - Id: 4
     Labirin: {fileID: 1166395832}
     IsClear: 0
     Stage: 1
     BallDefaultPosition: {fileID: 1466474448}
-  - Id: 6
+  - Id: 5
     Labirin: {fileID: 704511865}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 1016367257}
-  - Id: 7
+  - Id: 6
     Labirin: {fileID: 1565609281}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 1052848795}
-  - Id: 8
+  - Id: 7
     Labirin: {fileID: 1090793713}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 367557016}
-  - Id: 9
+  - Id: 8
     Labirin: {fileID: 955135684}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 963954645}
-  - Id: 10
+  - Id: 9
     Labirin: {fileID: 1504382726}
     IsClear: 0
     Stage: 2
     BallDefaultPosition: {fileID: 220401069}
-  - Id: 11
+  - Id: 10
     Labirin: {fileID: 758751761}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1366490511}
-  - Id: 12
+  - Id: 11
     Labirin: {fileID: 1509659281}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1238525881}
-  - Id: 13
+  - Id: 12
     Labirin: {fileID: 1444080787}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 657416424}
-  - Id: 14
+  - Id: 13
     Labirin: {fileID: 207954972}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1260413399}
-  - Id: 15
+  - Id: 14
     Labirin: {fileID: 392612008}
     IsClear: 0
     Stage: 3
     BallDefaultPosition: {fileID: 1650145832}
-  - Id: 16
+  - Id: 15
     Labirin: {fileID: 684613462}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 1006599575}
-  - Id: 17
+  - Id: 16
     Labirin: {fileID: 588256225}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 821226216}
-  - Id: 18
+  - Id: 17
     Labirin: {fileID: 1038590065}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 249227146}
-  - Id: 19
+  - Id: 18
     Labirin: {fileID: 1885508211}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 728419906}
-  - Id: 20
+  - Id: 19
     Labirin: {fileID: 1005645201}
     IsClear: 0
     Stage: 4
     BallDefaultPosition: {fileID: 1682576245}
-  - Id: 21
+  - Id: 20
     Labirin: {fileID: 1538161529}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 432918433}
-  - Id: 22
+  - Id: 21
     Labirin: {fileID: 1309560378}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 1846229438}
-  - Id: 23
+  - Id: 22
     Labirin: {fileID: 1991509347}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 322930864}
-  - Id: 24
+  - Id: 23
     Labirin: {fileID: 608014730}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 1851031595}
-  - Id: 25
+  - Id: 24
     Labirin: {fileID: 1236154451}
     IsClear: 0
     Stage: 5
     BallDefaultPosition: {fileID: 549767239}
-  - Id: 26
+  - Id: 25
     Labirin: {fileID: 1568214591}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 1539651743}
-  - Id: 27
+  - Id: 26
     Labirin: {fileID: 832060325}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 1581652053}
-  - Id: 28
+  - Id: 27
     Labirin: {fileID: 1880135724}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 197658484}
-  - Id: 29
+  - Id: 28
     Labirin: {fileID: 1088787083}
     IsClear: 0
     Stage: 6
     BallDefaultPosition: {fileID: 1215313346}
-  - Id: 30
+  - Id: 29
     Labirin: {fileID: 178854227}
     IsClear: 0
     Stage: 6
@@ -7756,6 +7758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MainMenuPlayButton: {fileID: 122061347}
   _HighscoreButton: {fileID: 608074352}
+  _AchievementButton: {fileID: 1240814922}
   _MainMenuExitButton: {fileID: 1760001289}
   _LevelSelectData:
   - ButtonType: 0
@@ -53035,7 +53038,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0d706597ad6a4bd4ab54c6440d1403e7, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1

@@ -69,8 +69,8 @@ public class MainManager : MonoBehaviour {
                 LevelSelect4.SetActive(false);
                 LevelSelect5.SetActive(false);
                 LevelSelect6.SetActive(false);
-
                 LevelSelect1.SetActive(true);
+
                 EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case MainMenuButtonType.ON_RESTART:
@@ -203,6 +203,7 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
+                EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case LevelSelectButtonType.Left_1:
                 MainMenuUI.SetActive(false);
@@ -339,6 +340,7 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
+                EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case LevelSelectButtonType.Left_2:
                 MainMenuUI.SetActive(false);
@@ -475,6 +477,7 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
+                EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case LevelSelectButtonType.Left_3:
                 MainMenuUI.SetActive(false);
@@ -611,6 +614,7 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
+                EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case LevelSelectButtonType.Left_4:
                 MainMenuUI.SetActive(false);
@@ -747,6 +751,7 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
+                EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case LevelSelectButtonType.Left_5:
                 MainMenuUI.SetActive(false);

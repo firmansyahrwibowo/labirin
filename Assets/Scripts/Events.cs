@@ -112,6 +112,7 @@ public class SetDataLevelEvent : GameEvent {
 }
 public class InitButtonEvent : GameEvent { }
 public class ShowLeaderboardEvent : GameEvent { }
+public class ShowAchievementEvent : GameEvent { }
 
 public class LeaderboardAddEvent : GameEvent {
     public int Score;
@@ -119,5 +120,14 @@ public class LeaderboardAddEvent : GameEvent {
     public LeaderboardAddEvent(int score)
     {
         Score = score;
+    }
+}
+public class AchievementUnlockEvent : GameEvent
+{
+    public int Id;
+
+    public AchievementUnlockEvent(int id)
+    {
+        Id = id;
     }
 }

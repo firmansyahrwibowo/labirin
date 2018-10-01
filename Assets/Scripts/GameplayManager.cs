@@ -18,6 +18,11 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     GameObject _WinUI;
 
+    [SerializeField]
+    int _ThisLevel;
+    [SerializeField]
+    int _NextLevel;
+
     public List<Level> _Level;
 
     [Header("WIN BUTTON")]
@@ -65,10 +70,6 @@ public class GameplayManager : MonoBehaviour
         EventManager.AddListener<GetStarEvent>(GetStarHandler);
         EventManager.AddListener<SetDataLevelEvent>(SetDataLevel);
 
-        _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
-            NextLevel();
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
-        });
 
         // Pause Handler
         _PauseButton.AddComponent<Button>().onClick.AddListener(delegate {
@@ -80,6 +81,7 @@ public class GameplayManager : MonoBehaviour
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
         });
         _RestartButton.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = _ThisLevel;
             OnPause(false);
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
@@ -87,20 +89,26 @@ public class GameplayManager : MonoBehaviour
 
         // Win Handler
         _WinRestart.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = _ThisLevel;
             OnPause(false);
             _WinUI.SetActive(false);
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
         });
+        _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
+            NextLevel();
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+        });
+        _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
+            Global.Level = _NextLevel;
+            OnQuit();
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+        });
+
         _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
         });
-        _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
-            OnQuit();
-            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
-        });
-        
         _BallManager = _Ball.AddComponent<BallBehaviour>();
     }
 
@@ -135,7 +143,8 @@ public class GameplayManager : MonoBehaviour
     private void StartGameInit(StartGameplayEvent e)
     {
         Time.timeScale = 1f;
-
+        _ThisLevel = Global.Level;
+        _NextLevel = _ThisLevel + 1;
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
@@ -178,10 +187,9 @@ public class GameplayManager : MonoBehaviour
 
     private void GoToNextLevel(OnNextLevel e)
     {
-        Global.Level++;
-        if (Global.Level > 29)
-            Global.Level = 0;
-
+        //Global.Level++;
+        //if (Global.Level > 29)
+        //    Global.Level = 0;
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
         _WinUI.SetActive(true);
@@ -240,14 +248,12 @@ public class GameplayManager : MonoBehaviour
 
             }
         }
-
-       
-
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }
 
     void NextLevel()
     {
+        Global.Level = _NextLevel;
         EventManager.TriggerEvent(new ControllerEvent(true));
         _WinUI.SetActive(false);
 
@@ -319,12 +325,8 @@ public class GameplayManager : MonoBehaviour
             Star[i].SetActive(false);
         for (int i = 0; i < _Level.Count; i++)
         {
-            //_Level[i].Labirin.transform.position = _LabirinDefaultPos;
             if (i == Global.Level)
-            {
-                //_Ball.transform.position = new Vector2(_Level[i].BallDefaultPosition.position.x, _Level[i].BallDefaultPosition.position.y);
                 _Ball.transform.position = _Level[i].BallDefaultPosition.position;
-            }
         }
            
     }

@@ -9,6 +9,7 @@ public class BallBehaviour : MonoBehaviour {
     int _MaxCollect = 3;
 
     bool _IsGoal = false;
+    bool _CalledOnce = false;
 
     [SerializeField]
     List<GameObject> _DiamondObject = new List<GameObject>();
@@ -16,6 +17,7 @@ public class BallBehaviour : MonoBehaviour {
     
     public void ResetBehaviour()
     {
+        _CalledOnce = false;
         _StarCount = 0;
         _IsGoal = false;
         for (int i = 0; i < _DiamondObject.Count; i++)
@@ -30,8 +32,11 @@ public class BallBehaviour : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Goal" && (_IsGoal || _StarCount > 2))
         {
-            EventManager.TriggerEvent(new OnNextLevel());
-
+            if (!_CalledOnce)
+            {
+                EventManager.TriggerEvent(new OnNextLevel());
+                _CalledOnce = true;
+            }
         }
 
         if (collision.gameObject.tag == "Obstacle")

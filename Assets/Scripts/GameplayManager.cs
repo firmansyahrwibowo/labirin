@@ -279,6 +279,9 @@ public class GameplayManager : MonoBehaviour
         _TimeCounting.InitTime();
         SetTextLevel();
         Reset();
+
+        _ThisLevel = Global.Level;
+        _NextLevel = _ThisLevel + 1;
     }
 
     void ObstacleHandler(ObstacleEvent e)

@@ -196,7 +196,7 @@ public class GameplayManager : MonoBehaviour
 
         for (int i = 0; i < _Level.Count; i++)
         {
-            if (i+1 == Global.Level)
+            if (i == Global.Level)
             {
                 if ((_Level[i].IsClear == false) && (_Level[i].Stage == 1))
                 {

@@ -43,6 +43,7 @@ public class BallBehaviour : MonoBehaviour {
         {
             EventManager.TriggerEvent(new ObstacleEvent());
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+            Handheld.Vibrate();
         }
 
         if (collision.gameObject.tag == "Collectible")

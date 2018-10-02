@@ -56,7 +56,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     GameObject[] Star;
 
-    [Header("Level Image")]
+    [Header("Level Title Image")]
     [SerializeField]
     Sprite[] _LevelTittleImage;
 

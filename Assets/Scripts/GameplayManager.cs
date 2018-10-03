@@ -60,6 +60,9 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     Sprite[] _LevelTittleImage;
 
+    [SerializeField]
+    Animator m_Transition;
+
     private void Awake()
     {
         _TimeCounting = GetComponent<TimeCounting>();
@@ -192,7 +195,11 @@ public class GameplayManager : MonoBehaviour
         //    Global.Level = 0;
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
-        _WinUI.SetActive(true);
+
+        //_WinUI.SetActive(true);
+        m_Transition.SetBool("IsPlay", true);
+
+        StartCoroutine(WinTransition());
 
         for (int i = 0; i < _Level.Count; i++)
         {
@@ -255,7 +262,10 @@ public class GameplayManager : MonoBehaviour
     {
         Global.Level = _NextLevel;
         EventManager.TriggerEvent(new ControllerEvent(true));
-        _WinUI.SetActive(false);
+
+        //_WinUI.SetActive(false);
+        m_Transition.SetBool("IsReverse", true);
+        StartCoroutine(ReverseWinTransition());
 
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
@@ -334,5 +344,19 @@ public class GameplayManager : MonoBehaviour
            
     }
 
+    IEnumerator WinTransition()
+    {
+        yield return new WaitForSeconds(1);
+        _WinUI.SetActive(true);
+        m_Transition.SetBool("IsPlay", false);
+
+    }
+
+    IEnumerator ReverseWinTransition()
+    {
+        yield return new WaitForSeconds(1);
+        _WinUI.SetActive(false);
+        m_Transition.SetBool("IsReverse", false);
+    }
 
 }

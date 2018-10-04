@@ -63,6 +63,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     Animator m_Transition;
 
+    public bool IsEndLevel=false;
+
     private void Awake()
     {
         _TimeCounting = GetComponent<TimeCounting>();
@@ -97,6 +99,7 @@ public class GameplayManager : MonoBehaviour
             _WinUI.SetActive(false);
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+
         });
         _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
             NextLevel();
@@ -193,6 +196,15 @@ public class GameplayManager : MonoBehaviour
         //Global.Level++;
         //if (Global.Level > 29)
         //    Global.Level = 0;
+        if (_NextLevel > _Level.Count - 1)
+        {
+            _NextLevel = 0;
+            IsEndLevel = true;
+        }
+
+       
+
+
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
 
@@ -253,8 +265,15 @@ public class GameplayManager : MonoBehaviour
                     _Level[i].IsClear = true;
                 }
 
+
             }
         }
+
+        if (IsEndLevel == true)
+        {
+            _NextLevelButton.SetActive(false);
+        }
+
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }
 
@@ -284,6 +303,7 @@ public class GameplayManager : MonoBehaviour
                 _Level[i].Labirin.SetActive(false);
 
         }
+
 
         OnPause(false);
         _TimeCounting.InitTime();
@@ -349,7 +369,6 @@ public class GameplayManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         _WinUI.SetActive(true);
         m_Transition.SetBool("IsPlay", false);
-
     }
 
     IEnumerator ReverseWinTransition()

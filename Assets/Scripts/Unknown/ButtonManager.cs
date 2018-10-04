@@ -388,8 +388,9 @@ public class ButtonManager : MonoBehaviour {
     public void Init (InitButtonEvent e)
     {
         Global.Level = _Backend.DBLocalData.Count;
+        Debug.Log(_Backend.DBLocalData.Count);
         //Level Lock Handler
-        for (int i = 0; i <= _LevelLock.Length; i++)
+        for (int i = 0; i < _LevelLock.Length; i++)
         {
             if (i <= Global.Level)
             {

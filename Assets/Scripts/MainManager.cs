@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainManager : MonoBehaviour {
 
     public GameObject IntroUI;
+    public GameObject Opening;
     public GameObject MainMenuUI;
     public GameObject LevelSelect1;
     public GameObject LevelSelect2;
@@ -36,6 +37,7 @@ public class MainManager : MonoBehaviour {
 
     void Start () {
         IntroUI.SetActive(true);
+        Opening.SetActive(true);
         InitFirstOpen();
 	}
 

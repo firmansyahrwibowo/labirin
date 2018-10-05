@@ -131,3 +131,12 @@ public class AchievementUnlockEvent : GameEvent
         Id = id;
     }
 }
+
+public class BlockSpamEvent : GameEvent {
+    public bool IsTrue;
+
+    public BlockSpamEvent(bool isTrue)
+    {
+        IsTrue = isTrue;
+    }
+}

@@ -19,6 +19,9 @@ public class MainManager : MonoBehaviour {
     public GameObject TheGameUI;
     public GameObject Transition;
 
+    [SerializeField]
+    GameObject _BlockObject;
+
     //AUDIO
     [SerializeField]
     private GameObject _GameplayBGM;
@@ -28,6 +31,7 @@ public class MainManager : MonoBehaviour {
     {
         EventManager.AddListener<MainMenuButtonEvent>(MainMenuButton);
         EventManager.AddListener<LevelSelectButtonEvent>(LevelSelectButton);
+        EventManager.AddListener<BlockSpamEvent>(BlockSpamHandler);
     }
 
     void Start () {
@@ -975,6 +979,10 @@ public class MainManager : MonoBehaviour {
                 break;
         }
 
+    }
+
+    void BlockSpamHandler(BlockSpamEvent e) {
+            _BlockObject.SetActive(e.IsTrue);
     }
 
     IEnumerator FalseTutorial() {

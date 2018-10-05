@@ -141,6 +141,9 @@ public class GameplayManager : MonoBehaviour
                     case 5:
                         Global.StarPerStage5 += 3;
                         break;
+                    case 6:
+                        Global.StarPerStage6 += 3;
+                        break;
                 }
             }
         }
@@ -373,9 +376,11 @@ public class GameplayManager : MonoBehaviour
 
     IEnumerator ReverseWinTransition()
     {
+        EventManager.TriggerEvent(new BlockSpamEvent(true));
         yield return new WaitForSeconds(1);
         _WinUI.SetActive(false);
         m_Transition.SetBool("IsReverse", false);
+        EventManager.TriggerEvent(new BlockSpamEvent(false));
     }
 
 }

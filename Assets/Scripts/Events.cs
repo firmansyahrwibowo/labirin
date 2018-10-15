@@ -102,6 +102,17 @@ public class SFXPlayEvent : GameEvent {
         IsEnd = isEnd;
     }
 }
+
+
+public class BGMEvent : GameEvent {
+    public PlayType Type;
+
+    public BGMEvent(PlayType type)
+    {
+        Type = type;
+    }
+}
+
 public class SetDataLevelEvent : GameEvent {
     public LevelData Data;
 
@@ -138,5 +149,18 @@ public class BlockSpamEvent : GameEvent {
     public BlockSpamEvent(bool isTrue)
     {
         IsTrue = isTrue;
+    }
+}
+
+public class AnalyticsGameEvent : GameEvent {
+    public string Type;
+
+    public AnalyticsGameEvent(AnalyticsType type)
+    {
+        Type = type.ToString();
+    }
+    public AnalyticsGameEvent(string type)
+    {
+        Type = type;
     }
 }

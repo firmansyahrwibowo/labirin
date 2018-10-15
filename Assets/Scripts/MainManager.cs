@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour {
 
     public GameObject IntroUI;
-    public GameObject Opening;
     public GameObject MainMenuUI;
     public GameObject LevelSelect1;
     public GameObject LevelSelect2;
@@ -22,10 +23,7 @@ public class MainManager : MonoBehaviour {
 
     [SerializeField]
     GameObject _BlockObject;
-
-    //AUDIO
-    [SerializeField]
-    private GameObject _GameplayBGM;
+    
 
     // Use this for initialization
     private void Awake()
@@ -33,16 +31,24 @@ public class MainManager : MonoBehaviour {
         EventManager.AddListener<MainMenuButtonEvent>(MainMenuButton);
         EventManager.AddListener<LevelSelectButtonEvent>(LevelSelectButton);
         EventManager.AddListener<BlockSpamEvent>(BlockSpamHandler);
+
+
+        TutorialUI.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            FalseTutorial();
+        });
+        
     }
 
     void Start () {
         IntroUI.SetActive(true);
-        Opening.SetActive(true);
         InitFirstOpen();
 	}
 
     void InitFirstOpen()
     {
+        EventManager.TriggerEvent(new AnalyticsGameEvent(AnalyticsType.PLAYING_GAME));
+
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LOGO_TULUS, false));
         MainMenuUI.SetActive(true);
         LevelSelect1.SetActive(false);
@@ -56,9 +62,10 @@ public class MainManager : MonoBehaviour {
         TutorialUI.SetActive(false);
         ButtonInGameUI.SetActive(false);
         TheGameUI.SetActive(false);
-        _GameplayBGM.SetActive(false);
         Transition.SetActive(false);
 
+        EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
+        EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
         EventManager.TriggerEvent(new ControllerEvent(false));
     }
 
@@ -80,6 +87,7 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(true);
                 Transition.SetActive(false);
 
+                EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
                 EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case MainMenuButtonType.ON_RESTART:
@@ -95,9 +103,9 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
-                _GameplayBGM.SetActive(false);
                 Transition.SetActive(false);
 
+                EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
                 EventManager.TriggerEvent(new ControllerEvent(false));
                 break;
         }
@@ -120,15 +128,12 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(true);
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
-
-                StartCoroutine(FalseTutorial());
-
-                _GameplayBGM.SetActive(true);
-
+                
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
                 EventManager.TriggerEvent(new StartGameplayEvent());
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 break;
             case LevelSelectButtonType.LEVEL_2:
                 MainMenuUI.SetActive(false);
@@ -143,7 +148,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 Transition.SetActive(true);
 
@@ -163,8 +168,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
-
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -183,8 +187,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
-
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -203,7 +206,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 Transition.SetActive(true);
 
@@ -224,6 +227,8 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
                 EventManager.TriggerEvent(new InitButtonEvent());
                 break;
             case LevelSelectButtonType.Left_1:
@@ -271,9 +276,9 @@ public class MainManager : MonoBehaviour {
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
-
-
-                _GameplayBGM.SetActive(true);
+                
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+                Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
                 EventManager.TriggerEvent(new StartGameplayEvent());
@@ -291,7 +296,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -310,7 +315,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -329,7 +334,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -348,7 +353,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -417,7 +422,7 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -436,7 +441,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -455,7 +460,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -474,7 +479,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -493,7 +498,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -561,8 +566,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -581,7 +585,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -600,7 +604,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -619,7 +623,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -638,7 +642,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -706,8 +710,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -726,7 +729,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -745,7 +748,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -764,7 +767,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -783,7 +786,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -851,8 +854,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -871,7 +873,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -890,7 +892,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -909,7 +911,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -928,7 +930,7 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
 
-                _GameplayBGM.SetActive(true);
+                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -987,8 +989,7 @@ public class MainManager : MonoBehaviour {
             _BlockObject.SetActive(e.IsTrue);
     }
 
-    IEnumerator FalseTutorial() {
-        yield return new WaitForSeconds(3);
+    void FalseTutorial() {
         TutorialUI.SetActive(false);
     }
 

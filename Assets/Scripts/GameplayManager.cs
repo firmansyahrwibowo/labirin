@@ -61,12 +61,14 @@ public class GameplayManager : MonoBehaviour
     Sprite[] _LevelTittleImage;
 
     [SerializeField]
-    Animator m_Transition;
+    GameObject _TransitionObject;
+    Animator _Transition;
 
     public bool IsEndLevel=false;
 
     private void Awake()
     {
+        _Transition = _TransitionObject.GetComponent<Animator>();
         _TimeCounting = GetComponent<TimeCounting>();
 
         EventManager.AddListener<OnNextLevel>(GoToNextLevel);
@@ -104,17 +106,21 @@ public class GameplayManager : MonoBehaviour
         _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
             NextLevel();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.RESTART));
         });
         _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             Global.Level = _NextLevel;
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
         });
 
         _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
         });
+
         _BallManager = _Ball.AddComponent<BallBehaviour>();
     }
 
@@ -181,6 +187,7 @@ public class GameplayManager : MonoBehaviour
         if (isPause)
         {
             EventManager.TriggerEvent(new ControllerEvent(false));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.PAUSE));
             _PauseUI.SetActive(true);
             _TimeCounting.PauseTime(false);
             Time.timeScale = 0.001f;
@@ -188,6 +195,7 @@ public class GameplayManager : MonoBehaviour
         else
         {
             EventManager.TriggerEvent(new ControllerEvent(true));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.UNPAUSE));
             _PauseUI.SetActive(false);
             _TimeCounting.PauseTime(true);
             Time.timeScale = 1f;
@@ -196,23 +204,18 @@ public class GameplayManager : MonoBehaviour
 
     private void GoToNextLevel(OnNextLevel e)
     {
-        //Global.Level++;
-        //if (Global.Level > 29)
-        //    Global.Level = 0;
         if (_NextLevel > _Level.Count - 1)
         {
             _NextLevel = 0;
             IsEndLevel = true;
         }
-
-       
-
-
+        
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
 
         //_WinUI.SetActive(true);
-        m_Transition.SetBool("IsPlay", true);
+        _TransitionObject.SetActive(true);
+        _Transition.CrossFade("FadeIn", 0);
 
         StartCoroutine(WinTransition());
 
@@ -277,6 +280,7 @@ public class GameplayManager : MonoBehaviour
             _NextLevelButton.SetActive(false);
         }
 
+        EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }
 
@@ -286,7 +290,7 @@ public class GameplayManager : MonoBehaviour
         EventManager.TriggerEvent(new ControllerEvent(true));
 
         //_WinUI.SetActive(false);
-        m_Transition.SetBool("IsReverse", true);
+        _Transition.CrossFade("FadeOut", 0);
         StartCoroutine(ReverseWinTransition());
 
         //STAR INIT
@@ -325,10 +329,8 @@ public class GameplayManager : MonoBehaviour
             Star[i].SetActive(false);
         for (int i = 0; i < _Level.Count; i++)
         {
-            //_Level[i].Labirin.transform.position = _LabirinDefaultPos;
             if (i==Global.Level)
             {
-                //_Ball.transform.position = new Vector2(_Level[i].BallDefaultPosition.position.x, _Level[i].BallDefaultPosition.position.y);
                 _Ball.transform.position = _Level[i].BallDefaultPosition.position;
             }
            
@@ -350,6 +352,7 @@ public class GameplayManager : MonoBehaviour
     }
 
     void OnQuit() {
+        OnPause(false);
         EventManager.TriggerEvent(new LevelSelectButtonEvent(LevelSelectButtonType.Back_ToMenu1));
     }
 
@@ -371,15 +374,14 @@ public class GameplayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         _WinUI.SetActive(true);
-        m_Transition.SetBool("IsPlay", false);
     }
 
     IEnumerator ReverseWinTransition()
     {
         EventManager.TriggerEvent(new BlockSpamEvent(true));
-        yield return new WaitForSeconds(1);
         _WinUI.SetActive(false);
-        m_Transition.SetBool("IsReverse", false);
+        yield return new WaitForSeconds(1);
+        _TransitionObject.SetActive(false);
         EventManager.TriggerEvent(new BlockSpamEvent(false));
     }
 

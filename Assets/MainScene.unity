@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 35926858}
   - component: {fileID: 35926857}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,7 +855,7 @@ Transform:
   m_GameObject: {fileID: 35926855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.534, y: 0.841, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 832060326}
   m_RootOrder: 13
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 35946105}
   - component: {fileID: 35946104}
   m_Layer: 0
-  m_Name: Obstacles (1)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 35946102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.59, y: 2.77, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 955135685}
   m_RootOrder: 3
@@ -2179,7 +2179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &69309599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2353,7 +2353,7 @@ GameObject:
   - component: {fileID: 73556744}
   - component: {fileID: 73556743}
   m_Layer: 0
-  m_Name: Obstacles (7)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,7 +2367,7 @@ Transform:
   m_GameObject: {fileID: 73556741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.38, y: -0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 588256226}
   m_RootOrder: 9
@@ -2817,7 +2817,7 @@ GameObject:
   - component: {fileID: 93688954}
   - component: {fileID: 93688953}
   m_Layer: 0
-  m_Name: Obstacles (6)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2831,7 +2831,7 @@ Transform:
   m_GameObject: {fileID: 93688951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.06, y: 0.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1885508212}
   m_RootOrder: 8
@@ -3700,7 +3700,7 @@ GameObject:
   - component: {fileID: 112265484}
   - component: {fileID: 112265483}
   m_Layer: 0
-  m_Name: Obstacles (9)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3714,7 +3714,7 @@ Transform:
   m_GameObject: {fileID: 112265481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.91, y: -3.32, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1504382727}
   m_RootOrder: 10
@@ -4716,7 +4716,7 @@ GameObject:
   - component: {fileID: 137860383}
   - component: {fileID: 137860382}
   m_Layer: 0
-  m_Name: Obstacles (9)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4730,7 +4730,7 @@ Transform:
   m_GameObject: {fileID: 137860380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.08, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1880135725}
   m_RootOrder: 12
@@ -6819,7 +6819,7 @@ GameObject:
   - component: {fileID: 195258662}
   - component: {fileID: 195258661}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6833,7 +6833,7 @@ Transform:
   m_GameObject: {fileID: 195258659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.24, y: 0.7799999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1504382727}
   m_RootOrder: 14
@@ -11264,7 +11264,7 @@ GameObject:
   - component: {fileID: 294462310}
   - component: {fileID: 294462309}
   m_Layer: 0
-  m_Name: Obstacles (4)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11278,7 +11278,7 @@ Transform:
   m_GameObject: {fileID: 294462307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.53, y: -0.07, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1509659282}
   m_RootOrder: 6
@@ -11456,7 +11456,7 @@ GameObject:
   - component: {fileID: 298209161}
   - component: {fileID: 298209160}
   m_Layer: 0
-  m_Name: Obstacles (2)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11470,7 +11470,7 @@ Transform:
   m_GameObject: {fileID: 298209158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.12, y: 0.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1090793714}
   m_RootOrder: 7
@@ -11648,7 +11648,7 @@ GameObject:
   - component: {fileID: 299261892}
   - component: {fileID: 299261891}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11662,7 +11662,7 @@ Transform:
   m_GameObject: {fileID: 299261889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.47, y: 0.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1880135725}
   m_RootOrder: 9
@@ -13074,7 +13074,7 @@ GameObject:
   - component: {fileID: 348546273}
   - component: {fileID: 348546272}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13088,7 +13088,7 @@ Transform:
   m_GameObject: {fileID: 348546270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.06, y: 0.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1885508212}
   m_RootOrder: 7
@@ -15105,7 +15105,7 @@ GameObject:
   - component: {fileID: 422843046}
   - component: {fileID: 422843045}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15119,7 +15119,7 @@ Transform:
   m_GameObject: {fileID: 422843043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.21, y: -2.86, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1236154452}
   m_RootOrder: 16
@@ -15511,7 +15511,7 @@ GameObject:
   - component: {fileID: 429931643}
   - component: {fileID: 429931642}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15525,7 +15525,7 @@ Transform:
   m_GameObject: {fileID: 429931640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: -3.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1568214592}
   m_RootOrder: 12
@@ -15677,7 +15677,7 @@ GameObject:
   - component: {fileID: 436671991}
   - component: {fileID: 436671993}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15691,7 +15691,7 @@ Transform:
   m_GameObject: {fileID: 436671989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: 2.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1166395833}
   m_RootOrder: 7
@@ -16178,7 +16178,7 @@ GameObject:
   - component: {fileID: 453244354}
   - component: {fileID: 453244353}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16192,7 +16192,7 @@ Transform:
   m_GameObject: {fileID: 453244351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.53, y: 0.06, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 392612009}
   m_RootOrder: 10
@@ -16410,7 +16410,7 @@ GameObject:
   - component: {fileID: 469550657}
   - component: {fileID: 469550659}
   m_Layer: 0
-  m_Name: Obstacles (3)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16424,7 +16424,7 @@ Transform:
   m_GameObject: {fileID: 469550655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.45, y: 0.31, z: 0}
-  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1545726685}
   m_RootOrder: 5
@@ -18452,7 +18452,7 @@ GameObject:
   - component: {fileID: 508657235}
   - component: {fileID: 508657234}
   m_Layer: 0
-  m_Name: Obstacles (9)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18467,7 +18467,7 @@ Transform:
   m_GameObject: {fileID: 508657232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.02, y: -2.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 178854228}
   m_RootOrder: 3
@@ -20883,7 +20883,7 @@ GameObject:
   - component: {fileID: 575403123}
   - component: {fileID: 575403122}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20897,7 +20897,7 @@ Transform:
   m_GameObject: {fileID: 575403120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.142, y: 2.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1504382727}
   m_RootOrder: 7
@@ -23006,7 +23006,7 @@ GameObject:
   - component: {fileID: 608631858}
   - component: {fileID: 608631857}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23020,7 +23020,7 @@ Transform:
   m_GameObject: {fileID: 608631855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.02, y: 4.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1880135725}
   m_RootOrder: 10
@@ -23198,7 +23198,7 @@ GameObject:
   - component: {fileID: 614084126}
   - component: {fileID: 614084125}
   m_Layer: 0
-  m_Name: Obstacles (9)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23212,7 +23212,7 @@ Transform:
   m_GameObject: {fileID: 614084123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.33, y: 0.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1088787084}
   m_RootOrder: 7
@@ -23336,7 +23336,7 @@ GameObject:
   - component: {fileID: 614214064}
   - component: {fileID: 614214063}
   m_Layer: 0
-  m_Name: Obstacles (2)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23350,7 +23350,7 @@ Transform:
   m_GameObject: {fileID: 614214061}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.689, y: 3.347, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1565609282}
   m_RootOrder: 4
@@ -23713,7 +23713,7 @@ GameObject:
   - component: {fileID: 638522819}
   - component: {fileID: 638522818}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23727,7 +23727,7 @@ Transform:
   m_GameObject: {fileID: 638522816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.69, y: -3.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1991509348}
   m_RootOrder: 10
@@ -24804,7 +24804,7 @@ GameObject:
   - component: {fileID: 663199976}
   - component: {fileID: 663199975}
   m_Layer: 0
-  m_Name: Obstacles (6)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24818,7 +24818,7 @@ Transform:
   m_GameObject: {fileID: 663199973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.38, y: -0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 588256226}
   m_RootOrder: 8
@@ -29012,7 +29012,7 @@ GameObject:
   - component: {fileID: 734556457}
   - component: {fileID: 734556456}
   m_Layer: 0
-  m_Name: Obstacles (9)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29026,7 +29026,7 @@ Transform:
   m_GameObject: {fileID: 734556454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.67, y: -3.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1991509348}
   m_RootOrder: 11
@@ -29329,7 +29329,7 @@ GameObject:
   - component: {fileID: 750339375}
   - component: {fileID: 750339374}
   m_Layer: 0
-  m_Name: Obstacles (3)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29343,7 +29343,7 @@ Transform:
   m_GameObject: {fileID: 750339372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.27, y: 2.85, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1444080788}
   m_RootOrder: 5
@@ -33565,7 +33565,7 @@ GameObject:
   - component: {fileID: 837650355}
   - component: {fileID: 837650354}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33580,7 +33580,7 @@ Transform:
   m_GameObject: {fileID: 837650352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: 4.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 178854228}
   m_RootOrder: 9
@@ -34080,7 +34080,7 @@ GameObject:
   - component: {fileID: 850487671}
   - component: {fileID: 850487670}
   m_Layer: 0
-  m_Name: Obstacles (6)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34094,7 +34094,7 @@ Transform:
   m_GameObject: {fileID: 850487668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.143, y: 2.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1504382727}
   m_RootOrder: 8
@@ -34218,7 +34218,7 @@ GameObject:
   - component: {fileID: 855013350}
   - component: {fileID: 855013349}
   m_Layer: 0
-  m_Name: Obstacles (7)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34232,7 +34232,7 @@ Transform:
   m_GameObject: {fileID: 855013347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.23, y: -0.81, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1504382727}
   m_RootOrder: 9
@@ -34925,7 +34925,7 @@ GameObject:
   - component: {fileID: 869241181}
   - component: {fileID: 869241180}
   m_Layer: 0
-  m_Name: Obstacles (1)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34939,7 +34939,7 @@ Transform:
   m_GameObject: {fileID: 869241178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.73, y: 3.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1565609282}
   m_RootOrder: 3
@@ -37093,7 +37093,7 @@ GameObject:
   - component: {fileID: 913961665}
   - component: {fileID: 913961664}
   m_Layer: 0
-  m_Name: Obstacles (14)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37107,7 +37107,7 @@ Transform:
   m_GameObject: {fileID: 913961662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.28, y: -0.5100001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1236154452}
   m_RootOrder: 18
@@ -37519,7 +37519,7 @@ GameObject:
   - component: {fileID: 932449621}
   - component: {fileID: 932449620}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37533,7 +37533,7 @@ Transform:
   m_GameObject: {fileID: 932449618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.29, y: 0.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1088787084}
   m_RootOrder: 16
@@ -37844,7 +37844,7 @@ GameObject:
   - component: {fileID: 936511872}
   - component: {fileID: 936511871}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37858,7 +37858,7 @@ Transform:
   m_GameObject: {fileID: 936511869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.63, y: 1.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 832060326}
   m_RootOrder: 14
@@ -37982,7 +37982,7 @@ GameObject:
   - component: {fileID: 936523672}
   - component: {fileID: 936523671}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37996,7 +37996,7 @@ Transform:
   m_GameObject: {fileID: 936523669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.05, y: -3.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1005645202}
   m_RootOrder: 10
@@ -38388,7 +38388,7 @@ GameObject:
   - component: {fileID: 943534801}
   - component: {fileID: 943534803}
   m_Layer: 0
-  m_Name: Obstacles (6)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38402,7 +38402,7 @@ Transform:
   m_GameObject: {fileID: 943534799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.92, y: 3.28, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1166395833}
   m_RootOrder: 8
@@ -42122,7 +42122,7 @@ GameObject:
   - component: {fileID: 1014654196}
   - component: {fileID: 1014654195}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42136,7 +42136,7 @@ Transform:
   m_GameObject: {fileID: 1014654193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.55, y: 0.06, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 392612009}
   m_RootOrder: 7
@@ -46027,7 +46027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1097753333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50489,7 +50489,7 @@ GameObject:
   - component: {fileID: 1210972759}
   - component: {fileID: 1210972758}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50503,7 +50503,7 @@ Transform:
   m_GameObject: {fileID: 1210972756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.69, y: -3.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 608014731}
   m_RootOrder: 12
@@ -52267,7 +52267,7 @@ GameObject:
   - component: {fileID: 1247794707}
   - component: {fileID: 1247794706}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52281,7 +52281,7 @@ Transform:
   m_GameObject: {fileID: 1247794704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.81, y: -3.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1309560379}
   m_RootOrder: 7
@@ -52832,7 +52832,7 @@ GameObject:
   - component: {fileID: 1277026191}
   - component: {fileID: 1277026190}
   m_Layer: 0
-  m_Name: Obstacles (9)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52846,7 +52846,7 @@ Transform:
   m_GameObject: {fileID: 1277026188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.67, y: -3.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 608014731}
   m_RootOrder: 13
@@ -53878,7 +53878,7 @@ GameObject:
   - component: {fileID: 1302452143}
   - component: {fileID: 1302452142}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53892,7 +53892,7 @@ Transform:
   m_GameObject: {fileID: 1302452140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.21, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1005645202}
   m_RootOrder: 7
@@ -54016,7 +54016,7 @@ GameObject:
   - component: {fileID: 1305221230}
   - component: {fileID: 1305221229}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54030,7 +54030,7 @@ Transform:
   m_GameObject: {fileID: 1305221227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.19, y: -2.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 758751762}
   m_RootOrder: 7
@@ -54505,7 +54505,7 @@ GameObject:
   - component: {fileID: 1321741507}
   - component: {fileID: 1321741506}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54519,7 +54519,7 @@ Transform:
   m_GameObject: {fileID: 1321741504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.23, y: -2.21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1088787084}
   m_RootOrder: 15
@@ -54749,7 +54749,7 @@ GameObject:
   - component: {fileID: 1324273891}
   - component: {fileID: 1324273890}
   m_Layer: 0
-  m_Name: Obstacles (4)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54763,7 +54763,7 @@ Transform:
   m_GameObject: {fileID: 1324273888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.29, y: 2.87, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1444080788}
   m_RootOrder: 6
@@ -55796,7 +55796,7 @@ GameObject:
   - component: {fileID: 1346536295}
   - component: {fileID: 1346536294}
   m_Layer: 0
-  m_Name: Obstacles (2)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55810,7 +55810,7 @@ Transform:
   m_GameObject: {fileID: 1346536292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.7800002, y: 1.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 955135685}
   m_RootOrder: 4
@@ -56293,7 +56293,7 @@ GameObject:
   - component: {fileID: 1362140095}
   - component: {fileID: 1362140094}
   m_Layer: 0
-  m_Name: Obstacles (3)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56307,7 +56307,7 @@ Transform:
   m_GameObject: {fileID: 1362140092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.66, y: -0.05, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 207954973}
   m_RootOrder: 5
@@ -57095,7 +57095,7 @@ GameObject:
   - component: {fileID: 1396698320}
   - component: {fileID: 1396698319}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57109,7 +57109,7 @@ Transform:
   m_GameObject: {fileID: 1396698317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.29, y: -2.2, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 207954973}
   m_RootOrder: 7
@@ -57233,7 +57233,7 @@ GameObject:
   - component: {fileID: 1399005673}
   - component: {fileID: 1399005672}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57247,7 +57247,7 @@ Transform:
   m_GameObject: {fileID: 1399005670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.24, y: -0.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 684613463}
   m_RootOrder: 7
@@ -59342,7 +59342,7 @@ GameObject:
   - component: {fileID: 1457002014}
   - component: {fileID: 1457002013}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59356,7 +59356,7 @@ Transform:
   m_GameObject: {fileID: 1457002011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.44, y: -2.3, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1509659282}
   m_RootOrder: 7
@@ -59718,7 +59718,7 @@ GameObject:
   - component: {fileID: 1462712237}
   - component: {fileID: 1462712236}
   m_Layer: 0
-  m_Name: Obstacles (9)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59732,7 +59732,7 @@ Transform:
   m_GameObject: {fileID: 1462712234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.78, y: -3.05, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 392612009}
   m_RootOrder: 14
@@ -59884,7 +59884,7 @@ GameObject:
   - component: {fileID: 1468955747}
   - component: {fileID: 1468955749}
   m_Layer: 0
-  m_Name: Obstacles (4)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59898,7 +59898,7 @@ Transform:
   m_GameObject: {fileID: 1468955745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.87, y: -3.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1166395833}
   m_RootOrder: 6
@@ -64408,7 +64408,7 @@ GameObject:
   - component: {fileID: 1553314817}
   - component: {fileID: 1553314816}
   m_Layer: 0
-  m_Name: Obstacles (7)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64422,7 +64422,7 @@ Transform:
   m_GameObject: {fileID: 1553314814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.17, y: -0.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1005645202}
   m_RootOrder: 9
@@ -67351,7 +67351,7 @@ GameObject:
   - component: {fileID: 1607253403}
   - component: {fileID: 1607253402}
   m_Layer: 0
-  m_Name: Obstacles (13)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67365,7 +67365,7 @@ Transform:
   m_GameObject: {fileID: 1607253400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.23, y: -0.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1236154452}
   m_RootOrder: 17
@@ -68354,7 +68354,7 @@ GameObject:
   - component: {fileID: 1628212433}
   - component: {fileID: 1628212432}
   m_Layer: 0
-  m_Name: Obstacles (6)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68368,7 +68368,7 @@ Transform:
   m_GameObject: {fileID: 1628212430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.87, y: -1.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1005645202}
   m_RootOrder: 8
@@ -68987,7 +68987,7 @@ GameObject:
   - component: {fileID: 1652889807}
   - component: {fileID: 1652889806}
   m_Layer: 0
-  m_Name: Obstacles (4)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69001,7 +69001,7 @@ Transform:
   m_GameObject: {fileID: 1652889804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.37, y: 2.54, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 207954973}
   m_RootOrder: 6
@@ -70774,7 +70774,7 @@ GameObject:
   - component: {fileID: 1719659015}
   - component: {fileID: 1719659014}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70788,7 +70788,7 @@ Transform:
   m_GameObject: {fileID: 1719659012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.56, y: 1.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1038590066}
   m_RootOrder: 7
@@ -72720,7 +72720,7 @@ GameObject:
   - component: {fileID: 1774337829}
   - component: {fileID: 1774337828}
   m_Layer: 0
-  m_Name: Obstacles (4)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72734,7 +72734,7 @@ Transform:
   m_GameObject: {fileID: 1774337826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.78, y: -1.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1038590066}
   m_RootOrder: 6
@@ -73221,7 +73221,7 @@ GameObject:
   - component: {fileID: 1792451603}
   - component: {fileID: 1792451602}
   m_Layer: 0
-  m_Name: Obstacles (8)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73235,7 +73235,7 @@ Transform:
   m_GameObject: {fileID: 1792451600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.25, y: 2.53, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1568214592}
   m_RootOrder: 13
@@ -74472,7 +74472,7 @@ GameObject:
   - component: {fileID: 1842119476}
   - component: {fileID: 1842119475}
   m_Layer: 0
-  m_Name: Obstacles (4)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74486,7 +74486,7 @@ Transform:
   m_GameObject: {fileID: 1842119473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.15, y: 1.92, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 758751762}
   m_RootOrder: 6
@@ -77157,7 +77157,7 @@ GameObject:
   - component: {fileID: 1899945280}
   - component: {fileID: 1899945279}
   m_Layer: 0
-  m_Name: Obstacles (6)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77171,7 +77171,7 @@ Transform:
   m_GameObject: {fileID: 1899945277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.95, y: 3, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 392612009}
   m_RootOrder: 8
@@ -82284,7 +82284,7 @@ GameObject:
   - component: {fileID: 2064359059}
   - component: {fileID: 2064359058}
   m_Layer: 0
-  m_Name: Obstacles (7)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82298,7 +82298,7 @@ Transform:
   m_GameObject: {fileID: 2064359056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.83, y: 2.99, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 392612009}
   m_RootOrder: 9
@@ -83574,7 +83574,7 @@ GameObject:
   - component: {fileID: 2114503347}
   - component: {fileID: 2114503346}
   m_Layer: 0
-  m_Name: Obstacles (5)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83588,7 +83588,7 @@ Transform:
   m_GameObject: {fileID: 2114503344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.37, y: -2.31, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1444080788}
   m_RootOrder: 7
@@ -83872,7 +83872,7 @@ GameObject:
   - component: {fileID: 2125729698}
   - component: {fileID: 2125729697}
   m_Layer: 0
-  m_Name: Obstacles (1)
+  m_Name: Roda
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83886,7 +83886,7 @@ Transform:
   m_GameObject: {fileID: 2125729695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.13, y: -0.91, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1090793714}
   m_RootOrder: 6

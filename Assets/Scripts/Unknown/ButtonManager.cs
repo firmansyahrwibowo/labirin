@@ -11,6 +11,12 @@ public class LevelSelectData
     public GameObject Object;
     public int GlobalLevel;
 }
+[System.Serializable]
+public class LevelLockData
+{
+    public GameObject LevelButton;
+    public GameObject LevelLabel;
+}
 
 public class ButtonManager : MonoBehaviour {
     [SerializeField]
@@ -27,7 +33,7 @@ public class ButtonManager : MonoBehaviour {
     
     [Header("LEVEL LOCK")]
     [SerializeField]
-    GameObject[] _LevelLock;
+    LevelLockData [] _LevelLockData;
 
     [Header("STAR COLLECTED")]
     [SerializeField]
@@ -103,13 +109,15 @@ public class ButtonManager : MonoBehaviour {
     {
         Global.Level = _Backend.DBLocalData.Count;
         //Level Lock Handler
-        for (int i = 0; i < _LevelLock.Length; i++)
+        for (int i = 0; i < _LevelLockData.Length; i++)
         {
             if (i <= Global.Level)
             {
                 if (Global.StarCollect >= (Global.Level - 1) * 3)
                 {
-                    _LevelLock[i].SetActive(true);
+                    //_LevelLock[i].SetActive(true);
+                    _LevelLockData[i].LevelButton.SetActive(true);
+                    _LevelLockData[i].LevelLabel.SetActive(true);
                 }
 
             }           

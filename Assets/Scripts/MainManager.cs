@@ -20,7 +20,7 @@ public class MainManager : MonoBehaviour {
     public GameObject ButtonInGameUI;
     public GameObject TheGameUI;
     public GameObject Transition;
-
+    public GameObject TiltController;
     [SerializeField]
     GameObject _BlockObject;
     
@@ -126,6 +126,7 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(true);
+                TiltController.SetActive(false);                
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
                 
@@ -991,6 +992,7 @@ public class MainManager : MonoBehaviour {
 
     void FalseTutorial() {
         TutorialUI.SetActive(false);
+        TiltController.SetActive(true);
     }
 
 }

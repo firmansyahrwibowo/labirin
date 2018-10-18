@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour {
 
-    public GameObject IntroUI;
+    //public GameObject IntroUI;
     public GameObject MainMenuUI;
     public GameObject LevelSelect1;
     public GameObject LevelSelect2;
@@ -17,6 +17,8 @@ public class MainManager : MonoBehaviour {
     public GameObject FinishLevel;
     public GameObject PausedUI;
     public GameObject TutorialUI;
+    public GameObject Tutorial1UI;
+    public GameObject Tutorial2UI;
     public GameObject ButtonInGameUI;
     public GameObject TheGameUI;
     public GameObject Transition;
@@ -37,11 +39,21 @@ public class MainManager : MonoBehaviour {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             FalseTutorial();
         });
-        
+
+        Tutorial1UI.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            FalseTutorial1();
+        });
+
+        Tutorial2UI.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            FalseTutorial2();
+        });
+
     }
 
     void Start () {
-        IntroUI.SetActive(true);
+        //IntroUI.SetActive(true);
         InitFirstOpen();
 	}
 
@@ -49,7 +61,8 @@ public class MainManager : MonoBehaviour {
     {
         EventManager.TriggerEvent(new AnalyticsGameEvent(AnalyticsType.PLAYING_GAME));
 
-        EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LOGO_TULUS, false));
+        //EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LOGO_TULUS, false));
+
         MainMenuUI.SetActive(true);
         LevelSelect1.SetActive(false);
         LevelSelect2.SetActive(false);
@@ -77,6 +90,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 LevelSelect2.SetActive(false);
@@ -101,6 +116,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -126,6 +143,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(true);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 TiltController.SetActive(false);                
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
@@ -144,6 +163,10 @@ public class MainManager : MonoBehaviour {
                 LevelSelect4.SetActive(false);
                 LevelSelect5.SetActive(false);
                 LevelSelect6.SetActive(false);
+                TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(true);
+                Tutorial2UI.SetActive(false);
+                TiltController.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -183,6 +206,10 @@ public class MainManager : MonoBehaviour {
                 LevelSelect4.SetActive(false);
                 LevelSelect5.SetActive(false);
                 LevelSelect6.SetActive(false);
+                TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(true);
+                TiltController.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
@@ -225,6 +252,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -243,6 +272,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -257,7 +288,9 @@ public class MainManager : MonoBehaviour {
                 LevelSelect6.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
-                TutorialUI.SetActive(false);
+                  TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -371,6 +404,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -387,6 +422,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -402,6 +439,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -516,6 +555,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -532,6 +573,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -547,6 +590,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -660,6 +705,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -676,6 +723,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -691,6 +740,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -804,6 +855,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -820,6 +873,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -835,6 +890,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -948,6 +1005,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -963,6 +1022,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -978,6 +1039,8 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
+                Tutorial1UI.SetActive(false);
+                Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
@@ -992,6 +1055,17 @@ public class MainManager : MonoBehaviour {
 
     void FalseTutorial() {
         TutorialUI.SetActive(false);
+        TiltController.SetActive(true);
+    }
+
+    void FalseTutorial1()
+    {
+        Tutorial1UI.SetActive(false);
+        TiltController.SetActive(true);
+    }
+    void FalseTutorial2()
+    {
+        Tutorial2UI.SetActive(false);
         TiltController.SetActive(true);
     }
 

@@ -64,6 +64,14 @@ public class GameplayManager : MonoBehaviour
     GameObject _TransitionObject;
     Animator _Transition;
 
+    [SerializeField]
+    GameObject _Tutorial1;
+    [SerializeField]
+    GameObject _Tutorial2;
+    [SerializeField]
+    GameObject _TiltController;
+
+
     public bool IsEndLevel=false;
 
     private void Awake()
@@ -76,6 +84,8 @@ public class GameplayManager : MonoBehaviour
         EventManager.AddListener<ObstacleEvent>(ObstacleHandler);
         EventManager.AddListener<GetStarEvent>(GetStarHandler);
         EventManager.AddListener<SetDataLevelEvent>(SetDataLevel);
+        EventManager.AddListener<Tutorial1GameEvent>(SetTutorial1);
+        EventManager.AddListener<Tutorial2GameEvent>(SetTutorial2);
 
 
         // Pause Handler
@@ -107,18 +117,28 @@ public class GameplayManager : MonoBehaviour
             NextLevel();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new BGMEvent(PlayType.RESTART));
+            if (_ThisLevel==1)
+            {
+                EventManager.TriggerEvent(new Tutorial1GameEvent(true));
+                _TiltController.SetActive(false);
+            }
+            if (_ThisLevel==3)
+            {
+                EventManager.TriggerEvent(new Tutorial2GameEvent(true));
+                _TiltController.SetActive(false);
+            }
         });
         _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             Global.Level = _NextLevel;
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
-            EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
         });
 
         _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
-            EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
         });
 
         _BallManager = _Ball.AddComponent<BallBehaviour>();
@@ -383,6 +403,16 @@ public class GameplayManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         _TransitionObject.SetActive(false);
         EventManager.TriggerEvent(new BlockSpamEvent(false));
+    }
+
+    void SetTutorial1(Tutorial1GameEvent e) {
+        _Tutorial1.SetActive(e.IsActive);
+        _TiltController.SetActive(e.IsActive);
+    }
+
+    void SetTutorial2(Tutorial2GameEvent e) {
+        _Tutorial2.SetActive(e.IsActive);
+        _TiltController.SetActive(e.IsActive);
     }
 
 }

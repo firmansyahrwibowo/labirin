@@ -164,3 +164,25 @@ public class AnalyticsGameEvent : GameEvent {
         Type = type;
     }
 }
+
+public class Tutorial1GameEvent : GameEvent
+{
+
+    public bool IsActive;
+
+    public Tutorial1GameEvent(bool isActive)
+    {
+        IsActive = isActive;
+    }
+}
+
+public class Tutorial2GameEvent : GameEvent
+{
+
+    public bool IsActive;
+
+    public Tutorial2GameEvent(bool isActive)
+    {
+        IsActive = isActive;
+    }
+}

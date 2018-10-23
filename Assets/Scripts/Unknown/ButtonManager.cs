@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 [System.Serializable]
 public class LevelSelectData
@@ -77,21 +78,33 @@ public class ButtonManager : MonoBehaviour {
         _MainMenuPlayButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, true));
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
+
+            AnalyticsEvent.Custom("Start Button");
+
         });
 
         _HighscoreButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new ShowLeaderboardEvent());
+
+            AnalyticsEvent.Custom("Highscore Button");
+
         });
         
         _AchievementButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new ShowAchievementEvent());
+
+            AnalyticsEvent.Custom("Achievement Button");
+
         });
 
         _MainMenuExitButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
             ExitButton();
+
+            AnalyticsEvent.Custom("Quit Button");
+
         });
 
 

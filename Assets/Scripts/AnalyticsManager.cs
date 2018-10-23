@@ -7,18 +7,19 @@ using UnityEngine.Analytics;
 public enum AnalyticsType
 {
     PLAYING_GAME,
-    EXIT_GAME
 }
 
 public class AnalyticsManager : MonoBehaviour {
 
     AnalyticsTracker _Analytics;
     AnalyticsEventTracker _AnalyticsTracker;
+    PlayGamesManager _PlayGamesManager;
 	// Use this for initialization
 	void Awake () {
         EventManager.AddListener<AnalyticsGameEvent>(AnalyticsHandler);
         _Analytics = GetComponent<AnalyticsTracker>();
         _AnalyticsTracker = GetComponent<AnalyticsEventTracker>();
+        _PlayGamesManager = GetComponent<PlayGamesManager>();
 
     }
 
@@ -29,9 +30,9 @@ public class AnalyticsManager : MonoBehaviour {
         //_AnalyticsTracker.name = e.Type;
         Analytics.CustomEvent(e.Type, new Dictionary<string, object>
         {
-            { "Username", "Test" },
-            { "Play", 1},
-            { "Exit", 1}
+            { "Username", _PlayGamesManager.UserName },
+            { "Play","Played"},
+            { "Exit", "Exited"}
         });
     }
     

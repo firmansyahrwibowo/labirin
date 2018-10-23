@@ -5,6 +5,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 
 public class PlayGamesManager : MonoBehaviour {
+    public string UserName;
 
     private void Awake()
     {
@@ -19,14 +20,16 @@ public class PlayGamesManager : MonoBehaviour {
         PlayGamesPlatform.Activate();
 
         SignIn();
-	}
+    }
 
 
     void SignIn() {
         Social.localUser.Authenticate(sucess => {
             UnlockAchievement(1);
+            UserName = Social.localUser.userName;
         });
     }
+
     // Update is called once per frame
     #region Achievements
     public void UnlockAchievement(int id)

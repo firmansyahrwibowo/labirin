@@ -23,6 +23,7 @@ public class MainManager : MonoBehaviour {
     public GameObject TheGameUI;
     public GameObject Transition;
     public GameObject TiltController;
+    public PlayGamesManager Gpgs;
     [SerializeField]
     GameObject _BlockObject;
     
@@ -59,10 +60,6 @@ public class MainManager : MonoBehaviour {
 
     void InitFirstOpen()
     {
-        EventManager.TriggerEvent(new AnalyticsGameEvent(AnalyticsType.PLAYING_GAME));
-
-        //EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LOGO_TULUS, false));
-
         MainMenuUI.SetActive(true);
         LevelSelect1.SetActive(false);
         LevelSelect2.SetActive(false);
@@ -76,7 +73,6 @@ public class MainManager : MonoBehaviour {
         ButtonInGameUI.SetActive(false);
         TheGameUI.SetActive(false);
         Transition.SetActive(false);
-
         EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
         EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
         EventManager.TriggerEvent(new ControllerEvent(false));
@@ -102,8 +98,17 @@ public class MainManager : MonoBehaviour {
                 LevelSelect1.SetActive(true);
                 Transition.SetActive(false);
 
+                AnalyticsEvent.Custom("Start Button");
+
                 EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
                 EventManager.TriggerEvent(new InitButtonEvent());
+
+                AnalyticsEvent.Custom("User Data", new Dictionary<string, object>
+                {
+                { "user_name", Gpgs.UserName },
+                { "play_count", +1 }
+                });
+
                 break;
             case MainMenuButtonType.ON_RESTART:
                 MainMenuUI.SetActive(true);
@@ -148,7 +153,9 @@ public class MainManager : MonoBehaviour {
                 TiltController.SetActive(false);                
                 ButtonInGameUI.SetActive(true);
                 TheGameUI.SetActive(true);
-                
+
+                AnalyticsEvent.Custom("Level1 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -174,6 +181,8 @@ public class MainManager : MonoBehaviour {
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
+                AnalyticsEvent.Custom("Level2 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -193,6 +202,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level3 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -216,6 +228,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level4 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -235,6 +250,8 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level5 Button");
 
                 Transition.SetActive(true);
 
@@ -258,6 +275,8 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
 
+                AnalyticsEvent.Custom("BackToMenu Button");
+
                 EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
                 EventManager.TriggerEvent(new InitButtonEvent());
                 break;
@@ -277,6 +296,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("LeftLevelSelect Button");
+
                 break;
             case LevelSelectButtonType.Right_1:
                 MainMenuUI.SetActive(false);
@@ -294,6 +316,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("RightLevelSelect Button");
+
                 break;
 
 
@@ -312,6 +337,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
                 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level6 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -331,6 +359,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level7 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -350,6 +381,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level8 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -369,6 +403,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level9 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -388,6 +425,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level10 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -410,6 +450,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
+
+                AnalyticsEvent.Custom("BackToMenu Button");
+
                 break;
             case LevelSelectButtonType.Left_2:
                 MainMenuUI.SetActive(false);
@@ -427,6 +470,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("LeftLevelSelect Button");
+
                 break;
             case LevelSelectButtonType.Right_2:
                 MainMenuUI.SetActive(false);
@@ -444,6 +490,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("RightLevelSelect Button");
+
                 break;
 
 
@@ -463,6 +512,9 @@ public class MainManager : MonoBehaviour {
 
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level11 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -482,6 +534,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level12 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -501,6 +556,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level13 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -520,6 +578,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level14 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -539,6 +600,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level15 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -561,6 +625,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
+
+                AnalyticsEvent.Custom("BackToMenu Button");
+
                 break;
             case LevelSelectButtonType.Left_3:
                 MainMenuUI.SetActive(false);
@@ -578,6 +645,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("LeftLevelSelect Button");
+
                 break;
             case LevelSelectButtonType.Right_3:
                 MainMenuUI.SetActive(false);
@@ -595,6 +665,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("RightLevelSelect Button");
+
                 break;
 
 
@@ -613,6 +686,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level16 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -632,6 +708,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level17 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -651,6 +730,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level18 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -670,6 +752,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level19 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -689,6 +774,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level20 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -711,6 +799,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
+
+                AnalyticsEvent.Custom("BackToMenu Button");
+
                 break;
             case LevelSelectButtonType.Left_4:
                 MainMenuUI.SetActive(false);
@@ -728,6 +819,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("LeftLevelSelect Button");
+
                 break;
             case LevelSelectButtonType.Right_4:
                 MainMenuUI.SetActive(false);
@@ -745,6 +839,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("RightLevelSelect Button");
+
                 break;
 
 
@@ -763,6 +860,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level21 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -782,6 +882,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level22 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -801,6 +904,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level23 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -820,6 +926,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level24 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -839,6 +948,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level25 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -861,6 +973,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
+
+                AnalyticsEvent.Custom("BackToMenu Button");
+
                 break;
             case LevelSelectButtonType.Left_5:
                 MainMenuUI.SetActive(false);
@@ -878,6 +993,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("LeftLevelSelect Button");
+
                 break;
             case LevelSelectButtonType.Right_5:
                 MainMenuUI.SetActive(false);
@@ -895,6 +1013,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("RightLevelSelect Button");
+
                 break;
 
 
@@ -913,6 +1034,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level26 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -932,6 +1056,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level27 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -951,6 +1078,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level28 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -970,6 +1100,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level29 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -989,6 +1122,9 @@ public class MainManager : MonoBehaviour {
                 TheGameUI.SetActive(true);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+
+                AnalyticsEvent.Custom("Level30 Button");
+
                 Transition.SetActive(true);
 
                 EventManager.TriggerEvent(new ControllerEvent(true));
@@ -1010,6 +1146,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("BackToMenu Button");
+
                 break;
             case LevelSelectButtonType.Left_6:
                 MainMenuUI.SetActive(false);
@@ -1027,6 +1166,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("LeftLevelSelect Button");
+
                 break;
             case LevelSelectButtonType.Right_6:
                 MainMenuUI.SetActive(false);
@@ -1044,6 +1186,9 @@ public class MainManager : MonoBehaviour {
                 ButtonInGameUI.SetActive(false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
+
+                AnalyticsEvent.Custom("RightLevelSelect Button");
+
                 break;
         }
 

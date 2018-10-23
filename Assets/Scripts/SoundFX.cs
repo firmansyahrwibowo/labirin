@@ -9,7 +9,9 @@ public enum SfxType {
     LABIRIN,
     STAR,
     LOGO_TULUS,
-    LEFT_RIGHT
+    LEFT_RIGHT,
+    HIT_WALL,
+    HIT_OBSTACLE
 }
 
 public enum PlayType {

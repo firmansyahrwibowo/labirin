@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -92,16 +93,25 @@ public class GameplayManager : MonoBehaviour
         _PauseButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(true);
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+
+            AnalyticsEvent.Custom("Pause Button");
+
         });
         _ResumeButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+
+            AnalyticsEvent.Custom("Resume Button");
+
         });
         _RestartButton.AddComponent<Button>().onClick.AddListener(delegate {
             Global.Level = _ThisLevel;
             OnPause(false);
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+
+            AnalyticsEvent.Custom("Restart Button");
+
         });
 
         // Win Handler
@@ -112,11 +122,16 @@ public class GameplayManager : MonoBehaviour
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
 
+            AnalyticsEvent.Custom("Restart Button");
+
         });
         _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
             NextLevel();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new BGMEvent(PlayType.RESTART));
+
+            AnalyticsEvent.Custom("NextLevel Button");
+
             if (_ThisLevel==1)
             {
                 EventManager.TriggerEvent(new Tutorial1GameEvent(true));
@@ -133,12 +148,18 @@ public class GameplayManager : MonoBehaviour
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
             EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
+
+            AnalyticsEvent.Custom("Quit Button");
+
         });
 
         _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
             EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
+
+            AnalyticsEvent.Custom("Quit Button");
+
         });
 
         _BallManager = _Ball.AddComponent<BallBehaviour>();

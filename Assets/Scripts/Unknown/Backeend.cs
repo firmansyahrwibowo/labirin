@@ -61,7 +61,7 @@ public class Backeend : MonoBehaviour {
 
         float avg = score / DBLocalData.Count;
         Debug.Log(avg);
-        EventManager.TriggerEvent(new LeaderboardAddEvent(Mathf.FloorToInt(avg)));
+        EventManager.TriggerEvent(new LeaderboardAddEvent(avg, LeaderboardType.GENERAL));
 
     }
     #endregion

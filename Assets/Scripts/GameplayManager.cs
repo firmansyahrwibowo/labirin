@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -64,6 +65,14 @@ public class GameplayManager : MonoBehaviour
     GameObject _TransitionObject;
     Animator _Transition;
 
+    [SerializeField]
+    GameObject _Tutorial1;
+    [SerializeField]
+    GameObject _Tutorial2;
+    [SerializeField]
+    GameObject _TiltController;
+
+
     public bool IsEndLevel=false;
 
     private void Awake()
@@ -76,22 +85,33 @@ public class GameplayManager : MonoBehaviour
         EventManager.AddListener<ObstacleEvent>(ObstacleHandler);
         EventManager.AddListener<GetStarEvent>(GetStarHandler);
         EventManager.AddListener<SetDataLevelEvent>(SetDataLevel);
+        EventManager.AddListener<Tutorial1GameEvent>(SetTutorial1);
+        EventManager.AddListener<Tutorial2GameEvent>(SetTutorial2);
 
 
         // Pause Handler
         _PauseButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(true);
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+
+            AnalyticsEvent.Custom("Pause Button");
+
         });
         _ResumeButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnPause(false);
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+
+            AnalyticsEvent.Custom("Resume Button");
+
         });
         _RestartButton.AddComponent<Button>().onClick.AddListener(delegate {
             Global.Level = _ThisLevel;
             OnPause(false);
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+
+            AnalyticsEvent.Custom("Restart Button");
+
         });
 
         // Win Handler
@@ -102,23 +122,44 @@ public class GameplayManager : MonoBehaviour
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
 
+            AnalyticsEvent.Custom("Restart Button");
+
         });
         _NextLevelButton.AddComponent<Button>().onClick.AddListener(delegate {
             NextLevel();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new BGMEvent(PlayType.RESTART));
+
+            AnalyticsEvent.Custom("NextLevel Button");
+
+            if (_ThisLevel==1)
+            {
+                EventManager.TriggerEvent(new Tutorial1GameEvent(true));
+                _TiltController.SetActive(false);
+            }
+            if (_ThisLevel==3)
+            {
+                EventManager.TriggerEvent(new Tutorial2GameEvent(true));
+                _TiltController.SetActive(false);
+            }
         });
         _WinQuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             Global.Level = _NextLevel;
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
-            EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
+
+            AnalyticsEvent.Custom("Quit Button");
+
         });
 
         _QuitButton.AddComponent<Button>().onClick.AddListener(delegate {
             OnQuit();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
-            EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
+            EventManager.TriggerEvent(new BGMEvent(PlayType.MAIN_BGM));
+
+            AnalyticsEvent.Custom("Quit Button");
+
         });
 
         _BallManager = _Ball.AddComponent<BallBehaviour>();
@@ -160,6 +201,7 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1f;
         _ThisLevel = Global.Level;
         _NextLevel = _ThisLevel + 1;
+
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
@@ -212,6 +254,12 @@ public class GameplayManager : MonoBehaviour
         
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
+        //LEADERBOARD ADD CHALLENGE
+        if (_ThisLevel == 29)
+        {
+            Debug.Log("LEVEL 30 = " + _TimeCounting.GetTime());
+            EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_1));
+        }
 
         //_WinUI.SetActive(true);
         _TransitionObject.SetActive(true);
@@ -383,6 +431,16 @@ public class GameplayManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         _TransitionObject.SetActive(false);
         EventManager.TriggerEvent(new BlockSpamEvent(false));
+    }
+
+    void SetTutorial1(Tutorial1GameEvent e) {
+        _Tutorial1.SetActive(e.IsActive);
+        _TiltController.SetActive(e.IsActive);
+    }
+
+    void SetTutorial2(Tutorial2GameEvent e) {
+        _Tutorial2.SetActive(e.IsActive);
+        _TiltController.SetActive(e.IsActive);
     }
 
 }

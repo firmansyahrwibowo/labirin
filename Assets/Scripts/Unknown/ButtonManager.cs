@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 [System.Serializable]
 public class LevelSelectData
@@ -12,11 +13,24 @@ public class LevelSelectData
     public int GlobalLevel;
 }
 
+[System.Serializable]
+public class LevelLockData
+{
+    public GameObject LevelButton;
+    public GameObject LevelLabel;
+}
+
 public class ButtonManager : MonoBehaviour {
     [SerializeField]
     GameObject _MainMenuPlayButton;
     [SerializeField]
     GameObject _HighscoreButton;
+    [SerializeField]
+    GameObject _CreditButton;
+    [SerializeField]
+    GameObject _CreditBackButton;
+    [SerializeField]
+    GameObject _MenuButton;
     [SerializeField]
     GameObject _AchievementButton;
     [SerializeField]
@@ -27,7 +41,7 @@ public class ButtonManager : MonoBehaviour {
     
     [Header("LEVEL LOCK")]
     [SerializeField]
-    GameObject[] _LevelLock;
+    LevelLockData [] _LevelLockData;
 
     [Header("STAR COLLECTED")]
     [SerializeField]
@@ -61,8 +75,14 @@ public class ButtonManager : MonoBehaviour {
     MainManager _MainManager;
 
     Backeend _Backend;
-    
+
+    [Header("MENU PURPOSE")]
+    [SerializeField]
+    GameObject _CreditObject;
+    Animator _MenuAnimator;
+    bool _IsMenu = false;
     void Awake () {
+        _MenuAnimator = _MenuButton.GetComponentInChildren<Animator>();
         _MainManager = GetComponent<MainManager>();
         _Backend = GetComponent<Backeend>();
         EventManager.AddListener<InitButtonEvent>(Init);
@@ -71,24 +91,62 @@ public class ButtonManager : MonoBehaviour {
         _MainMenuPlayButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, true));
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
+
+            AnalyticsEvent.Custom("Start Button");
+
+            _MenuAnimator.CrossFade("FALSE", 0);
+            _IsMenu = false;
+
         });
 
         _HighscoreButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new ShowLeaderboardEvent());
+
+            AnalyticsEvent.Custom("Highscore Button");
+
         });
         
         _AchievementButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
             EventManager.TriggerEvent(new ShowAchievementEvent());
+
+            AnalyticsEvent.Custom("Achievement Button");
+
         });
 
         _MainMenuExitButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
             ExitButton();
+
+            AnalyticsEvent.Custom("Quit Button");
+
         });
 
+        //MENU BUTTON
+        _MenuButton.AddComponent<Button>().onClick.AddListener(delegate {
+            if (!_IsMenu)
+            {
+                EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+                _MenuAnimator.CrossFade("TRUE", 0);
+                _IsMenu = true;
+            }
+            else
+            {
+                EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+                _MenuAnimator.CrossFade("FALSE", 0);
+                _IsMenu = false;
+            }
+        });
 
+        _CreditButton.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            _CreditObject.SetActive(true);
+        });
+        _CreditBackButton.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+            _CreditObject.SetActive(false);
+        });
         //BENTUK SEDERHANA LEVEL HANDLER
         foreach (LevelSelectData data in _LevelSelectData)
         {
@@ -101,15 +159,20 @@ public class ButtonManager : MonoBehaviour {
 
     public void Init (InitButtonEvent e)
     {
+        _IsMenu = false;
+        _MenuAnimator.CrossFade("DEFAULT", 0);
+
         Global.Level = _Backend.DBLocalData.Count;
         //Level Lock Handler
-        for (int i = 0; i < _LevelLock.Length; i++)
+        for (int i = 0; i < _LevelLockData.Length; i++)
         {
             if (i <= Global.Level)
             {
                 if (Global.StarCollect >= (Global.Level - 1) * 3)
                 {
-                    _LevelLock[i].SetActive(true);
+                    //_LevelLock[i].SetActive(true);
+                    _LevelLockData[i].LevelButton.SetActive(true);
+                    _LevelLockData[i].LevelLabel.SetActive(true);
                 }
 
             }           

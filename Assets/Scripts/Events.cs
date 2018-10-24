@@ -126,11 +126,13 @@ public class ShowLeaderboardEvent : GameEvent { }
 public class ShowAchievementEvent : GameEvent { }
 
 public class LeaderboardAddEvent : GameEvent {
-    public int Score;
+    public float Score;
+    public LeaderboardType Type;
 
-    public LeaderboardAddEvent(int score)
+    public LeaderboardAddEvent(float score, LeaderboardType type)
     {
         Score = score;
+        Type = type;
     }
 }
 public class AchievementUnlockEvent : GameEvent
@@ -162,5 +164,27 @@ public class AnalyticsGameEvent : GameEvent {
     public AnalyticsGameEvent(string type)
     {
         Type = type;
+    }
+}
+
+public class Tutorial1GameEvent : GameEvent
+{
+
+    public bool IsActive;
+
+    public Tutorial1GameEvent(bool isActive)
+    {
+        IsActive = isActive;
+    }
+}
+
+public class Tutorial2GameEvent : GameEvent
+{
+
+    public bool IsActive;
+
+    public Tutorial2GameEvent(bool isActive)
+    {
+        IsActive = isActive;
     }
 }

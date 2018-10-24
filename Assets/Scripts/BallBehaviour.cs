@@ -60,4 +60,12 @@ public class BallBehaviour : MonoBehaviour {
                 _IsGoal = true;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if ((collision.gameObject.tag != "Obstacle") || (collision.gameObject.tag != "Collectible") || (collision.gameObject.tag == "Goal"))
+        {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.HIT_WALL, false));
+        }
+    }
 }

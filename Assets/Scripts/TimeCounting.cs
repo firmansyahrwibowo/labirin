@@ -37,6 +37,10 @@ public class TimeCounting : MonoBehaviour {
     {
         _TimeStart = isBool;
     }
+
+    public float GetTime (){
+        return _Time;
+    }
     public void StopTime() {
         _TimeStart = false;
 

@@ -126,11 +126,13 @@ public class ShowLeaderboardEvent : GameEvent { }
 public class ShowAchievementEvent : GameEvent { }
 
 public class LeaderboardAddEvent : GameEvent {
-    public int Score;
+    public float Score;
+    public LeaderboardType Type;
 
-    public LeaderboardAddEvent(int score)
+    public LeaderboardAddEvent(float score, LeaderboardType type)
     {
         Score = score;
+        Type = type;
     }
 }
 public class AchievementUnlockEvent : GameEvent

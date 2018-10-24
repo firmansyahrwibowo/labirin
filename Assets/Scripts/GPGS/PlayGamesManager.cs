@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using System;
 
 public class PlayGamesManager : MonoBehaviour {
     public string UserName;
@@ -55,10 +56,24 @@ public class PlayGamesManager : MonoBehaviour {
 
     #region Leaderboard
     public void LeaderboardAddHandler(LeaderboardAddEvent e) {
-        Debug.Log(e.Score);
-        Social.ReportScore(e.Score, GPGSIds.leaderboard_leaderboard, (bool sucess) => {
+        long score = Convert.ToInt64(e.Score);
+        switch (e.Type)
+        {
+            case LeaderboardType.GENERAL:
+                Debug.Log("GLOBAL : " + e.Score);
+                Social.ReportScore(score, GPGSIds.leaderboard_leaderboard, (bool sucess) =>
+                {
 
-        });
+                });
+                break;
+            case LeaderboardType.CHALLENGE_1:
+                Debug.Log("CHALLENGE : " + e.Score);
+                Social.ReportScore(score, GPGSIds.leaderboard_challenge_1, (bool sucess) =>
+                {
+
+                });
+                break;
+        }
     }
 
     public void ShowLeaderboardUI(ShowLeaderboardEvent e) {

@@ -12,6 +12,7 @@ public class LevelSelectData
     public GameObject Object;
     public int GlobalLevel;
 }
+
 [System.Serializable]
 public class LevelLockData
 {
@@ -24,6 +25,12 @@ public class ButtonManager : MonoBehaviour {
     GameObject _MainMenuPlayButton;
     [SerializeField]
     GameObject _HighscoreButton;
+    [SerializeField]
+    GameObject _CreditButton;
+    [SerializeField]
+    GameObject _CreditBackButton;
+    [SerializeField]
+    GameObject _MenuButton;
     [SerializeField]
     GameObject _AchievementButton;
     [SerializeField]
@@ -68,8 +75,14 @@ public class ButtonManager : MonoBehaviour {
     MainManager _MainManager;
 
     Backeend _Backend;
-    
+
+    [Header("MENU PURPOSE")]
+    [SerializeField]
+    GameObject _CreditObject;
+    Animator _MenuAnimator;
+    bool _IsMenu = false;
     void Awake () {
+        _MenuAnimator = _MenuButton.GetComponentInChildren<Animator>();
         _MainManager = GetComponent<MainManager>();
         _Backend = GetComponent<Backeend>();
         EventManager.AddListener<InitButtonEvent>(Init);
@@ -80,6 +93,9 @@ public class ButtonManager : MonoBehaviour {
             EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.START_GAME));
 
             AnalyticsEvent.Custom("Start Button");
+
+            _MenuAnimator.CrossFade("FALSE", 0);
+            _IsMenu = false;
 
         });
 
@@ -107,7 +123,30 @@ public class ButtonManager : MonoBehaviour {
 
         });
 
+        //MENU BUTTON
+        _MenuButton.AddComponent<Button>().onClick.AddListener(delegate {
+            if (!_IsMenu)
+            {
+                EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+                _MenuAnimator.CrossFade("TRUE", 0);
+                _IsMenu = true;
+            }
+            else
+            {
+                EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+                _MenuAnimator.CrossFade("FALSE", 0);
+                _IsMenu = false;
+            }
+        });
 
+        _CreditButton.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
+            _CreditObject.SetActive(true);
+        });
+        _CreditBackButton.AddComponent<Button>().onClick.AddListener(delegate {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
+            _CreditObject.SetActive(false);
+        });
         //BENTUK SEDERHANA LEVEL HANDLER
         foreach (LevelSelectData data in _LevelSelectData)
         {
@@ -120,6 +159,9 @@ public class ButtonManager : MonoBehaviour {
 
     public void Init (InitButtonEvent e)
     {
+        _IsMenu = false;
+        _MenuAnimator.CrossFade("DEFAULT", 0);
+
         Global.Level = _Backend.DBLocalData.Count;
         //Level Lock Handler
         for (int i = 0; i < _LevelLockData.Length; i++)

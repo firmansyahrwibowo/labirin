@@ -201,6 +201,7 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1f;
         _ThisLevel = Global.Level;
         _NextLevel = _ThisLevel + 1;
+
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
             Star[i].SetActive(false);
@@ -253,6 +254,12 @@ public class GameplayManager : MonoBehaviour
         
         EventManager.TriggerEvent(new ControllerEvent(false));
         _TimeCounting.StopTime();
+        //LEADERBOARD ADD CHALLENGE
+        if (_ThisLevel == 29)
+        {
+            Debug.Log("LEVEL 30 = " + _TimeCounting.GetTime());
+            EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_1));
+        }
 
         //_WinUI.SetActive(true);
         _TransitionObject.SetActive(true);

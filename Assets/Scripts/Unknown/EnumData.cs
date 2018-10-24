@@ -10,7 +10,10 @@ public enum MainMenuButtonType
     ON_RESTART,
     EXIT
 }
-
+public enum LeaderboardType {
+    GENERAL,
+    CHALLENGE_1
+}
 public enum LevelSelectButtonType
 {
     LEVEL_1,

@@ -23,6 +23,7 @@ public class MainManager : MonoBehaviour {
     public GameObject TheGameUI;
     public GameObject Transition;
     public GameObject TiltController;
+    public GameObject IntroUI;
     public PlayGamesManager Gpgs;
     [SerializeField]
     GameObject _BlockObject;
@@ -54,7 +55,7 @@ public class MainManager : MonoBehaviour {
     }
 
     void Start () {
-        //IntroUI.SetActive(true);
+        IntroUI.SetActive(true);
         InitFirstOpen();
 	}
 

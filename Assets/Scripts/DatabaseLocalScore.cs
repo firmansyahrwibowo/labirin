@@ -15,7 +15,7 @@ public class DatabaseLocalScore : MonoBehaviour {
 
     private void CheckDBLocal(CheckDBLocalEvent e)
     {
-        LevelData data = _Backend.DBLocalData.Find(x => x.IDLevel == e.highScore.IDLevel);
+        LevelData data = _Backend.DBLocalData.Find(x => x.IDLevel == e.highScore.IDLevel); //DATA SAVE
         if (data != null)
         {
             if (data.Score >= e.highScore.Score)

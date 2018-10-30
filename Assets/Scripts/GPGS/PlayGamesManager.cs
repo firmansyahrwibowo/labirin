@@ -11,6 +11,7 @@ public class PlayGamesManager : MonoBehaviour {
     private void Awake()
     {
         EventManager.AddListener<LeaderboardAddEvent>(LeaderboardAddHandler);
+        EventManager.AddListener<AchievementAddEvent>(UnlockAchievement);
         EventManager.AddListener<ShowLeaderboardEvent>(ShowLeaderboardUI);
         EventManager.AddListener<ShowAchievementEvent>(ShowAchievementUI);
     }
@@ -26,16 +27,16 @@ public class PlayGamesManager : MonoBehaviour {
 
     void SignIn() {
         Social.localUser.Authenticate(sucess => {
-            UnlockAchievement(1);
+            UnlockAchievement(new AchievementAddEvent(1));
             UserName = Social.localUser.userName;
         });
     }
 
     // Update is called once per frame
     #region Achievements
-    public void UnlockAchievement(int id)
+    public void UnlockAchievement(AchievementAddEvent e)
     {
-        switch (id) {
+        switch (e.Id) {
             case 1:
                 Social.ReportProgress(GPGSIds.achievement_tulus_labirin, 100, (bool sucess) => { });
                 break;

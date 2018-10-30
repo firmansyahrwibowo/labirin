@@ -222,6 +222,7 @@ public class GameplayManager : MonoBehaviour
         _TimeCounting.InitTime();
         OnPause(false);
         Reset();
+        EventManager.TriggerEvent(new AchievementAddEvent(2));
     }
     
     private void OnPause(bool isPause)

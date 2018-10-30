@@ -125,6 +125,15 @@ public class InitButtonEvent : GameEvent { }
 public class ShowLeaderboardEvent : GameEvent { }
 public class ShowAchievementEvent : GameEvent { }
 
+public class AchievementAddEvent : GameEvent {
+    public int Id;
+
+    public AchievementAddEvent(int id)
+    {
+        Id = id;
+    }
+}
+
 public class LeaderboardAddEvent : GameEvent {
     public float Score;
     public LeaderboardType Type;

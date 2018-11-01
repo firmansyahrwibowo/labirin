@@ -16,4 +16,5 @@ public static class Global
     public static int StarPerStage4 = 0;
     public static int StarPerStage5 = 0;
     public static int StarPerStage6 = 0;
+    public static int Challenge = 2;
 }

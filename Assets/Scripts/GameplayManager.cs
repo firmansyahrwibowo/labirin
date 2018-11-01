@@ -10,9 +10,9 @@ public class GameplayManager : MonoBehaviour
 
     [SerializeField]
     GameObject _Ball;
+
     BallBehaviour _BallManager;
-    //[SerializeField]
-    //Vector2 _BallDefaultPos;
+
     [SerializeField]
     Vector2 _LabirinDefaultPos;
 
@@ -396,8 +396,6 @@ public class GameplayManager : MonoBehaviour
         _LevelImage.SetNativeSize();
         _WinUILevelImage.sprite = _LevelTittleImage[Global.Level];
         _WinUILevelImage.SetNativeSize();
-        //_TextLevel.text = "LEVEL " + (Global.Level+1).ToString();
-        //_WinUILevel.text = "LEVEL " + (Global.Level + 1).ToString();
     }
 
     void OnQuit() {

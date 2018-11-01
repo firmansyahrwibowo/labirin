@@ -197,3 +197,18 @@ public class Tutorial2GameEvent : GameEvent
         IsActive = isActive;
     }
 }
+
+
+//Challenge Events
+
+public class StartChallengeEvent : GameEvent
+{
+
+}
+
+public class OnFinishChallenge : GameEvent
+{
+
+}
+
+

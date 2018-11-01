@@ -8,6 +8,7 @@ public enum MainMenuButtonType
     TUTORIAL,
     ON_FINISH,
     ON_RESTART,
+    CHALLENGE_2,
     EXIT
 }
 public enum LeaderboardType {

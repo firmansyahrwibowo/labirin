@@ -109,9 +109,11 @@ public class ButtonManager : MonoBehaviour {
         
         _AchievementButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
-            EventManager.TriggerEvent(new ShowAchievementEvent());
+            EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.CHALLENGE_2));
+            //Diubah jadi challenge button
+            //EventManager.TriggerEvent(new ShowAchievementEvent());
 
-            AnalyticsEvent.Custom("Achievement Button");
+            AnalyticsEvent.Custom("Challenge Button");
 
         });
 

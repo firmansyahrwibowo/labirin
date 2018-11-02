@@ -258,8 +258,8 @@ public class GameplayManager : MonoBehaviour
         //LEADERBOARD ADD CHALLENGE
         if (_ThisLevel == 29)
         {
-            //Debug.Log("LEVEL 30 = " + _TimeCounting.GetTime());
-            //EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_1));
+            Debug.Log("LEVEL 30 = " + _TimeCounting.GetTime());
+            EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_1));
         }
 
         //_WinUI.SetActive(true);

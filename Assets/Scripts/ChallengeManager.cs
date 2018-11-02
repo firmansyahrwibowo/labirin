@@ -228,6 +228,8 @@ public class ChallengeManager : MonoBehaviour
 
         StartCoroutine(WinTransition());
 
+        Debug.Log("Challenge = " + _TimeCounting.GetTime());
+        EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_2));
         EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }

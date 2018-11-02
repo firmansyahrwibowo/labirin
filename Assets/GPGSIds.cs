@@ -24,10 +24,11 @@
 
 public static class GPGSIds
 {
-        public const string achievement_star_collect = "CgkI9Y_BxagCEAIQAw"; // <GPGSID>
-        public const string leaderboard_challenge_1 = "CgkI9Y_BxagCEAIQBA"; // <GPGSID>
+        public const string leaderboard_peringkat = "CgkI9Y_BxagCEAIQBQ"; // <GPGSID>
+        public const string achievement_selamat_bermain = "CgkI9Y_BxagCEAIQAw"; // <GPGSID>
         public const string achievement_tulus_labirin = "CgkI9Y_BxagCEAIQAg"; // <GPGSID>
-        public const string leaderboard_leaderboard = "CgkI9Y_BxagCEAIQBQ"; // <GPGSID>
+        public const string leaderboard_tantangan_1 = "CgkI9Y_BxagCEAIQBA"; // <GPGSID>
+        public const string leaderboard_tantangan_2 = "CgkI9Y_BxagCEAIQBg"; // <GPGSID>
 
 }
 

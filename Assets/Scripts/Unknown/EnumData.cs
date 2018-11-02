@@ -13,7 +13,11 @@ public enum MainMenuButtonType
 }
 public enum LeaderboardType {
     GENERAL,
-    CHALLENGE_1
+    CHALLENGE_1,
+
+    CHALLENGE_2,
+    CHALLENGE_3,
+    CHALLENGE_4
 }
 public enum LevelSelectButtonType
 {

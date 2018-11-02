@@ -41,7 +41,7 @@ public class PlayGamesManager : MonoBehaviour {
                 Social.ReportProgress(GPGSIds.achievement_tulus_labirin, 100, (bool sucess) => { });
                 break;
             case 2:
-                Social.ReportProgress(GPGSIds.achievement_star_collect, 100, (bool sucess) => { });
+                Social.ReportProgress(GPGSIds.achievement_selamat_bermain, 100, (bool sucess) => { });
                 break;
         }
     }
@@ -62,17 +62,28 @@ public class PlayGamesManager : MonoBehaviour {
         {
             case LeaderboardType.GENERAL:
                 Debug.Log("GLOBAL : " + e.Score);
-                Social.ReportScore(score, GPGSIds.leaderboard_leaderboard, (bool sucess) =>
+                Social.ReportScore(score, GPGSIds.leaderboard_peringkat, (bool sucess) =>
                 {
 
                 });
                 break;
             case LeaderboardType.CHALLENGE_1:
-                Debug.Log("CHALLENGE : " + e.Score);
-                Social.ReportScore(score, GPGSIds.leaderboard_challenge_1, (bool sucess) =>
+                //Debug.Log("CHALLENGE : " + e.Score);
+                //Social.ReportScore(score, GPGSIds.leaderboard_tantangan_1, (bool sucess) =>
+                //{
+
+                //});
+                break;
+            case LeaderboardType.CHALLENGE_2:
+                Debug.Log("GLOBAL : " + e.Score);
+                Social.ReportScore(score, GPGSIds.leaderboard_tantangan_2, (bool sucess) =>
                 {
 
                 });
+                break;
+            case LeaderboardType.CHALLENGE_3:
+                break;
+            case LeaderboardType.CHALLENGE_4:
                 break;
         }
     }

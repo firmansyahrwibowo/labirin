@@ -15,22 +15,25 @@ public class MainManager : MonoBehaviour {
     public GameObject LevelSelect5;
     public GameObject LevelSelect6;
     public GameObject FinishLevel;
+	public GameObject FinishLevelChallenge;
     public GameObject PausedUI;
+	public GameObject PausedUIChallenge;
     public GameObject TutorialUI;
     public GameObject Tutorial1UI;
     public GameObject Tutorial2UI;
     public GameObject ButtonInGameUI;
+	public GameObject ButtonInGameUIChallenge;
     public GameObject TheGameUI;
     public GameObject Transition;
     public GameObject TiltController;
     public GameObject IntroUI;
     public PlayGamesManager Gpgs;
-    public GameObject Ball;
-    public GameObject BallChallenge;
-    public GameObject Goal;
-    public GameObject GoalChallenge;
-    public GameObject WinUI;
-    public GameObject WinUIChallenge;
+    //public GameObject Ball;
+    //public GameObject BallChallenge;
+    //public GameObject Goal;
+    //public GameObject GoalChallenge;
+    //public GameObject WinUI;
+    //public GameObject WinUIChallenge;
     [SerializeField]
     GameObject _BlockObject;
     [SerializeField]
@@ -80,12 +83,9 @@ public class MainManager : MonoBehaviour {
         PausedUI.SetActive(false);
         TutorialUI.SetActive(false);
         ButtonInGameUI.SetActive(false);
+		ButtonInGameUIChallenge.SetActive(false);
         TheGameUI.SetActive(false);
-
-        Ball.SetActive(false);
-        Goal.SetActive(false);
-        BallChallenge.SetActive(false);
-        GoalChallenge.SetActive(false);
+		_Challenge2.SetActive (false);
 
         Transition.SetActive(false);
         EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
@@ -104,7 +104,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 LevelSelect2.SetActive(false);
                 LevelSelect3.SetActive(false);
                 LevelSelect4.SetActive(false);
@@ -139,7 +141,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
@@ -155,15 +159,9 @@ public class MainManager : MonoBehaviour {
                 LevelSelect6.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
-                TiltController.SetActive(false);
-                ButtonInGameUI.SetActive(true);
-                TheGameUI.SetActive(true);
-
-                Ball.SetActive(false);
-                Goal.SetActive(false);
-                BallChallenge.SetActive(true);
-                GoalChallenge.SetActive(true);
-
+				ButtonInGameUI.SetActive(true);
+				TheGameUI.SetActive(false);
+				_Challenge2.SetActive (true);
                 AnalyticsEvent.Custom("Challenge Button");
 
                 Transition.SetActive(true);
@@ -194,13 +192,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial2UI.SetActive(false);
                 TiltController.SetActive(false);                
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 AnalyticsEvent.Custom("Level1 Button");
 
                 Transition.SetActive(true);
@@ -224,13 +218,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level2 Button");
@@ -251,13 +241,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level3 Button");
@@ -282,13 +268,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level4 Button");
@@ -309,13 +291,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level5 Button");
@@ -334,11 +312,15 @@ public class MainManager : MonoBehaviour {
                 LevelSelect5.SetActive(false);
                 LevelSelect6.SetActive(false);
                 FinishLevel.SetActive(false);
+				FinishLevelChallenge.SetActive(false);
                 PausedUI.SetActive(false);
+				PausedUIChallenge.SetActive(false);
                 TutorialUI.SetActive(false);
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
 
@@ -361,7 +343,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("LeftLevelSelect Button");
@@ -381,7 +365,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("RightLevelSelect Button");
@@ -401,13 +387,9 @@ public class MainManager : MonoBehaviour {
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level6 Button");
@@ -428,13 +410,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level7 Button");
@@ -455,13 +433,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level8 Button");
@@ -482,13 +456,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level9 Button");
@@ -509,13 +479,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level10 Button");
@@ -539,6 +505,8 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
@@ -560,6 +528,8 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
 
@@ -580,6 +550,8 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
                 TheGameUI.SetActive(false);
                 Transition.SetActive(false);
 
@@ -600,13 +572,9 @@ public class MainManager : MonoBehaviour {
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level11 Button");
@@ -627,13 +595,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level12 Button");
@@ -654,13 +618,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level13 Button");
@@ -681,13 +641,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level14 Button");
@@ -708,13 +664,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level15 Button");
@@ -738,7 +690,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
 
@@ -759,7 +713,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("LeftLevelSelect Button");
@@ -779,7 +735,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("RightLevelSelect Button");
@@ -799,13 +757,9 @@ public class MainManager : MonoBehaviour {
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level16 Button");
@@ -826,13 +780,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level17 Button");
@@ -853,13 +803,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level18 Button");
@@ -880,13 +826,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level19 Button");
@@ -907,13 +849,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level20 Button");
@@ -937,7 +875,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
 
@@ -958,7 +898,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("LeftLevelSelect Button");
@@ -978,7 +920,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("RightLevelSelect Button");
@@ -998,13 +942,9 @@ public class MainManager : MonoBehaviour {
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
-
+				_Challenge2.SetActive (false);
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
                 AnalyticsEvent.Custom("Level21 Button");
@@ -1025,12 +965,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1052,12 +989,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1079,12 +1013,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1106,12 +1037,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1136,7 +1064,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
                 EventManager.TriggerEvent(new InitButtonEvent());
 
@@ -1157,7 +1087,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("LeftLevelSelect Button");
@@ -1177,7 +1109,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("RightLevelSelect Button");
@@ -1197,12 +1131,9 @@ public class MainManager : MonoBehaviour {
                 PausedUI.SetActive(false);
                 TutorialUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1224,12 +1155,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1251,12 +1179,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1278,12 +1203,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1305,12 +1227,9 @@ public class MainManager : MonoBehaviour {
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
                 ButtonInGameUI.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(true);
-
-                Ball.SetActive(true);
-                Goal.SetActive(true);
-                BallChallenge.SetActive(false);
-                GoalChallenge.SetActive(false);
+				_Challenge2.SetActive (false);
 
                 EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
 
@@ -1335,7 +1254,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("BackToMenu Button");
@@ -1355,7 +1276,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("LeftLevelSelect Button");
@@ -1375,7 +1298,9 @@ public class MainManager : MonoBehaviour {
                 Tutorial1UI.SetActive(false);
                 Tutorial2UI.SetActive(false);
                 ButtonInGameUI.SetActive(false);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
+				_Challenge2.SetActive (false);
                 Transition.SetActive(false);
 
                 AnalyticsEvent.Custom("RightLevelSelect Button");

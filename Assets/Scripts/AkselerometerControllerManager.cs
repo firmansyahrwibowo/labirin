@@ -6,10 +6,12 @@ using UnityEngine;
 public class AkselerometerControllerManager : MonoBehaviour
 {
     Rigidbody2D rigid;
+	Rigidbody2D rigid2;
     [SerializeField]
     private AkselerometerController _Controller;
     [SerializeField]
     private Transform _Labirin;
+	public GameObject _BallChallenge;
     public GameObject _Ball;
     [SerializeField]
     bool _IsActive;
@@ -17,6 +19,7 @@ public class AkselerometerControllerManager : MonoBehaviour
     private void Start()
     {
         rigid = _Ball.GetComponent<Rigidbody2D>();
+		rigid2 = _BallChallenge.GetComponent<Rigidbody2D>();
     }
 
     private void Awake()
@@ -51,6 +54,7 @@ public class AkselerometerControllerManager : MonoBehaviour
             Vector3 _Movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
             // Adding force to rigidbody
             rigid.AddForce(_Movement * _Controller.speed * Time.deltaTime);
+			rigid2.AddForce(_Movement * _Controller.speed * Time.deltaTime);
             //rigid.AddForce(_Movement * _Controller.speed);
         }
         else
@@ -60,6 +64,7 @@ public class AkselerometerControllerManager : MonoBehaviour
             Vector3 _Movement = new Vector3(Input.acceleration.x, Input.acceleration.y, 0.0f);
             // Adding force to rigidbody
             rigid.AddForce(_Movement * _Controller.speed * Time.deltaTime);
+			rigid2.AddForce(_Movement * _Controller.speed * Time.deltaTime);
         }
 
     }

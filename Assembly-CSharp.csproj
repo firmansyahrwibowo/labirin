@@ -237,7 +237,9 @@
      <Compile Include="Assets\Scripts\AkselerometerControllerManager.cs" />
      <Compile Include="Assets\Scripts\AnalyticsManager.cs" />
      <Compile Include="Assets\Scripts\BallBehaviour.cs" />
+     <Compile Include="Assets\Scripts\BallBehaviour1.cs" />
      <Compile Include="Assets\Scripts\Chainsaw.cs" />
+     <Compile Include="Assets\Scripts\ChallengeManager.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\ControllerManager.cs" />
      <Compile Include="Assets\Scripts\DatabaseLocalScore.cs" />

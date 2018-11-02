@@ -159,8 +159,9 @@ public class MainManager : MonoBehaviour {
                 LevelSelect6.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
-				ButtonInGameUI.SetActive(true);
-				TheGameUI.SetActive(false);
+				ButtonInGameUI.SetActive(false);
+                ButtonInGameUIChallenge.SetActive(true);
+                TheGameUI.SetActive(false);
 				_Challenge2.SetActive (true);
                 AnalyticsEvent.Custom("Challenge Button");
 

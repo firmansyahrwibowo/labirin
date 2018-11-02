@@ -158,6 +158,7 @@ public class ChallengeManager : MonoBehaviour
     {
         _LevelImage.sprite = _ChallengeTittleImage;
         _LevelImage.SetNativeSize();
+        //_LevelImage.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
         _WinUILevelImage.sprite = _ChallengeTittleImage;
         _WinUILevelImage.SetNativeSize();
     }

@@ -10134,8 +10134,8 @@ MonoBehaviour:
   _ResumeButton: {fileID: 529181004}
   _RestartButton: {fileID: 1241921127}
   _QuitButton: {fileID: 663367758}
-  _LevelImage: {fileID: 1627740082}
-  _WinUILevelImage: {fileID: 65906833}
+  _LevelImage: {fileID: 1031985317}
+  _WinUILevelImage: {fileID: 307864463}
   Star:
   - {fileID: 2009918163}
   - {fileID: 1787892866}
@@ -48750,7 +48750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 354, y: 796.09985}
+  m_AnchoredPosition: {x: 280, y: 796.09985}
   m_SizeDelta: {x: 176, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031985317

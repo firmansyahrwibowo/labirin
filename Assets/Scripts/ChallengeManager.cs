@@ -18,6 +18,11 @@ public class ChallengeManager : MonoBehaviour
     [SerializeField]
     GameObject _WinUI;
 
+    [SerializeField]
+    int _ThisLevel;
+
+    public List<Challenge> _Level;
+
     [Header("WIN BUTTON")]
     [SerializeField]
     GameObject _WinRestart;
@@ -49,7 +54,7 @@ public class ChallengeManager : MonoBehaviour
 
     [Header("Level Title Image")]
     [SerializeField]
-    Sprite _ChallengeTittleImage;
+    Sprite[] _ChallengeTittleImage;
 
     [SerializeField]
     GameObject _TransitionObject;
@@ -63,6 +68,7 @@ public class ChallengeManager : MonoBehaviour
 
     [SerializeField]
     GameObject _Labirin;
+
     private void Awake()
     {
         _Transition = _TransitionObject.GetComponent<Animator>();
@@ -89,8 +95,9 @@ public class ChallengeManager : MonoBehaviour
 
         });
         _RestartButton.AddComponent<Button>().onClick.AddListener(delegate {
-            _Labirin.SetActive(true);
-            EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+            //_Labirin.SetActive(true);
+            //EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+            Global.Challenge = _ThisLevel;
             OnPause(false);
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
@@ -101,8 +108,9 @@ public class ChallengeManager : MonoBehaviour
 
         // Win Handler
         _WinRestart.AddComponent<Button>().onClick.AddListener(delegate {
-            _Labirin.SetActive(true);
-            EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+            //_Labirin.SetActive(true);
+            //EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+            Global.Challenge = _ThisLevel;
             OnPause(false);
             _WinUI.SetActive(false);
             Reset();
@@ -138,6 +146,7 @@ public class ChallengeManager : MonoBehaviour
     private void StartChallengeInit(StartChallengeEvent e)
     {
         Time.timeScale = 1f;
+        _ThisLevel = Global.Challenge;
 
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
@@ -146,7 +155,18 @@ public class ChallengeManager : MonoBehaviour
         }
 
         // LEVEL INIT
-        _Labirin.SetActive(true);
+        //_Labirin.SetActive(true);
+
+        for (int i = 0; i < _Level.Count; i++)
+        {
+            if (i == Global.Challenge)
+            {
+                EventManager.TriggerEvent(new ChangeLabirinControlEvent(_Level[i].Labirin.transform));
+                _Level[i].Labirin.SetActive(true);
+            }
+            else
+                _Level[i].Labirin.SetActive(false);
+        }
 
         SetTextLevel();
         _TimeCounting.InitTime();
@@ -156,10 +176,10 @@ public class ChallengeManager : MonoBehaviour
 
     void SetTextLevel()
     {
-        _LevelImage.sprite = _ChallengeTittleImage;
+        _LevelImage.sprite = _ChallengeTittleImage[Global.Challenge];
         _LevelImage.SetNativeSize();
         //_LevelImage.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
-        _WinUILevelImage.sprite = _ChallengeTittleImage;
+        _WinUILevelImage.sprite = _ChallengeTittleImage[Global.Challenge];
         _WinUILevelImage.SetNativeSize();
     }
 
@@ -192,7 +212,13 @@ public class ChallengeManager : MonoBehaviour
             Star[i].SetActive(false);
         }
 
-        _Ball.transform.position = _BallDefaultPosition.position;
+        for (int i = 0; i < _Level.Count; i++)
+        {
+            if (i == Global.Challenge)
+                _Ball.transform.position = _Level[i].BallDefaultPosition.position;
+        }
+
+        //_Ball.transform.position = _BallDefaultPosition.position;
     }
 
     void ObstacleHandler(ObstacleEvent e)
@@ -203,8 +229,16 @@ public class ChallengeManager : MonoBehaviour
         {
             Star[i].SetActive(false);
         }
+        for (int i = 0; i < _Level.Count; i++)
+        {
+            if (i == Global.Challenge)
+            {
+                _Ball.transform.position = _Level[i].BallDefaultPosition.position;
+            }
 
-        _Ball.transform.position = _BallDefaultPosition.position;
+        }
+
+        //_Ball.transform.position = _BallDefaultPosition.position;
     }
 
     void GetStarHandler(GetStarEvent e)

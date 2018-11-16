@@ -171,8 +171,14 @@ public class ButtonManager : MonoBehaviour {
             });
         }
 
-		//BENTUK SEDERHANA CGALLENGE HANDLER
-
+        //BENTUK SEDERHANA CGALLENGE HANDLER
+        foreach (ChallengeSelectData data in _ChallengeSelectData)
+        {
+            data.Object.AddComponent<Button>().onClick.AddListener(delegate
+            {
+                ButtonAction2(data);
+            });
+        }
     }
 
     public void Init (InitButtonEvent e)
@@ -219,6 +225,20 @@ public class ButtonManager : MonoBehaviour {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LEFT_RIGHT, true));
         }
         EventManager.TriggerEvent(new LevelSelectButtonEvent(data.ButtonType));
+    }
+
+    public void ButtonAction2 (ChallengeSelectData data)
+    {
+        if (data.GlobalChallenge != -1)
+        {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, true));
+            Global.Challenge = data.GlobalChallenge;
+        }
+        else
+        {
+            EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LEFT_RIGHT, true));
+        }
+        EventManager.TriggerEvent(new ChallengeSelectButtonEvent(data.ButtonType));
     }
 
     void StartGameButton() {

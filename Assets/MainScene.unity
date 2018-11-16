@@ -3837,7 +3837,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5668,6 +5668,7 @@ GameObject:
   - component: {fileID: 134221695}
   - component: {fileID: 134221697}
   - component: {fileID: 134221696}
+  - component: {fileID: 134221698}
   m_Layer: 0
   m_Name: CenterCircle (1)
   m_TagString: Untagged
@@ -5824,6 +5825,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &134221698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 134221694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b603c1c70139734bb369d6e18b858e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedAndDirection: 0.3
 --- !u!1 &134686030
 GameObject:
   m_ObjectHideFlags: 0
@@ -10443,11 +10456,29 @@ MonoBehaviour:
     GlobalLevel: -1
   _ChallengeSelectData:
   - ButtonType: 0
-    Object: {fileID: 0}
+    Object: {fileID: 1835890839}
     GlobalChallenge: 0
   - ButtonType: 4
-    Object: {fileID: 0}
+    Object: {fileID: 1124571186}
     GlobalChallenge: 1
+  - ButtonType: 1
+    Object: {fileID: 1520611864}
+    GlobalChallenge: -1
+  - ButtonType: 2
+    Object: {fileID: 979144470}
+    GlobalChallenge: -1
+  - ButtonType: 3
+    Object: {fileID: 1821403286}
+    GlobalChallenge: -1
+  - ButtonType: 5
+    Object: {fileID: 1994258054}
+    GlobalChallenge: -1
+  - ButtonType: 6
+    Object: {fileID: 22208240}
+    GlobalChallenge: -1
+  - ButtonType: 7
+    Object: {fileID: 1109272580}
+    GlobalChallenge: -1
   _LevelLockData:
   - LevelButton: {fileID: 1488600890}
     LevelLabel: {fileID: 2013571530}
@@ -15325,7 +15356,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -40622,6 +40653,7 @@ GameObject:
   - component: {fileID: 841807716}
   - component: {fileID: 841807718}
   - component: {fileID: 841807717}
+  - component: {fileID: 841807719}
   m_Layer: 0
   m_Name: CenterCircle
   m_TagString: Untagged
@@ -40799,6 +40831,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &841807719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841807715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b603c1c70139734bb369d6e18b858e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedAndDirection: -0.3
 --- !u!1 &844234555
 GameObject:
   m_ObjectHideFlags: 0
@@ -51972,6 +52016,7 @@ GameObject:
   - component: {fileID: 1054079819}
   - component: {fileID: 1054079821}
   - component: {fileID: 1054079820}
+  - component: {fileID: 1054079822}
   m_Layer: 0
   m_Name: CenterCircle (2)
   m_TagString: Untagged
@@ -52128,6 +52173,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1054079822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1054079818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b603c1c70139734bb369d6e18b858e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedAndDirection: -0.3
 --- !u!1 &1054602916
 GameObject:
   m_ObjectHideFlags: 0
@@ -58656,7 +58713,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -67018,7 +67075,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -67482,7 +67539,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -68135,6 +68192,7 @@ GameObject:
   - component: {fileID: 1398570377}
   - component: {fileID: 1398570379}
   - component: {fileID: 1398570378}
+  - component: {fileID: 1398570380}
   m_Layer: 0
   m_Name: MediumCircle
   m_TagString: Untagged
@@ -68401,6 +68459,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1398570380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1398570376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b603c1c70139734bb369d6e18b858e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedAndDirection: 0.3
 --- !u!1 &1399005670
 GameObject:
   m_ObjectHideFlags: 0
@@ -71329,7 +71399,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -75280,7 +75350,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

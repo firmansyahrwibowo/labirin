@@ -19,7 +19,7 @@ public class ChallengeManager : MonoBehaviour
     GameObject _WinUI;
 
     [SerializeField]
-    int _ThisLevel;
+    int _ThisChallenge;
 
     public List<Challenge> _Level;
 
@@ -69,6 +69,8 @@ public class ChallengeManager : MonoBehaviour
     [SerializeField]
     GameObject _Labirin;
 
+    public RotateLabirin[] RotateScripts;
+
     private void Awake()
     {
         _Transition = _TransitionObject.GetComponent<Animator>();
@@ -97,7 +99,7 @@ public class ChallengeManager : MonoBehaviour
         _RestartButton.AddComponent<Button>().onClick.AddListener(delegate {
             //_Labirin.SetActive(true);
             //EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
-            Global.Challenge = _ThisLevel;
+            Global.Challenge = _ThisChallenge;
             OnPause(false);
             Reset();
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
@@ -110,7 +112,7 @@ public class ChallengeManager : MonoBehaviour
         _WinRestart.AddComponent<Button>().onClick.AddListener(delegate {
             //_Labirin.SetActive(true);
             //EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
-            Global.Challenge = _ThisLevel;
+            Global.Challenge = _ThisChallenge;
             OnPause(false);
             _WinUI.SetActive(false);
             Reset();
@@ -146,7 +148,7 @@ public class ChallengeManager : MonoBehaviour
     private void StartChallengeInit(StartChallengeEvent e)
     {
         Time.timeScale = 1f;
-        _ThisLevel = Global.Challenge;
+        _ThisChallenge = Global.Challenge;
 
         //STAR INIT
         for (int i = 0; i < Star.Length; i++)
@@ -156,7 +158,6 @@ public class ChallengeManager : MonoBehaviour
 
         // LEVEL INIT
         //_Labirin.SetActive(true);
-
         for (int i = 0; i < _Level.Count; i++)
         {
             if (i == Global.Challenge)
@@ -183,7 +184,7 @@ public class ChallengeManager : MonoBehaviour
         _WinUILevelImage.SetNativeSize();
     }
 
-    private void OnPause(bool isPause)
+    public void OnPause(bool isPause)
     {
         if (isPause)
         {
@@ -191,6 +192,10 @@ public class ChallengeManager : MonoBehaviour
             EventManager.TriggerEvent(new BGMEvent(PlayType.PAUSE));
             _PauseUI.SetActive(true);
             _TimeCounting.PauseTime(false);
+            foreach (var scripts in RotateScripts)
+            {
+                scripts.enabled = false;
+            }
             Time.timeScale = 0.001f;
         }
         else
@@ -199,6 +204,10 @@ public class ChallengeManager : MonoBehaviour
             EventManager.TriggerEvent(new BGMEvent(PlayType.UNPAUSE));
             _PauseUI.SetActive(false);
             _TimeCounting.PauseTime(true);
+            foreach (var scripts in RotateScripts)
+            {
+                scripts.enabled = true;
+            }
             Time.timeScale = 1f;
         }
     }
@@ -262,8 +271,17 @@ public class ChallengeManager : MonoBehaviour
 
         StartCoroutine(WinTransition());
 
-        Debug.Log("Challenge = " + _TimeCounting.GetTime());
-        EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_2));
+        //EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_2));
+        if (_ThisChallenge==0)
+        {
+            EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_2));
+            Debug.Log("Challenge2 = " + _TimeCounting.GetTime());
+        }
+        if (_ThisChallenge==1)
+        {
+            EventManager.TriggerEvent(new LeaderboardAddEvent(_TimeCounting.GetTime(), LeaderboardType.CHALLENGE_3));
+            Debug.Log("Challenge3 = " + _TimeCounting.GetTime());
+        }
         EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
         EventManager.TriggerEvent(new SFXPlayEvent(SfxType.LABIRIN, true));
     }

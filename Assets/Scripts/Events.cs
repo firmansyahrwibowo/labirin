@@ -211,4 +211,15 @@ public class OnFinishChallenge : GameEvent
 
 }
 
+public class ChallengeSelectButtonEvent : GameEvent
+{
+	public ChallengeSelectButtonType Type;
+
+	public ChallengeSelectButtonEvent(ChallengeSelectButtonType type)
+	{
+		Type = type;
+	}
+
+}
+
 

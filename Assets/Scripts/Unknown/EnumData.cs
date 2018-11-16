@@ -8,7 +8,7 @@ public enum MainMenuButtonType
     TUTORIAL,
     ON_FINISH,
     ON_RESTART,
-    CHALLENGE_2,
+    CHALLENGE,
     EXIT
 }
 public enum LeaderboardType {
@@ -69,4 +69,15 @@ public enum LevelSelectButtonType
     Back_ToMenu6,
     Left_6,
     Right_6
+}
+public enum ChallengeSelectButtonType
+{
+	CHALLENGE_2,
+	Back_ToMenu7,
+	Left_7,
+	Right_7,
+	CHALLENGE_3,
+	Back_ToMenu8,
+	Left_8,
+	Right_8,
 }

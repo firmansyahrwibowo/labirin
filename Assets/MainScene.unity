@@ -10441,6 +10441,13 @@ MonoBehaviour:
   - ButtonType: 47
     Object: {fileID: 1097497985}
     GlobalLevel: -1
+  _ChallengeSelectData:
+  - ButtonType: 0
+    Object: {fileID: 0}
+    GlobalChallenge: 0
+  - ButtonType: 4
+    Object: {fileID: 0}
+    GlobalChallenge: 1
   _LevelLockData:
   - LevelButton: {fileID: 1488600890}
     LevelLabel: {fileID: 2013571530}

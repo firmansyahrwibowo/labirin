@@ -14,6 +14,14 @@ public class LevelSelectData
 }
 
 [System.Serializable]
+public class ChallengeSelectData
+{
+	public ChallengeSelectButtonType ButtonType;
+	public GameObject Object;
+	public int GlobalChallenge;
+}
+
+[System.Serializable]
 public class LevelLockData
 {
     public GameObject LevelButton;
@@ -38,6 +46,10 @@ public class ButtonManager : MonoBehaviour {
 
     [SerializeField]
     LevelSelectData [] _LevelSelectData;
+
+	[SerializeField]
+	ChallengeSelectData [] _ChallengeSelectData;
+
     
     [Header("LEVEL LOCK")]
     [SerializeField]
@@ -109,7 +121,7 @@ public class ButtonManager : MonoBehaviour {
         
         _AchievementButton.AddComponent<Button>().onClick.AddListener(delegate {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP, false));
-            EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.CHALLENGE_2));
+            EventManager.TriggerEvent(new MainMenuButtonEvent(MainMenuButtonType.CHALLENGE));
             //Diubah jadi challenge button
             //EventManager.TriggerEvent(new ShowAchievementEvent());
 
@@ -149,6 +161,7 @@ public class ButtonManager : MonoBehaviour {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.TAP_BACK, false));
             _CreditObject.SetActive(false);
         });
+
         //BENTUK SEDERHANA LEVEL HANDLER
         foreach (LevelSelectData data in _LevelSelectData)
         {
@@ -157,6 +170,9 @@ public class ButtonManager : MonoBehaviour {
                 ButtonAction(data);
             });
         }
+
+		//BENTUK SEDERHANA CGALLENGE HANDLER
+
     }
 
     public void Init (InitButtonEvent e)

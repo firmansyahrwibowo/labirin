@@ -157,7 +157,7 @@ public class MainManager : MonoBehaviour {
                 EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
                 EventManager.TriggerEvent(new ControllerEvent(false));
                 break;
-            case MainMenuButtonType.CHALLENGE_2:
+			case MainMenuButtonType.CHALLENGE:
                 MainMenuUI.SetActive(false);
                 LevelSelect1.SetActive(false);
                 LevelSelect2.SetActive(false);
@@ -165,21 +165,21 @@ public class MainManager : MonoBehaviour {
                 LevelSelect4.SetActive(false);
                 LevelSelect5.SetActive(false);
                 LevelSelect6.SetActive(false);
-				ChallengeSelect1.SetActive(false);
+				ChallengeSelect1.SetActive(true);
 				ChallengeSelect2.SetActive(false);
                 FinishLevel.SetActive(false);
                 PausedUI.SetActive(false);
 				ButtonInGameUI.SetActive(false);
-                ButtonInGameUIChallenge.SetActive(true);
+				ButtonInGameUIChallenge.SetActive(false);
                 TheGameUI.SetActive(false);
-				_Challenge.SetActive (true);
+				_Challenge.SetActive (false);
                 AnalyticsEvent.Custom("Challenge Button");
 
-                Transition.SetActive(true);
+                //Transition.SetActive(true);
 
-                EventManager.TriggerEvent(new ControllerEvent(true));
-                EventManager.TriggerEvent(new StartChallengeEvent());
-                EventManager.TriggerEvent(new BGMEvent(PlayType.PLAY));
+                //EventManager.TriggerEvent(new ControllerEvent(true));
+                //EventManager.TriggerEvent(new StartChallengeEvent());
+				EventManager.TriggerEvent(new BGMEvent(PlayType.STOP));
                 break;
         }
     }
@@ -1437,4 +1437,213 @@ public class MainManager : MonoBehaviour {
         TiltController.SetActive(true);
     }
 
+	public void ChallengeSelectButton(ChallengeSelectButtonEvent e)
+	{
+		switch (e.Type) {
+		case ChallengeSelectButtonType.CHALLENGE_2:
+			MainMenuUI.SetActive (false);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (false);
+			ChallengeSelect2.SetActive (false);
+			FinishLevel.SetActive (false);
+			PausedUI.SetActive (false);
+			TiltController.SetActive (false);                
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (true);
+			TheGameUI.SetActive (false);
+			_Challenge.SetActive (true);
+			AnalyticsEvent.Custom ("Challenge2 Button");
+
+			Transition.SetActive (true);
+
+			EventManager.TriggerEvent (new ControllerEvent (true));
+			EventManager.TriggerEvent (new StartGameplayEvent ());
+			EventManager.TriggerEvent (new BGMEvent (PlayType.PLAY));
+			break;
+		case ChallengeSelectButtonType.CHALLENGE_3:
+			MainMenuUI.SetActive (false);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (false);
+			ChallengeSelect2.SetActive (false);
+			TiltController.SetActive (false);
+			FinishLevel.SetActive (false);
+			PausedUI.SetActive (false);
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (true);
+			TheGameUI.SetActive (false);
+			_Challenge.SetActive (true);
+			EventManager.TriggerEvent (new BGMEvent (PlayType.PLAY));
+
+			AnalyticsEvent.Custom ("Challenge3 Button");
+
+			Transition.SetActive (true);
+
+			EventManager.TriggerEvent (new ControllerEvent (true));
+			EventManager.TriggerEvent (new StartGameplayEvent ());
+			break;
+		
+		case ChallengeSelectButtonType.Back_ToMenu7:
+			MainMenuUI.SetActive (true);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (false);
+			ChallengeSelect2.SetActive (false);
+			FinishLevel.SetActive (false);
+			FinishLevelChallenge.SetActive (false);
+			PausedUI.SetActive (false);
+			PausedUIChallenge.SetActive (false);
+			TutorialUI.SetActive (false);
+			Tutorial1UI.SetActive (false);
+			Tutorial2UI.SetActive (false);
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (false);
+			_Challenge.SetActive (false);
+			TheGameUI.SetActive (false);
+			Transition.SetActive (false);
+
+			AnalyticsEvent.Custom ("BackToMenu Button");
+
+			EventManager.TriggerEvent (new BGMEvent (PlayType.STOP));
+			EventManager.TriggerEvent (new InitButtonEvent ());
+			break;
+		case ChallengeSelectButtonType.Left_7:
+			MainMenuUI.SetActive (false);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (false);
+			ChallengeSelect2.SetActive (true);
+			FinishLevel.SetActive (false);
+			PausedUI.SetActive (false);
+			TutorialUI.SetActive (false);
+			Tutorial1UI.SetActive (false);
+			Tutorial2UI.SetActive (false);
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (false);
+			TheGameUI.SetActive (false);
+			_Challenge.SetActive (false);
+			Transition.SetActive (false);
+
+			AnalyticsEvent.Custom ("LeftChallengeSelect Button");
+
+			break;
+		case ChallengeSelectButtonType.Right_7:
+			MainMenuUI.SetActive (false);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (false);
+			ChallengeSelect2.SetActive (true);
+			FinishLevel.SetActive (false);
+			PausedUI.SetActive (false);
+			TutorialUI.SetActive (false);
+			Tutorial1UI.SetActive (false);
+			Tutorial2UI.SetActive (false);
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (false);
+			TheGameUI.SetActive (false);
+			_Challenge.SetActive (false);
+			Transition.SetActive (false);
+
+			AnalyticsEvent.Custom ("RightChallengeSelect Button");
+
+			break;
+		case ChallengeSelectButtonType.Left_8:
+			MainMenuUI.SetActive (false);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (true);
+			ChallengeSelect2.SetActive (false);
+			FinishLevel.SetActive (false);
+			PausedUI.SetActive (false);
+			TutorialUI.SetActive (false);
+			Tutorial1UI.SetActive (false);
+			Tutorial2UI.SetActive (false);
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (false);
+			TheGameUI.SetActive (false);
+			_Challenge.SetActive (false);
+			Transition.SetActive (false);
+
+			AnalyticsEvent.Custom ("LeftChallengeSelect Button");
+
+			break;
+		case ChallengeSelectButtonType.Right_8:
+			MainMenuUI.SetActive (false);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (true);
+			ChallengeSelect2.SetActive (false);
+			FinishLevel.SetActive (false);
+			PausedUI.SetActive (false);
+			TutorialUI.SetActive (false);
+			Tutorial1UI.SetActive (false);
+			Tutorial2UI.SetActive (false);
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (false);
+			TheGameUI.SetActive (false);
+			_Challenge.SetActive (false);
+			Transition.SetActive (false);
+
+			AnalyticsEvent.Custom ("RightChallengeSelect Button");
+
+			break;
+		case ChallengeSelectButtonType.Back_ToMenu8:
+			MainMenuUI.SetActive (true);
+			LevelSelect1.SetActive (false);
+			LevelSelect2.SetActive (false);
+			LevelSelect3.SetActive (false);
+			LevelSelect4.SetActive (false);
+			LevelSelect5.SetActive (false);
+			LevelSelect6.SetActive (false);
+			ChallengeSelect1.SetActive (false);
+			ChallengeSelect2.SetActive (false);
+			FinishLevel.SetActive (false);
+			FinishLevelChallenge.SetActive (false);
+			PausedUI.SetActive (false);
+			PausedUIChallenge.SetActive (false);
+			TutorialUI.SetActive (false);
+			Tutorial1UI.SetActive (false);
+			Tutorial2UI.SetActive (false);
+			ButtonInGameUI.SetActive (false);
+			ButtonInGameUIChallenge.SetActive (false);
+			_Challenge.SetActive (false);
+			TheGameUI.SetActive (false);
+			Transition.SetActive (false);
+
+			AnalyticsEvent.Custom ("BackToMenu Button");
+
+			EventManager.TriggerEvent (new BGMEvent (PlayType.STOP));
+			EventManager.TriggerEvent (new InitButtonEvent ());
+			break;
+		}
+	}
 }

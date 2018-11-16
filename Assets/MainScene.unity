@@ -10260,6 +10260,8 @@ MonoBehaviour:
   LevelSelect4: {fileID: 1391420528}
   LevelSelect5: {fileID: 1300183625}
   LevelSelect6: {fileID: 981136805}
+  ChallengeSelect1: {fileID: 859232212}
+  ChallengeSelect2: {fileID: 982081863}
   FinishLevel: {fileID: 1821566669}
   FinishLevelChallenge: {fileID: 102882704}
   PausedUI: {fileID: 428724246}
@@ -10275,7 +10277,7 @@ MonoBehaviour:
   IntroUI: {fileID: 1058621557}
   Gpgs: {fileID: 214584687}
   _BlockObject: {fileID: 1448429407}
-  _Challenge2: {fileID: 147728423}
+  _Challenge: {fileID: 147728423}
 --- !u!114 &214584683
 MonoBehaviour:
   m_ObjectHideFlags: 0

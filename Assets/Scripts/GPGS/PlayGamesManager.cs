@@ -75,13 +75,18 @@ public class PlayGamesManager : MonoBehaviour {
                 //});
                 break;
             case LeaderboardType.CHALLENGE_2:
+                //Debug.Log("GLOBAL : " + e.Score);
+                //Social.ReportScore(score, GPGSIds.leaderboard_tantangan_2, (bool sucess) =>
+                //{
+
+                //});
+                break;
+            case LeaderboardType.CHALLENGE_3:
                 Debug.Log("GLOBAL : " + e.Score);
-                Social.ReportScore(score, GPGSIds.leaderboard_tantangan_2, (bool sucess) =>
+                Social.ReportScore(score, GPGSIds.leaderboard_tantangan_3, (bool sucess) =>
                 {
 
                 });
-                break;
-            case LeaderboardType.CHALLENGE_3:
                 break;
             case LeaderboardType.CHALLENGE_4:
                 break;

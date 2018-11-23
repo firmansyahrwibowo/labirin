@@ -10616,7 +10616,7 @@ MonoBehaviour:
   _Ball: {fileID: 1962799399}
   _LabirinDefaultPos: {x: 0, y: 0}
   _WinUI: {fileID: 102882704}
-  _ThisLevel: 0
+  _ThisChallenge: 0
   _Level:
   - Id: 0
     Labirin: {fileID: 1828502934}
@@ -10644,6 +10644,7 @@ MonoBehaviour:
   _TiltController: {fileID: 1173962544}
   _BallDefaultPosition: {fileID: 181846029}
   _Labirin: {fileID: 1828502934}
+  RotateScripts: []
 --- !u!1 &217401415
 GameObject:
   m_ObjectHideFlags: 0
@@ -36403,7 +36404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &771337442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40985,7 +40986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &846766109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -65392,7 +65393,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

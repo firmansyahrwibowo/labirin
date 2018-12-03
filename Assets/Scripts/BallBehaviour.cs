@@ -20,11 +20,11 @@ public class BallBehaviour : MonoBehaviour {
         _CalledOnce = false;
         _StarCount = 0;
         _IsGoal = false;
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         for (int i = 0; i < _DiamondObject.Count; i++)
         {
             _DiamondObject[i].SetActive(true);
         }
-
         _DiamondObject = new List<GameObject>();
     }
 
@@ -68,4 +68,5 @@ public class BallBehaviour : MonoBehaviour {
             EventManager.TriggerEvent(new SFXPlayEvent(SfxType.HIT_WALL, false));
         }
     }
+
 }

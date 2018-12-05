@@ -10644,7 +10644,11 @@ MonoBehaviour:
   _TiltController: {fileID: 1173962544}
   _BallDefaultPosition: {fileID: 181846029}
   _Labirin: {fileID: 1828502934}
-  RotateScripts: []
+  RotateScripts:
+  - {fileID: 1398570380}
+  - {fileID: 841807719}
+  - {fileID: 134221698}
+  - {fileID: 1054079822}
 --- !u!1 &217401415
 GameObject:
   m_ObjectHideFlags: 0

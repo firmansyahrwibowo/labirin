@@ -68,18 +68,18 @@ public class PlayGamesManager : MonoBehaviour {
                 });
                 break;
             case LeaderboardType.CHALLENGE_1:
-                //Debug.Log("CHALLENGE : " + e.Score);
-                //Social.ReportScore(score, GPGSIds.leaderboard_tantangan_1, (bool sucess) =>
-                //{
+                Debug.Log("CHALLENGE : " + e.Score);
+                Social.ReportScore(score, GPGSIds.leaderboard_tantangan_1, (bool sucess) =>
+                {
 
-                //});
+                });
                 break;
             case LeaderboardType.CHALLENGE_2:
-                //Debug.Log("GLOBAL : " + e.Score);
-                //Social.ReportScore(score, GPGSIds.leaderboard_tantangan_2, (bool sucess) =>
-                //{
+                Debug.Log("GLOBAL : " + e.Score);
+                Social.ReportScore(score, GPGSIds.leaderboard_tantangan_2, (bool sucess) =>
+                {
 
-                //});
+                });
                 break;
             case LeaderboardType.CHALLENGE_3:
                 Debug.Log("GLOBAL : " + e.Score);

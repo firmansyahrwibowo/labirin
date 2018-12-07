@@ -24,7 +24,7 @@
 
 public static class GPGSIds
 {
-        public const string leaderboard_tantangan_3 = "CgkI9Y_BxagCEAIQBw"; // <GPGSID>
+        public const string leaderboard_tantangan_3 = "CgkI9Y_BxagCEAIQCA"; // <GPGSID>
         public const string leaderboard_peringkat = "CgkI9Y_BxagCEAIQBQ"; // <GPGSID>
         public const string achievement_selamat_bermain = "CgkI9Y_BxagCEAIQAw"; // <GPGSID>
         public const string achievement_tulus_labirin = "CgkI9Y_BxagCEAIQAg"; // <GPGSID>
